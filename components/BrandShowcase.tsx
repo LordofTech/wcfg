@@ -1,37 +1,50 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { MARQUES, MARQUE_ACCENTS, type Marque } from "@/lib/brands";
+import { BRANDS, DEFAULT_MARQUE_ACCENT, MARQUE_ACCENTS } from "@/lib/brands";
 import { luxuryEase } from "@/lib/motion";
 
-function BrandBadge({ brand, index }: { brand: Marque; index: number }) {
-  const accent = MARQUE_ACCENTS[brand];
-
+function BrandBadge({
+  name,
+  href,
+  accent,
+  index,
+}: {
+  name: string;
+  href: string;
+  accent: string;
+  index: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.06, ease: luxuryEase }}
-      className="group relative overflow-hidden rounded-sm border border-gold-light/15 bg-charcoal-velvet px-4 py-8 text-center transition-all duration-500 hover:border-gold-light/45 hover:shadow-gold"
+      transition={{ duration: 0.5, delay: Math.min(index, 12) * 0.04, ease: luxuryEase }}
     >
-      <div
-        className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${accent} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        aria-hidden
+      <Link
+        href={href}
+        className="group relative block overflow-hidden rounded-sm border border-gold-light/15 bg-charcoal-velvet px-3 py-6 text-center transition-all duration-500 hover:border-gold-light/45 hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal sm:px-4 sm:py-8"
       >
-        <div className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent" />
-        <div className="absolute inset-x-4 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent" />
-      </div>
-      <p className="relative font-display text-lg font-medium tracking-wide text-ivory transition-colors duration-300 group-hover:text-gold-light sm:text-xl">
-        {brand}
-      </p>
-      <p className="relative mt-2 font-sans text-[9px] font-light uppercase tracking-luxury text-mist opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        WCFG Network
-      </p>
+        <div
+          className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${accent} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          aria-hidden
+        >
+          <div className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent" />
+          <div className="absolute inset-x-4 bottom-0 h-px bg-gradient-to-r from-transparent via-gold-light to-transparent" />
+        </div>
+        <p className="relative font-display text-base font-medium tracking-wide text-ivory transition-colors duration-300 group-hover:text-gold-light sm:text-lg">
+          {name}
+        </p>
+        <p className="relative mt-2 font-sans text-[9px] font-light uppercase tracking-luxury text-mist opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          View inventory
+        </p>
+      </Link>
     </motion.div>
   );
 }
@@ -57,9 +70,15 @@ export default function BrandShowcase() {
           <div className="divider-gold mt-6 w-24" />
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-4">
-          {MARQUES.map((brand, index) => (
-            <BrandBadge key={brand} brand={brand} index={index} />
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 lg:gap-4">
+          {BRANDS.map((brand, index) => (
+            <BrandBadge
+              key={brand.slug}
+              name={brand.name}
+              href={brand.href}
+              accent={MARQUE_ACCENTS[brand.name] ?? DEFAULT_MARQUE_ACCENT}
+              index={index}
+            />
           ))}
         </div>
       </div>

@@ -43,3 +43,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# import scratch files
+adscars-sample.html
+scripts/adscars-*.html
+scripts/adscars-links.json
+scripts/probe-*.mjs
+scripts/tmp-vehicles/

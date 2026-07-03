@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { luxuryEase } from "@/lib/motion";
 
 const NAV_LINKS = [
-  { label: "Curated Inventory", href: "#inventory" },
-  { label: "Premium Services", href: "#services" },
-  { label: "The WCFG Experience", href: "#experience" },
+  { label: "Curated Inventory", href: "/inventory" },
+  { label: "Premium Services", href: "/#services" },
+  { label: "The WCFG Experience", href: "/#experience" },
   { label: "Portal Login", href: "/portal" },
 ] as const;
 
@@ -53,8 +54,8 @@ export default function Navbar() {
           className="glass-strong flex w-full max-w-6xl items-center justify-between rounded-sm border border-gold-light/20 shadow-glass"
           aria-label="Primary"
         >
-          <a
-            href="#top"
+          <Link
+            href="/"
             className="group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
             onClick={closeMobile}
           >
@@ -64,28 +65,28 @@ export default function Navbar() {
             <span className="mt-1 hidden font-sans text-[9px] font-light uppercase tracking-luxury text-mist sm:block">
               Luxury Automobile Brokers
             </span>
-          </a>
+          </Link>
 
           <ul className="hidden items-center gap-7 lg:flex">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   className="font-sans text-[11px] font-light uppercase tracking-luxury text-ivory/80 transition-colors duration-300 hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
 
           <div className="flex items-center gap-3">
-            <a
-              href="#consultation"
+            <Link
+              href="/#consultation"
               className="hidden bg-gold-gradient px-5 py-2.5 font-sans text-[10px] font-medium uppercase tracking-luxury text-pitch transition-shadow duration-300 hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-pitch sm:inline-flex"
             >
               Schedule a Consultation
-            </a>
+            </Link>
 
             <button
               type="button"
@@ -121,23 +122,23 @@ export default function Navbar() {
               <ul className="flex flex-col gap-6">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
-                    <a
+                    <Link
                       href={link.href}
                       onClick={closeMobile}
                       className="block font-sans text-sm font-light uppercase tracking-luxury text-ivory transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
-              <a
-                href="#consultation"
+              <Link
+                href="/#consultation"
                 onClick={closeMobile}
                 className="mt-8 flex w-full items-center justify-center bg-gold-gradient px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight"
               >
                 Schedule a Consultation
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         ) : null}

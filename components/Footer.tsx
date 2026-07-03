@@ -1,4 +1,11 @@
 import { Mail, Globe, MapPin, Phone } from "lucide-react";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_WEBSITE,
+  mailtoHref,
+  telHref,
+} from "@/lib/contact";
 
 export default function Footer() {
   return (
@@ -26,16 +33,16 @@ export default function Footer() {
           <ul className="space-y-4 font-sans text-sm font-light text-ivory/90">
             <li>
               <a
-                href="mailto:jamail@wcfgbizbrokers.com"
+                href={mailtoHref()}
                 className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
               >
                 <Mail size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
-                jamail@wcfgbizbrokers.com
+                {CONTACT_EMAIL}
               </a>
             </li>
             <li>
               <a
-                href="https://www.wcfgbrokers.com"
+                href={CONTACT_WEBSITE}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
@@ -46,11 +53,11 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="tel:+18325667163"
+                href={telHref}
                 className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
               >
                 <Phone size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
-                +1 (832) 566-7163
+                {CONTACT_PHONE_DISPLAY}
               </a>
             </li>
             <li className="inline-flex items-start gap-3 text-mist">
@@ -71,22 +78,22 @@ export default function Footer() {
           <div className="divider-gold mt-3 mb-6 w-16" />
           <ul className="space-y-3 font-sans text-sm font-light text-ivory/90">
             <li>
-              <a href="#inventory" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
+              <a href="/inventory" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
                 Curated Inventory
               </a>
             </li>
             <li>
-              <a href="#services" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
+              <a href="/#services" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
                 Premium Services
               </a>
             </li>
             <li>
-              <a href="#experience" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
+              <a href="/#experience" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
                 The WCFG Experience
               </a>
             </li>
             <li>
-              <a href="#consultation" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
+              <a href="/#consultation" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
                 Schedule a Consultation
               </a>
             </li>

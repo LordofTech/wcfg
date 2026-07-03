@@ -1,0 +1,29 @@
+---
+description: Always commit, push to GitHub, and deploy to Vercel after any project change
+alwaysApply: true
+---
+
+# Always Commit, Push, and Deploy (WCFG)
+
+For **this WCFG project**, after completing any code, content, config, or asset change:
+
+1. **Commit** relevant changes with a clear message. Continuous deploy is authorized — commit without waiting to be asked.
+2. **Push** to `origin` on `main` (or the current branch tracking remote).
+3. **Deploy to Vercel** — push alone is enough if GitHub→Vercel is connected; otherwise run `vercel --prod --yes` when status is unclear.
+4. Do this **every time** changes are made, not only when the user asks.
+5. **Never** commit secrets (`.env.local`, API keys, passwords, tokens).
+6. **Never** force-push to `main`.
+7. After deploy, briefly confirm:
+   - Repo: https://github.com/LordofTech/wcfg
+   - Production: https://wcfg.vercel.app
+8. If push or deploy fails, report the error and fix/retry.
+
+## Workflow
+
+```bash
+git add <relevant-files>
+git commit -m "Clear message describing why"
+git push origin HEAD
+# If push-triggered deploy is insufficient or unclear:
+vercel --prod --yes
+```

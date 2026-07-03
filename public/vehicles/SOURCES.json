@@ -1,0 +1,86 @@
+[
+  {
+    "id": "rr-cullinan-2024",
+    "imageSrc": "/vehicles/rr-cullinan-2024.webp",
+    "bytes": 201642,
+    "source": "Wikimedia Commons — Rolls-Royce Cullinan 005.jpg",
+    "note": "Cullinan (not Black Badge-specific livery)"
+  },
+  {
+    "id": "ferrari-296-gtb",
+    "imageSrc": "/vehicles/ferrari-296-gtb.webp",
+    "bytes": 214972,
+    "source": "Wikimedia Commons — Ferrari 296 GTB 1X7A6377.jpg",
+    "note": null
+  },
+  {
+    "id": "lambo-urus-se",
+    "imageSrc": "/vehicles/lambo-urus-se.webp",
+    "bytes": 318584,
+    "source": "Wikimedia Commons — Lamborghini Urus SE DSC 8521.jpg",
+    "note": null
+  },
+  {
+    "id": "mb-g63-2024",
+    "imageSrc": "/vehicles/mb-g63-2024.webp",
+    "bytes": 256714,
+    "source": "Wikimedia Commons — Mercedes-AMG G 63 (2024–) DSC 0681.jpg",
+    "note": null
+  },
+  {
+    "id": "porsche-911-turbo-s",
+    "imageSrc": "/vehicles/porsche-911-turbo-s.webp",
+    "bytes": 211274,
+    "source": "Wikimedia Commons — Porsche 992 Turbo S 1X7A0413.jpg",
+    "note": null
+  },
+  {
+    "id": "bentley-continental-gt",
+    "imageSrc": "/vehicles/bentley-continental-gt.webp",
+    "bytes": 254414,
+    "source": "Wikimedia Commons — Bentley Continental GT Speed (3rd gen.) IMG 0014.jpg",
+    "note": "3rd-gen Speed (inventory lists 2024 4th-gen Speed; same model line)"
+  },
+  {
+    "id": "corvette-z06",
+    "imageSrc": "/vehicles/corvette-z06.webp",
+    "bytes": 210996,
+    "source": "Wikimedia Commons — Chevrolet Corvette Z06 (C8) Miami Metro Area, USA.jpg",
+    "note": null
+  },
+  {
+    "id": "rr-ghost-2023",
+    "imageSrc": "/vehicles/rr-ghost-2023.webp",
+    "bytes": 404724,
+    "source": "Wikimedia Commons — Rolls-Royce Ghost Extended II Black (2).jpg",
+    "note": null
+  },
+  {
+    "id": "ferrari-roma",
+    "imageSrc": "/vehicles/ferrari-roma.webp",
+    "bytes": 273678,
+    "source": "Wikimedia Commons — Ferrari Roma Spider IMG 9546.jpg",
+    "note": null
+  },
+  {
+    "id": "mb-s580",
+    "imageSrc": "/vehicles/mb-s580.webp",
+    "bytes": 285690,
+    "source": "Wikimedia Commons — Mercedes-Benz W223 IAA 2021 1X7A0206.jpg",
+    "note": "W223 S-Class (not S 580 badging-specific)"
+  },
+  {
+    "id": "lambo-huracan-sterrato",
+    "imageSrc": "/vehicles/lambo-huracan-sterrato.webp",
+    "bytes": 444590,
+    "source": "Wikimedia Commons — Lamborghini Huracan Sterrato.jpg",
+    "note": null
+  },
+  {
+    "id": "porsche-cayenne-turbo-gt",
+    "imageSrc": "/vehicles/porsche-cayenne-turbo-gt.webp",
+    "bytes": 287300,
+    "source": "Wikimedia Commons — Porsche Cayenne Turbo GT DSC 7899.jpg",
+    "note": null
+  }
+]

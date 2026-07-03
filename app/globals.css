@@ -1,0 +1,240 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+/* ─── Design Tokens (CSS variables) ─── */
+:root {
+  --pitch: #0b0b0b;
+  --charcoal: #141414;
+  --charcoal-velvet: #1a1a1a;
+  --charcoal-soft: #222222;
+  --charcoal-elevated: #2a2a2a;
+
+  --gold-highlight: #f5d76e;
+  --gold-light: #d4af37;
+  --gold: #c9a227;
+  --gold-dark: #aa7c11;
+  --gold-deep: #8b6914;
+
+  --ivory: #f5f5f0;
+  --mist: #a8a8a0;
+  --white: #ffffff;
+
+  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+  --gradient-gold-horizontal: linear-gradient(
+    90deg,
+    #d4af37 0%,
+    #f5d76e 50%,
+    #aa7c11 100%
+  );
+  --gradient-gold-shimmer: linear-gradient(
+    135deg,
+    #aa7c11 0%,
+    #d4af37 40%,
+    #f5d76e 50%,
+    #d4af37 60%,
+    #aa7c11 100%
+  );
+
+  --background: var(--pitch);
+  --foreground: var(--ivory);
+}
+
+/* ─── Tailwind v4 theme bridge ─── */
+@theme inline {
+  --color-pitch: var(--pitch);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-velvet: var(--charcoal-velvet);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-charcoal-elevated: var(--charcoal-elevated);
+
+  --color-gold-highlight: var(--gold-highlight);
+  --color-gold-light: var(--gold-light);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-deep: var(--gold-deep);
+
+  --color-ivory: var(--ivory);
+  --color-mist: var(--mist);
+
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --background-image-gold-gradient: var(--gradient-gold);
+  --background-image-gold-gradient-horizontal: var(--gradient-gold-horizontal);
+  --background-image-gold-shimmer: var(--gradient-gold-shimmer);
+  --background-image-gold-radial: radial-gradient(
+    ellipse at center,
+    rgba(212, 175, 55, 0.15) 0%,
+    transparent 70%
+  );
+
+  --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.25);
+  --shadow-gold-lg: 0 0 40px rgba(212, 175, 55, 0.35);
+  --shadow-gold-sm: 0 0 10px rgba(212, 175, 55, 0.2);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--pitch);
+  color: var(--ivory);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Regal serif headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--ivory);
+}
+
+/* Gold text selection */
+::selection {
+  background-color: rgba(212, 175, 55, 0.35);
+  color: var(--ivory);
+}
+
+::-moz-selection {
+  background-color: rgba(212, 175, 55, 0.35);
+  color: var(--ivory);
+}
+
+/* Refined scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--pitch);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-gold);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+/* ─── Premium utilities ─── */
+
+/* Metallic gold text */
+.text-gold-gradient {
+  background-image: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gold-shimmer {
+  background-image: var(--gradient-gold-shimmer);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gold fill / border helpers */
+.bg-gold-gradient {
+  background-image: var(--gradient-gold);
+}
+
+.bg-gold-shimmer {
+  background-image: var(--gradient-gold-shimmer);
+}
+
+.border-gold-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--pitch), var(--pitch)) padding-box,
+    var(--gradient-gold) border-box;
+}
+
+/* Glassmorphism panels */
+.glass {
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(212, 175, 55, 0.08);
+}
+
+.glass-strong {
+  background: rgba(26, 26, 26, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+/* Subtle gold hairline divider */
+.divider-gold {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.5) 50%,
+    transparent 100%
+  );
+}
+
+/* Soft gold ambient glow */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.glow-gold-lg {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.35);
+}
+
+/* Luxury letter-spacing for all-caps labels */
+.tracking-luxury {
+  letter-spacing: 0.2em;
+}
+
+.tracking-luxury-wide {
+  letter-spacing: 0.35em;
+}
+
+/* Focus ring for interactive elements without explicit focus styles */
+:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.55);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

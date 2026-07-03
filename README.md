@@ -1,19 +1,19 @@
 # WCFG — White-Glove Car Finder
 
-Luxury vehicle sourcing website (Next.js App Router). Public inventory is static mock data; consultation leads are stored in Supabase and emailed to the team via Resend.
+Luxury vehicle sourcing website (Next.js App Router). Public inventory is static mock data; consultation leads are stored in Supabase and emailed to the team via SMTP.
 
 ## Getting Started
 
 ```bash
 npm install
 cp .env.example .env.local
-# Fill in Supabase + Resend values (see below)
+# Fill in Supabase + SMTP values (see below)
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Consultation leads (Supabase + Resend)
+## Consultation leads (Supabase + SMTP)
 
 The multi-step form posts to `POST /api/consultation`, which:
 
@@ -33,13 +33,18 @@ If email delivery fails after a successful insert, the API still returns success
    - `anon` `public` key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `service_role` `secret` key → `SUPABASE_SERVICE_ROLE_KEY` (**server only**)
 
-### 2. Create a Resend API key
+### 2. Configure SMTP
 
-1. Go to [https://resend.com/api-keys](https://resend.com/api-keys) and create an API key
-2. Set `RESEND_API_KEY`
-3. For production, verify `wcfgbizbrokers.com` in Resend and set:
-   - `RESEND_FROM_EMAIL=WCFG Consultations <leads@wcfgbizbrokers.com>` (or another verified address)
-4. Until the domain is verified, you can test with `onboarding@resend.dev` (Resend may only deliver to your Resend account email in that mode)
+WCFG sends lead notifications with nodemailer over SMTP (STARTTLS on port 587). No domain verification is required (unlike transactional providers such as Resend).
+
+For the `wcfgbizbrokers.com` mailbox (cPanel / domain mail):
+
+1. Set `SMTP_HOST=mail.wcfgbizbrokers.com` and `SMTP_PORT=587`
+2. Set `SMTP_USER` / `SMTP_PASS` to the mailbox credentials
+3. Optionally set `SMTP_FROM` (defaults to `WCFG Consultations <SMTP_USER>`)
+4. Set `LEADS_NOTIFY_EMAIL` to the inbox that should receive leads (defaults to `jamail@wcfgbizbrokers.com`)
+
+If you switch to Google Workspace later, use `SMTP_HOST=smtp.gmail.com` and an [App Password](https://myaccount.google.com/apppasswords) as `SMTP_PASS` (2-Step Verification required).
 
 ### 3. Environment variables
 
@@ -50,8 +55,11 @@ Copy `.env.example` to `.env.local`:
 | `NEXT_PUBLIC_SUPABASE_URL` | Yes | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Recommended | Public anon key (not used for inserts) |
 | `SUPABASE_SERVICE_ROLE_KEY` | Yes | Server-only insert access |
-| `RESEND_API_KEY` | Yes (for email) | Lead is still saved if missing |
-| `RESEND_FROM_EMAIL` | Optional | Defaults to `WCFG Consultations <onboarding@resend.dev>` |
+| `SMTP_HOST` | Optional | Defaults to `smtp.gmail.com`; production uses `mail.wcfgbizbrokers.com` |
+| `SMTP_PORT` | Optional | Defaults to `587` (STARTTLS) |
+| `SMTP_USER` | Yes (for email) | Lead is still saved if missing |
+| `SMTP_PASS` | Yes (for email) | Lead is still saved if missing |
+| `SMTP_FROM` | Optional | Defaults to `WCFG Consultations <SMTP_USER>` |
 | `LEADS_NOTIFY_EMAIL` | Optional | Defaults to `jamail@wcfgbizbrokers.com` |
 
 ### 4. Vercel production env

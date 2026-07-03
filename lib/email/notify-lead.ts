@@ -1,8 +1,9 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import type { ConsultationLeadInput } from "@/lib/consultation";
 
 const DEFAULT_NOTIFY_EMAIL = "jamail@wcfgbizbrokers.com";
-const DEFAULT_FROM_EMAIL = "WCFG Consultations <onboarding@resend.dev>";
+const DEFAULT_SMTP_HOST = "smtp.gmail.com";
+const DEFAULT_SMTP_PORT = 587;
 
 function escapeHtml(value: string): string {
   return value
@@ -62,48 +63,61 @@ function buildLeadEmailText(lead: ConsultationLeadInput): string {
   ].join("\n");
 }
 
+function resolveFromAddress(smtpUser: string): string {
+  const configured = process.env.SMTP_FROM?.trim();
+  if (configured) return configured;
+  return `WCFG Consultations <${smtpUser}>`;
+}
+
 /**
- * Sends a lead notification email. Failures are logged and never thrown —
- * the lead must remain saved even if email delivery fails.
+ * Sends a lead notification email via SMTP. Failures are logged and never
+ * thrown — the lead must remain saved even if email delivery fails.
  */
 export async function notifyLeadEmail(
   lead: ConsultationLeadInput,
   leadId: string
 ): Promise<void> {
-  const apiKey = process.env.RESEND_API_KEY?.trim();
-  if (!apiKey) {
+  const smtpUser = process.env.SMTP_USER?.trim();
+  const smtpPass = process.env.SMTP_PASS?.trim();
+
+  if (!smtpUser || !smtpPass) {
     console.error(
-      "Lead notification skipped: RESEND_API_KEY is not configured.",
+      "Lead notification skipped: SMTP_USER / SMTP_PASS are not configured.",
       { leadId }
     );
     return;
   }
 
+  const host = process.env.SMTP_HOST?.trim() || DEFAULT_SMTP_HOST;
+  const port = Number(process.env.SMTP_PORT?.trim() || DEFAULT_SMTP_PORT);
   const to =
     process.env.LEADS_NOTIFY_EMAIL?.trim() || DEFAULT_NOTIFY_EMAIL;
-  const from =
-    process.env.RESEND_FROM_EMAIL?.trim() || DEFAULT_FROM_EMAIL;
+  const from = resolveFromAddress(smtpUser);
 
   try {
-    const resend = new Resend(apiKey);
-    const { error } = await resend.emails.send(
-      {
-        from,
-        to: [to],
-        subject: `New WCFG consultation: ${lead.fullName} · ${lead.marque}`,
-        html: buildLeadEmailHtml(lead),
-        text: buildLeadEmailText(lead),
+    const transporter = nodemailer.createTransport({
+      host,
+      port,
+      secure: port === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
       },
-      { idempotencyKey: `consultation-lead/${leadId}` }
-    );
+    });
 
-    if (error) {
-      console.error("Lead notification email failed:", error.message, {
-        leadId,
-        to,
-      });
-    }
+    await transporter.sendMail({
+      from,
+      to,
+      subject: `New WCFG consultation: ${lead.fullName} · ${lead.marque}`,
+      html: buildLeadEmailHtml(lead),
+      text: buildLeadEmailText(lead),
+    });
   } catch (error) {
-    console.error("Lead notification email threw:", error, { leadId, to });
+    console.error("Lead notification email threw:", error, {
+      leadId,
+      to,
+      host,
+      port,
+    });
   }
 }

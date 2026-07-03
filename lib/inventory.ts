@@ -16,6 +16,8 @@ export interface Vehicle {
   sourceUrl?: string;
   mileage?: string;
   vin?: string;
+  /** Promoted “Featured In Stock” unit — shown first on homepage and listings */
+  featured?: boolean;
 }
 
 function normalize(vehicle: Vehicle): Vehicle {
@@ -24,10 +26,25 @@ function normalize(vehicle: Vehicle): Vehicle {
     brandSlug: vehicle.brandSlug || marqueToSlug(vehicle.brand),
     status: vehicle.status ?? "available",
     source: vehicle.source ?? "wcfg",
+    featured: vehicle.featured === true,
   };
 }
 
-export const inventory: Vehicle[] = (inventoryData as Vehicle[]).map(normalize);
+/** Featured units first, then WCFG curated, then remaining stock. */
+export function sortInventory(vehicles: Vehicle[]): Vehicle[] {
+  return [...vehicles].sort((a, b) => {
+    const featuredDelta = Number(b.featured) - Number(a.featured);
+    if (featuredDelta !== 0) return featuredDelta;
+    const wcfgDelta =
+      Number(b.source === "wcfg") - Number(a.source === "wcfg");
+    if (wcfgDelta !== 0) return wcfgDelta;
+    return b.year - a.year;
+  });
+}
+
+export const inventory: Vehicle[] = sortInventory(
+  (inventoryData as Vehicle[]).map(normalize)
+);
 
 export function getLocalInventory(brandSlug?: string): Vehicle[] {
   if (!brandSlug) return inventory;
@@ -38,11 +55,17 @@ export function getLocalVehicleById(id: string): Vehicle | null {
   return inventory.find((vehicle) => vehicle.id === id) ?? null;
 }
 
+export function getFeaturedVehicle(): Vehicle | null {
+  return inventory.find((vehicle) => vehicle.featured) ?? null;
+}
+
 export function getFeaturedInventory(limit = 9): Vehicle[] {
-  const featured = inventory.filter((vehicle) => vehicle.source === "wcfg");
-  if (featured.length >= limit) return featured.slice(0, limit);
-  return [...featured, ...inventory.filter((v) => v.source !== "wcfg")].slice(
-    0,
-    limit
+  const spotlight = inventory.filter((vehicle) => vehicle.featured);
+  const curated = inventory.filter(
+    (vehicle) => vehicle.source === "wcfg" && !vehicle.featured
   );
+  const rest = inventory.filter(
+    (vehicle) => vehicle.source !== "wcfg" && !vehicle.featured
+  );
+  return [...spotlight, ...curated, ...rest].slice(0, limit);
 }

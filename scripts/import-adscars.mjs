@@ -72,6 +72,18 @@ const DEFAULT_ACCENT = "from-gold-light/25 via-zinc-700/15 to-transparent";
 /** Original WCFG showcase units (kept alongside imported stock). */
 const WCFG_ORIGINALS = [
   {
+    id: "corvette-zr1-coupe-3lz-black",
+    brand: "Corvette",
+    model: "ZR1 Coupe 3LZ",
+    year: 2025,
+    highlight: "Available now · Black exterior · Twin-turbo LT7 · 1,064 hp",
+    priceLabel: "Call for Price",
+    imageSrc: "/vehicles/corvette-zr1-coupe-3lz-black.webp",
+    imageAlt: "New 2025 Chevrolet Corvette ZR1 Coupe 3LZ in black",
+    source: "wcfg",
+    featured: true,
+  },
+  {
     id: "rr-cullinan-2024",
     brand: "Rolls-Royce",
     model: "Cullinan Black Badge",
@@ -396,6 +408,7 @@ function enrichVehicle(vehicle) {
     brandSlug: vehicle.brandSlug || slugify(vehicle.brand),
     status: vehicle.status || "available",
     source: vehicle.source || "wcfg",
+    featured: vehicle.featured === true,
   };
 }
 
@@ -487,6 +500,8 @@ export interface Vehicle {
   sourceUrl?: string;
   mileage?: string;
   vin?: string;
+  /** Promoted “Featured In Stock” unit — shown first on homepage and listings */
+  featured?: boolean;
 }
 
 function normalize(vehicle: Vehicle): Vehicle {
@@ -495,10 +510,25 @@ function normalize(vehicle: Vehicle): Vehicle {
     brandSlug: vehicle.brandSlug || marqueToSlug(vehicle.brand),
     status: vehicle.status ?? "available",
     source: vehicle.source ?? "wcfg",
+    featured: vehicle.featured === true,
   };
 }
 
-export const inventory: Vehicle[] = (inventoryData as Vehicle[]).map(normalize);
+/** Featured units first, then WCFG curated, then remaining stock. */
+export function sortInventory(vehicles: Vehicle[]): Vehicle[] {
+  return [...vehicles].sort((a, b) => {
+    const featuredDelta = Number(b.featured) - Number(a.featured);
+    if (featuredDelta !== 0) return featuredDelta;
+    const wcfgDelta =
+      Number(b.source === "wcfg") - Number(a.source === "wcfg");
+    if (wcfgDelta !== 0) return wcfgDelta;
+    return b.year - a.year;
+  });
+}
+
+export const inventory: Vehicle[] = sortInventory(
+  (inventoryData as Vehicle[]).map(normalize)
+);
 
 export function getLocalInventory(brandSlug?: string): Vehicle[] {
   if (!brandSlug) return inventory;
@@ -509,13 +539,19 @@ export function getLocalVehicleById(id: string): Vehicle | null {
   return inventory.find((vehicle) => vehicle.id === id) ?? null;
 }
 
+export function getFeaturedVehicle(): Vehicle | null {
+  return inventory.find((vehicle) => vehicle.featured) ?? null;
+}
+
 export function getFeaturedInventory(limit = 9): Vehicle[] {
-  const featured = inventory.filter((vehicle) => vehicle.source === "wcfg");
-  if (featured.length >= limit) return featured.slice(0, limit);
-  return [...featured, ...inventory.filter((v) => v.source !== "wcfg")].slice(
-    0,
-    limit
+  const spotlight = inventory.filter((vehicle) => vehicle.featured);
+  const curated = inventory.filter(
+    (vehicle) => vehicle.source === "wcfg" && !vehicle.featured
   );
+  const rest = inventory.filter(
+    (vehicle) => vehicle.source !== "wcfg" && !vehicle.featured
+  );
+  return [...spotlight, ...curated, ...rest].slice(0, limit);
 }
 `;
 }
@@ -538,7 +574,8 @@ async function writeSupabaseSeed(vehicles) {
     '${esc(v.source || "wcfg")}',
     ${v.sourceUrl ? `'${esc(v.sourceUrl)}'` : "null"},
     ${v.mileage ? `'${esc(v.mileage)}'` : "null"},
-    ${v.vin ? `'${esc(v.vin)}'` : "null"}
+    ${v.vin ? `'${esc(v.vin)}'` : "null"},
+    ${v.featured === true}
   )`;
     })
     .join(",\n");
@@ -550,11 +587,12 @@ alter table public.vehicles
   add column if not exists source text not null default 'wcfg',
   add column if not exists source_url text,
   add column if not exists mileage text,
-  add column if not exists vin text;
+  add column if not exists vin text,
+  add column if not exists featured boolean not null default false;
 
 insert into public.vehicles (
   id, brand, brand_slug, model, year, highlight, price_label,
-  image_src, image_alt, status, source, source_url, mileage, vin
+  image_src, image_alt, status, source, source_url, mileage, vin, featured
 ) values
 ${values}
 on conflict (id) do update set
@@ -570,7 +608,8 @@ on conflict (id) do update set
   source = excluded.source,
   source_url = excluded.source_url,
   mileage = excluded.mileage,
-  vin = excluded.vin;
+  vin = excluded.vin,
+  featured = excluded.featured;
 `;
 
   await writeFile(path.join(root, "supabase", "migrations", "003_adscars_inventory.sql"), sql);

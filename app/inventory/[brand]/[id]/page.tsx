@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BadgeCheck, Mail, Phone, ShieldCheck } from "lucide-react";
+import { BadgeCheck, Mail, Phone, ShieldCheck, Sparkles } from "lucide-react";
 import InventoryShell from "@/components/InventoryShell";
 import { getBrandBySlug } from "@/lib/brands";
 import {
@@ -77,9 +77,19 @@ export default async function VehicleDetailPage({
               />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal-velvet/80 via-transparent to-pitch/20" />
               <div className="absolute left-4 top-4">
-                <span className="inline-flex items-center gap-1.5 rounded-sm border border-gold-light/30 bg-pitch/70 px-2.5 py-1 font-sans text-[9px] font-light uppercase tracking-luxury text-gold-light backdrop-blur-sm">
-                  <ShieldCheck size={12} strokeWidth={1.5} aria-hidden />
-                  WCFG Curated
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-sm border bg-pitch/70 px-2.5 py-1 font-sans text-[9px] font-light uppercase tracking-luxury text-gold-light backdrop-blur-sm ${
+                    vehicle.featured
+                      ? "border-gold-light/50 font-medium"
+                      : "border-gold-light/30"
+                  }`}
+                >
+                  {vehicle.featured ? (
+                    <Sparkles size={12} strokeWidth={1.5} aria-hidden />
+                  ) : (
+                    <ShieldCheck size={12} strokeWidth={1.5} aria-hidden />
+                  )}
+                  {vehicle.featured ? "Featured In Stock" : "WCFG Curated"}
                 </span>
               </div>
             </div>

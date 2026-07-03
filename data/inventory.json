@@ -443,6 +443,20 @@
     "vin": "2JB017713"
   },
   {
+    "id": "corvette-zr1-coupe-3lz-black",
+    "brand": "Corvette",
+    "brandSlug": "corvette",
+    "model": "ZR1 Coupe 3LZ",
+    "year": 2025,
+    "highlight": "Available now · Black exterior · Twin-turbo LT7 · 1,064 hp",
+    "priceLabel": "Call for Price",
+    "imageSrc": "/vehicles/corvette-zr1-coupe-3lz-black.webp",
+    "imageAlt": "New 2025 Chevrolet Corvette ZR1 Coupe 3LZ in black",
+    "status": "available",
+    "source": "wcfg",
+    "featured": true
+  },
+  {
     "id": "corvette-z06",
     "brand": "Corvette",
     "model": "Z06 3LZ",

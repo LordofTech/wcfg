@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BadgeCheck, Mail, Phone, ShieldCheck } from "lucide-react";
+import { BadgeCheck, Mail, Phone, ShieldCheck, Sparkles } from "lucide-react";
 import {
   CONTACT_PHONE_DISPLAY,
   mailtoVehicleInterest,
@@ -61,9 +61,19 @@ export default function VehicleCard({
           <div className="absolute -inset-8 rotate-6 bg-gradient-to-br from-gold-light/20 via-transparent to-transparent" />
         </div>
         <div className="absolute left-4 top-4 z-20">
-          <span className="inline-flex items-center gap-1.5 rounded-sm border border-gold-light/30 bg-pitch/70 px-2.5 py-1 font-sans text-[9px] font-light uppercase tracking-luxury text-gold-light backdrop-blur-sm">
-            <ShieldCheck size={12} strokeWidth={1.5} aria-hidden />
-            WCFG Curated
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-sm border bg-pitch/70 px-2.5 py-1 font-sans text-[9px] font-light uppercase tracking-luxury text-gold-light backdrop-blur-sm ${
+              vehicle.featured
+                ? "border-gold-light/50 font-medium"
+                : "border-gold-light/30"
+            }`}
+          >
+            {vehicle.featured ? (
+              <Sparkles size={12} strokeWidth={1.5} aria-hidden />
+            ) : (
+              <ShieldCheck size={12} strokeWidth={1.5} aria-hidden />
+            )}
+            {vehicle.featured ? "Featured In Stock" : "WCFG Curated"}
           </span>
         </div>
         <div className="absolute inset-0 flex items-end p-5">

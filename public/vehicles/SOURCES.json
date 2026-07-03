@@ -42,6 +42,20 @@
     "note": "3rd-gen Speed (inventory lists 2024 4th-gen Speed; same model line)"
   },
   {
+    "id": "corvette-zr1-coupe-3lz-black",
+    "imageSrc": "/vehicles/corvette-zr1-coupe-3lz-black.webp",
+    "bytes": 285136,
+    "source": "Wikimedia Commons — 2025 Chevrolet C8 Corvette ZR1.jpg",
+    "note": "Black GBA Coupe with blue racing stripes (Miami reveal unit)"
+  },
+  {
+    "id": "corvette-zr1-coupe-3lz-black-side",
+    "imageSrc": "/vehicles/corvette-zr1-coupe-3lz-black-side.webp",
+    "bytes": 316538,
+    "source": "Wikimedia Commons — 2025 Chevrolet Corvette ZR1 (54337064388).jpg",
+    "note": "Black GBA Coupe with ZTK wing; secondary angle"
+  },
+  {
     "id": "corvette-z06",
     "imageSrc": "/vehicles/corvette-z06.webp",
     "bytes": 210996,

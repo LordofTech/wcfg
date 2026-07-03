@@ -2,6 +2,7 @@ import { isBrandSlug, type BrandSlug } from "@/lib/brands";
 import {
   getLocalInventory,
   getLocalVehicleById,
+  sortInventory,
   type Vehicle,
 } from "@/lib/inventory";
 import {
@@ -24,6 +25,7 @@ interface VehicleRow {
   source_url?: string | null;
   mileage?: string | null;
   vin?: string | null;
+  featured?: boolean | null;
 }
 
 function mapRow(row: VehicleRow): Vehicle {
@@ -42,28 +44,45 @@ function mapRow(row: VehicleRow): Vehicle {
     sourceUrl: row.source_url ?? undefined,
     mileage: row.mileage ?? undefined,
     vin: row.vin ?? undefined,
+    featured: row.featured === true,
   };
 }
+
+const VEHICLE_SELECT_WITH_FEATURED =
+  "id, brand, brand_slug, model, year, highlight, price_label, image_src, image_alt, status, source, source_url, mileage, vin, featured";
+const VEHICLE_SELECT_BASE =
+  "id, brand, brand_slug, model, year, highlight, price_label, image_src, image_alt, status, source, source_url, mileage, vin";
 
 async function fetchFromSupabase(brandSlug?: BrandSlug): Promise<Vehicle[] | null> {
   if (!isSupabasePublicConfigured()) return null;
 
   try {
     const supabase = getSupabasePublic();
-    let query = supabase
-      .from("vehicles")
-      .select(
-        "id, brand, brand_slug, model, year, highlight, price_label, image_src, image_alt, status, source, source_url, mileage, vin"
-      )
-      .eq("status", "available")
-      .order("brand")
-      .order("year", { ascending: false });
 
-    if (brandSlug) {
-      query = query.eq("brand_slug", brandSlug);
+    const runQuery = async (select: string, orderFeatured: boolean) => {
+      let query = supabase
+        .from("vehicles")
+        .select(select)
+        .eq("status", "available");
+
+      if (orderFeatured) {
+        query = query.order("featured", { ascending: false });
+      }
+      query = query.order("year", { ascending: false });
+
+      if (brandSlug) {
+        query = query.eq("brand_slug", brandSlug);
+      }
+
+      return query;
+    };
+
+    let { data, error } = await runQuery(VEHICLE_SELECT_WITH_FEATURED, true);
+
+    if (error?.message?.includes("featured")) {
+      ({ data, error } = await runQuery(VEHICLE_SELECT_BASE, false));
     }
 
-    const { data, error } = await query;
     if (error || !data) {
       console.warn("Inventory service: Supabase query failed, using local fallback.", error?.message);
       return null;
@@ -81,14 +100,22 @@ async function fetchOneFromSupabase(id: string): Promise<Vehicle | null | undefi
 
   try {
     const supabase = getSupabasePublic();
-    const { data, error } = await supabase
+
+    let { data, error } = await supabase
       .from("vehicles")
-      .select(
-        "id, brand, brand_slug, model, year, highlight, price_label, image_src, image_alt, status, source, source_url, mileage, vin"
-      )
+      .select(VEHICLE_SELECT_WITH_FEATURED)
       .eq("id", id)
       .eq("status", "available")
       .maybeSingle();
+
+    if (error?.message?.includes("featured")) {
+      ({ data, error } = await supabase
+        .from("vehicles")
+        .select(VEHICLE_SELECT_BASE)
+        .eq("id", id)
+        .eq("status", "available")
+        .maybeSingle());
+    }
 
     if (error) {
       console.warn("Inventory service: Supabase single query failed.", error.message);
@@ -103,17 +130,49 @@ async function fetchOneFromSupabase(id: string): Promise<Vehicle | null | undefi
   }
 }
 
+function overlayLocalFlags(remote: Vehicle[], local: Vehicle[]): Vehicle[] {
+  const localById = new Map(local.map((vehicle) => [vehicle.id, vehicle]));
+  return remote.map((vehicle) => {
+    const localVehicle = localById.get(vehicle.id);
+    if (!localVehicle) return vehicle;
+    return {
+      ...vehicle,
+      featured: localVehicle.featured === true || vehicle.featured === true,
+      source: vehicle.source ?? localVehicle.source,
+    };
+  });
+}
+
 export async function listVehicles(brandSlug?: string): Promise<Vehicle[]> {
   const slug = brandSlug && isBrandSlug(brandSlug) ? brandSlug : undefined;
+  const local = getLocalInventory(slug);
   const remote = await fetchFromSupabase(slug);
-  if (remote !== null) return remote;
-  return getLocalInventory(slug);
+  if (remote === null) return local;
+
+  // Keep local featured / curated units even if Supabase seed is behind.
+  const remoteIds = new Set(remote.map((vehicle) => vehicle.id));
+  const missingLocal = local.filter(
+    (vehicle) =>
+      !remoteIds.has(vehicle.id) &&
+      (vehicle.featured || vehicle.source === "wcfg")
+  );
+  return sortInventory([
+    ...missingLocal,
+    ...overlayLocalFlags(remote, local),
+  ]);
 }
 
 export async function getVehicleById(id: string): Promise<Vehicle | null> {
+  const local = getLocalVehicleById(id);
   const remote = await fetchOneFromSupabase(id);
-  if (remote !== undefined) return remote;
-  return getLocalVehicleById(id);
+  if (remote) {
+    return {
+      ...remote,
+      featured: local?.featured === true || remote.featured === true,
+      source: remote.source ?? local?.source,
+    };
+  }
+  return local;
 }
 
 export function vehicleToJson(vehicle: Vehicle) {
@@ -132,5 +191,6 @@ export function vehicleToJson(vehicle: Vehicle) {
     sourceUrl: vehicle.sourceUrl,
     mileage: vehicle.mileage,
     vin: vehicle.vin,
+    featured: vehicle.featured === true,
   };
 }

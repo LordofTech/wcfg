@@ -26,11 +26,11 @@ export default function Footer() {
           <ul className="space-y-4 font-sans text-sm font-light text-ivory/90">
             <li>
               <a
-                href="mailto:info@wcfgbrokers.com"
+                href="mailto:jamail@wcfgbizbrokers.com"
                 className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
               >
                 <Mail size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
-                info@wcfgbrokers.com
+                jamail@wcfgbizbrokers.com
               </a>
             </li>
             <li>
@@ -50,7 +50,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
               >
                 <Phone size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
-                832-566-7163
+                +1 (832) 566-7163
               </a>
             </li>
             <li className="inline-flex items-start gap-3 text-mist">

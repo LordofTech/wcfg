@@ -65,6 +65,7 @@ export default function ConsultationForm() {
   const [direction, setDirection] = useState(1);
   const [data, setData] = useState<FormData>(initialData);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
   const progress = ((step + 1) / STEPS.length) * 100;
@@ -102,14 +103,51 @@ export default function ConsultationForm() {
     setStep((current) => Math.max(current - 1, 0));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!canAdvance()) {
-      setError("Please complete this step to continue.");
+    if (!canAdvance() || submitting) {
+      if (!canAdvance()) {
+        setError("Please complete this step to continue.");
+      }
       return;
     }
+
     setError("");
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("/api/consultation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: data.fullName.trim(),
+          phone: data.phone.trim(),
+          marque: data.marque,
+          budget: data.budget,
+          deliveryLocation: data.location,
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as
+        | { success?: boolean; error?: string }
+        | null;
+
+      if (!response.ok || !payload?.success) {
+        setError(
+          payload?.error ??
+            "We could not submit your request. Please try again."
+        );
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(
+        "Network error. Please check your connection and try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -372,7 +410,10 @@ export default function ConsultationForm() {
             </AnimatePresence>
 
             {error ? (
-              <p className="mt-4 font-sans text-xs font-light text-gold-highlight" role="alert">
+              <p
+                className="mt-4 rounded-sm border border-gold-highlight/30 bg-pitch/40 px-3 py-2.5 font-sans text-xs font-light leading-relaxed text-gold-highlight"
+                role="alert"
+              >
                 {error}
               </p>
             ) : null}
@@ -382,7 +423,7 @@ export default function ConsultationForm() {
             <button
               type="button"
               onClick={goBack}
-              disabled={step === 0}
+              disabled={step === 0 || submitting}
               className="inline-flex items-center gap-1.5 font-sans text-[11px] font-light uppercase tracking-luxury text-mist transition-colors hover:text-gold-light disabled:pointer-events-none disabled:opacity-30 focus-visible:outline-none focus-visible:text-gold-light"
             >
               <ChevronLeft size={16} strokeWidth={1.5} aria-hidden />
@@ -401,9 +442,13 @@ export default function ConsultationForm() {
             ) : (
               <button
                 type="submit"
-                className="inline-flex items-center justify-center bg-gold-gradient px-6 py-3 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
+                disabled={submitting}
+                aria-busy={submitting}
+                className="inline-flex min-w-[14rem] items-center justify-center bg-gold-gradient px-6 py-3 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal disabled:cursor-wait disabled:opacity-70"
               >
-                Initiate White-Glove Sourcing
+                {submitting
+                  ? "Submitting…"
+                  : "Initiate White-Glove Sourcing"}
               </button>
             )}
           </div>

@@ -88,7 +88,7 @@ async function fetchFromSupabase(brandSlug?: BrandSlug): Promise<Vehicle[] | nul
       return null;
     }
 
-    return data.map((row) => mapRow(row as VehicleRow));
+    return (data as unknown as VehicleRow[]).map((row) => mapRow(row));
   } catch (error) {
     console.warn("Inventory service: Supabase unavailable, using local fallback.", error);
     return null;
@@ -123,7 +123,7 @@ async function fetchOneFromSupabase(id: string): Promise<Vehicle | null | undefi
     }
 
     if (!data) return null;
-    return mapRow(data as VehicleRow);
+    return mapRow(data as unknown as VehicleRow);
   } catch (error) {
     console.warn("Inventory service: Supabase unavailable for single vehicle.", error);
     return undefined;

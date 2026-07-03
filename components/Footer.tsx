@@ -12,7 +12,7 @@ export default function Footer() {
             Luxury Automobile Brokers
           </p>
           <p className="mt-6 max-w-xs font-sans text-sm font-light leading-relaxed text-mist">
-            Based in Dallas, Texas — delivering white-glove luxury vehicle
+            Based in Houston, Texas — delivering white-glove luxury vehicle
             sourcing and premium logistics tailored for discerning clients in
             Nigeria and beyond.
           </p>

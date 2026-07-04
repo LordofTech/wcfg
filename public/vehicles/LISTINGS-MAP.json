@@ -1,0 +1,366 @@
+[
+  {
+    "source": "WhatsApp Image 2026-07-03 at 10.49.511.jpeg",
+    "productId": "corvette-zr1-coupe-3lz-black",
+    "output": "/vehicles/corvette-zr1-coupe-3lz-black.webp",
+    "bytes": 188398,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 10.49.51.jpeg",
+    "productId": "corvette-zr1-coupe-3lz-black",
+    "output": "/vehicles/corvette-zr1-coupe-3lz-black-side.webp",
+    "bytes": 196432,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 10.49.5112.jpeg",
+    "productId": "corvette-zr1-coupe-3lz-black",
+    "output": "/vehicles/corvette-zr1-coupe-3lz-black-2.webp",
+    "bytes": 128092,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 10.49.50.jpeg",
+    "productId": "corvette-zr1-coupe-3lz-black",
+    "output": "/vehicles/corvette-zr1-coupe-3lz-black-3.webp",
+    "bytes": 106446,
+    "role": "gallery-4"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.46.jpeg",
+    "productId": "adscars-7223175",
+    "output": "/vehicles/listings/adscars-7223175.webp",
+    "bytes": 138430,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.47 (1).jpeg",
+    "productId": "adscars-7223175",
+    "output": "/vehicles/listings/adscars-7223175-2.webp",
+    "bytes": 143472,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.46 (1).jpeg",
+    "productId": "cadillac-escalade-black",
+    "output": "/vehicles/listings/cadillac-escalade-black.webp",
+    "bytes": 172164,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.47.jpeg",
+    "productId": "cadillac-escalade-black",
+    "output": "/vehicles/listings/cadillac-escalade-black-2.webp",
+    "bytes": 168270,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.49 (2).jpeg",
+    "productId": "mb-g63-2024",
+    "output": "/vehicles/listings/mb-g63-2024.webp",
+    "bytes": 122760,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.49 (3).jpeg",
+    "productId": "mb-g63-2024",
+    "output": "/vehicles/listings/mb-g63-2024-2.webp",
+    "bytes": 127596,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.47 (2).jpeg",
+    "productId": "mb-g63-2024",
+    "output": "/vehicles/listings/mb-g63-2024-3.webp",
+    "bytes": 127140,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.47 (3).jpeg",
+    "productId": "mb-g63-2024",
+    "output": "/vehicles/listings/mb-g63-2024-4.webp",
+    "bytes": 135620,
+    "role": "gallery-4"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.49.jpeg",
+    "productId": "adscars-7489126",
+    "output": "/vehicles/listings/adscars-7489126.webp",
+    "bytes": 273034,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.49 (1).jpeg",
+    "productId": "adscars-7489126",
+    "output": "/vehicles/listings/adscars-7489126-2.webp",
+    "bytes": 243852,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.50.jpeg",
+    "productId": "rr-ghost-2023",
+    "output": "/vehicles/listings/rr-ghost-2023.webp",
+    "bytes": 95804,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.50 (1).jpeg",
+    "productId": "rr-ghost-2023",
+    "output": "/vehicles/listings/rr-ghost-2023-2.webp",
+    "bytes": 96818,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.51.jpeg",
+    "productId": "adscars-7464615",
+    "output": "/vehicles/listings/adscars-7464615.webp",
+    "bytes": 115704,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.52.jpeg",
+    "productId": "adscars-7464615",
+    "output": "/vehicles/listings/adscars-7464615-2.webp",
+    "bytes": 132730,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.52 (1).jpeg",
+    "productId": "adscars-7495625",
+    "output": "/vehicles/listings/adscars-7495625.webp",
+    "bytes": 133948,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.52 (2).jpeg",
+    "productId": "adscars-7495625",
+    "output": "/vehicles/listings/adscars-7495625-2.webp",
+    "bytes": 133588,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.53.jpeg",
+    "productId": "adscars-7428598",
+    "output": "/vehicles/listings/adscars-7428598.webp",
+    "bytes": 189390,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.54.jpeg",
+    "productId": "adscars-7428598",
+    "output": "/vehicles/listings/adscars-7428598-2.webp",
+    "bytes": 145552,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.53 (1).jpeg",
+    "productId": "rr-cullinan-2024",
+    "output": "/vehicles/listings/rr-cullinan-2024.webp",
+    "bytes": 148018,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.53 (2).jpeg",
+    "productId": "rr-cullinan-2024",
+    "output": "/vehicles/listings/rr-cullinan-2024-2.webp",
+    "bytes": 125924,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.53 (3).jpeg",
+    "productId": "rr-cullinan-2024",
+    "output": "/vehicles/listings/rr-cullinan-2024-3.webp",
+    "bytes": 141102,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.57.jpeg",
+    "productId": "adscars-7380073",
+    "output": "/vehicles/listings/adscars-7380073.webp",
+    "bytes": 159262,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.57 (1).jpeg",
+    "productId": "adscars-7380073",
+    "output": "/vehicles/listings/adscars-7380073-2.webp",
+    "bytes": 167542,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.54 (1).jpeg",
+    "productId": "adscars-7380073",
+    "output": "/vehicles/listings/adscars-7380073-3.webp",
+    "bytes": 191956,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.55.jpeg",
+    "productId": "adscars-7380073",
+    "output": "/vehicles/listings/adscars-7380073-4.webp",
+    "bytes": 203120,
+    "role": "gallery-4"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.55 (1).jpeg",
+    "productId": "adscars-7380073",
+    "output": "/vehicles/listings/adscars-7380073-5.webp",
+    "bytes": 240414,
+    "role": "gallery-5"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.55 (4).jpeg",
+    "productId": "adscars-7480463",
+    "output": "/vehicles/listings/adscars-7480463.webp",
+    "bytes": 113522,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.55 (5).jpeg",
+    "productId": "adscars-7480463",
+    "output": "/vehicles/listings/adscars-7480463-2.webp",
+    "bytes": 116472,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.55 (2).jpeg",
+    "productId": "adscars-7480463",
+    "output": "/vehicles/listings/adscars-7480463-3.webp",
+    "bytes": 109950,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.55 (3).jpeg",
+    "productId": "adscars-7480463",
+    "output": "/vehicles/listings/adscars-7480463-4.webp",
+    "bytes": 106578,
+    "role": "gallery-4"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.56 (1).jpeg",
+    "productId": "adscars-7480463",
+    "output": "/vehicles/listings/adscars-7480463-5.webp",
+    "bytes": 208622,
+    "role": "gallery-5"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.58.jpeg",
+    "productId": "adscars-7480463",
+    "output": "/vehicles/listings/adscars-7480463-6.webp",
+    "bytes": 113520,
+    "role": "gallery-6"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.56.jpeg",
+    "productId": "adscars-7480463",
+    "output": "/vehicles/listings/adscars-7480463-7.webp",
+    "bytes": 105104,
+    "role": "gallery-7"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.57 (3).jpeg",
+    "productId": "adscars-7485952",
+    "output": "/vehicles/listings/adscars-7485952.webp",
+    "bytes": 61160,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.57 (2).jpeg",
+    "productId": "adscars-7485952",
+    "output": "/vehicles/listings/adscars-7485952-2.webp",
+    "bytes": 59618,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.57 (4).jpeg",
+    "productId": "adscars-7485952",
+    "output": "/vehicles/listings/adscars-7485952-3.webp",
+    "bytes": 65842,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.59.jpeg",
+    "productId": "ferrari-f8-tributo-yellow",
+    "output": "/vehicles/listings/ferrari-f8-tributo-yellow.webp",
+    "bytes": 73866,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.59 (1).jpeg",
+    "productId": "ferrari-f8-tributo-yellow",
+    "output": "/vehicles/listings/ferrari-f8-tributo-yellow-2.webp",
+    "bytes": 78484,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.59 (2).jpeg",
+    "productId": "aston-martin-vantage-teal",
+    "output": "/vehicles/listings/aston-martin-vantage-teal.webp",
+    "bytes": 136002,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.59 (3).jpeg",
+    "productId": "aston-martin-vantage-teal",
+    "output": "/vehicles/listings/aston-martin-vantage-teal-2.webp",
+    "bytes": 135130,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.47.59 (4).jpeg",
+    "productId": "adscars-7310278",
+    "output": "/vehicles/listings/adscars-7310278.webp",
+    "bytes": 201198,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.48.00.jpeg",
+    "productId": "adscars-7310278",
+    "output": "/vehicles/listings/adscars-7310278-2.webp",
+    "bytes": 198592,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.48.00 (1).jpeg",
+    "productId": "adscars-7476947",
+    "output": "/vehicles/listings/adscars-7476947.webp",
+    "bytes": 156168,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.48.00 (2).jpeg",
+    "productId": "adscars-7476947",
+    "output": "/vehicles/listings/adscars-7476947-2.webp",
+    "bytes": 157710,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.48.00 (5).jpeg",
+    "productId": "adscars-7474860",
+    "output": "/vehicles/listings/adscars-7474860.webp",
+    "bytes": 145550,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.48.01.jpeg",
+    "productId": "adscars-7474860",
+    "output": "/vehicles/listings/adscars-7474860-2.webp",
+    "bytes": 118338,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.48.00 (3).jpeg",
+    "productId": "adscars-7474860",
+    "output": "/vehicles/listings/adscars-7474860-3.webp",
+    "bytes": 149416,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-03 at 23.48.00 (4).jpeg",
+    "productId": "adscars-7474860",
+    "output": "/vehicles/listings/adscars-7474860-4.webp",
+    "bytes": 171368,
+    "role": "gallery-4"
+  }
+]

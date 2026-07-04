@@ -53,20 +53,8 @@ const vehicles = [
     source: "Wikimedia Commons — Bentley Continental GT Speed (3rd gen.) IMG 0014.jpg",
     note: "3rd-gen Speed (inventory lists 2024 4th-gen Speed; same model line)",
   },
-  {
-    id: "corvette-zr1-coupe-3lz-black",
-    filename: "corvette-zr1-coupe-3lz-black.webp",
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/2025_Chevrolet_C8_Corvette_ZR1.jpg/1920px-2025_Chevrolet_C8_Corvette_ZR1.jpg",
-    source: "Wikimedia Commons — 2025 Chevrolet C8 Corvette ZR1.jpg",
-    note: "Black GBA Coupe with blue racing stripes (Miami reveal unit)",
-  },
-  {
-    id: "corvette-zr1-coupe-3lz-black-side",
-    filename: "corvette-zr1-coupe-3lz-black-side.webp",
-    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/2025_Chevrolet_Corvette_ZR1_%2854337064388%29.jpg/1920px-2025_Chevrolet_Corvette_ZR1_%2854337064388%29.jpg",
-    source: "Wikimedia Commons — 2025 Chevrolet Corvette ZR1 (54337064388).jpg",
-    note: "Black GBA Coupe with ZTK wing; secondary angle",
-  },
+  // ZR1 assets are sourced from local `car listings/` (not Wikimedia).
+  // Re-run conversion from that folder if primary/side images need refresh.
   {
     id: "corvette-z06",
     filename: "corvette-z06.webp",

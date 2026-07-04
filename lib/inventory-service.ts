@@ -130,17 +130,23 @@ async function fetchOneFromSupabase(id: string): Promise<Vehicle | null | undefi
   }
 }
 
+function overlayLocalFields(remote: Vehicle, local?: Vehicle): Vehicle {
+  if (!local) return remote;
+  return {
+    ...remote,
+    featured: local.featured === true || remote.featured === true,
+    source: remote.source ?? local.source,
+    imageSrc: local.imageSrc || remote.imageSrc,
+    imageAlt: local.imageAlt || remote.imageAlt,
+    images: local.images ?? remote.images,
+  };
+}
+
 function overlayLocalFlags(remote: Vehicle[], local: Vehicle[]): Vehicle[] {
   const localById = new Map(local.map((vehicle) => [vehicle.id, vehicle]));
-  return remote.map((vehicle) => {
-    const localVehicle = localById.get(vehicle.id);
-    if (!localVehicle) return vehicle;
-    return {
-      ...vehicle,
-      featured: localVehicle.featured === true || vehicle.featured === true,
-      source: vehicle.source ?? localVehicle.source,
-    };
-  });
+  return remote.map((vehicle) =>
+    overlayLocalFields(vehicle, localById.get(vehicle.id))
+  );
 }
 
 export async function listVehicles(brandSlug?: string): Promise<Vehicle[]> {
@@ -166,11 +172,7 @@ export async function getVehicleById(id: string): Promise<Vehicle | null> {
   const local = getLocalVehicleById(id);
   const remote = await fetchOneFromSupabase(id);
   if (remote) {
-    return {
-      ...remote,
-      featured: local?.featured === true || remote.featured === true,
-      source: remote.source ?? local?.source,
-    };
+    return overlayLocalFields(remote, local ?? undefined);
   }
   return local;
 }
@@ -186,6 +188,7 @@ export function vehicleToJson(vehicle: Vehicle) {
     priceLabel: vehicle.priceLabel,
     imageSrc: vehicle.imageSrc,
     imageAlt: vehicle.imageAlt,
+    images: vehicle.images,
     status: vehicle.status ?? "available",
     source: vehicle.source,
     sourceUrl: vehicle.sourceUrl,

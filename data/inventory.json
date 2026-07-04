@@ -40,14 +40,23 @@
     "year": 2026,
     "highlight": "4,265 mi · Blue exterior · Automatic",
     "priceLabel": "$459,995",
-    "imageSrc": "/vehicles/imported/adscars-7480463.webp",
-    "imageAlt": "2026 Aston Martin Vanquish",
+    "imageSrc": "/vehicles/listings/adscars-7480463.webp",
+    "imageAlt": "2026 Aston Martin Vanquish in metallic blue",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2026-aston-martin-vanquish--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7480463",
     "mileage": "4,265 mi",
     "vin": "SCFUMCEV6TGJ60666",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7480463.webp",
+      "/vehicles/listings/adscars-7480463-2.webp",
+      "/vehicles/listings/adscars-7480463-3.webp",
+      "/vehicles/listings/adscars-7480463-4.webp",
+      "/vehicles/listings/adscars-7480463-5.webp",
+      "/vehicles/listings/adscars-7480463-6.webp",
+      "/vehicles/listings/adscars-7480463-7.webp"
+    ]
   },
   {
     "id": "adscars-7464615",
@@ -57,14 +66,18 @@
     "year": 2023,
     "highlight": "22,069 mi · Black exterior · Automatic",
     "priceLabel": "$144,995",
-    "imageSrc": "/vehicles/imported/adscars-7464615.webp",
-    "imageAlt": "2023 Aston Martin DBX 707",
+    "imageSrc": "/vehicles/listings/adscars-7464615.webp",
+    "imageAlt": "2023 Aston Martin DBX 707 in matte black",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2023-aston-martin-dbx-707-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7464615",
     "mileage": "22,069 mi",
     "vin": "SD7VUJBW0PTV06101",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7464615.webp",
+      "/vehicles/listings/adscars-7464615-2.webp"
+    ]
   },
   {
     "id": "adscars-7485952",
@@ -74,14 +87,19 @@
     "year": 2023,
     "highlight": "7,674 mi · White exterior · Automatic",
     "priceLabel": "$154,995",
-    "imageSrc": "/vehicles/imported/adscars-7485952.webp",
-    "imageAlt": "2023 Aston Martin Vantage F1 Edition Convertible",
+    "imageSrc": "/vehicles/listings/adscars-7485952.webp",
+    "imageAlt": "2023 Aston Martin Vantage F1 Edition Convertible white with blue stripe",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2023-aston-martin-vantage-f1-edition-convertible-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7485952",
     "mileage": "7,674 mi",
     "vin": "SCFSMGBW4PGP07113",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7485952.webp",
+      "/vehicles/listings/adscars-7485952-2.webp",
+      "/vehicles/listings/adscars-7485952-3.webp"
+    ]
   },
   {
     "id": "adscars-7428598",
@@ -91,14 +109,18 @@
     "year": 2021,
     "highlight": "14,230 mi · Gray exterior · Automatic",
     "priceLabel": "$94,995",
-    "imageSrc": "/vehicles/imported/adscars-7428598.webp",
-    "imageAlt": "2021 Aston Martin DBX",
+    "imageSrc": "/vehicles/listings/adscars-7428598.webp",
+    "imageAlt": "2021 Aston Martin DBX in metallic grey",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2021-aston-martin-dbx--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7428598",
     "mileage": "14,230 mi",
     "vin": "SCFVUJAW2MTV03277",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7428598.webp",
+      "/vehicles/listings/adscars-7428598-2.webp"
+    ]
   },
   {
     "id": "adscars-7476676",
@@ -258,14 +280,18 @@
     "year": 2016,
     "highlight": "49,550 mi · Black exterior · Automatic",
     "priceLabel": "$79,995",
-    "imageSrc": "/vehicles/imported/adscars-7310278.webp",
-    "imageAlt": "2016 Bentley Mulsanne Speed",
+    "imageSrc": "/vehicles/listings/adscars-7310278.webp",
+    "imageAlt": "2016 Bentley Mulsanne Speed in black",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2016-bentley-mulsanne-speed-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7310278",
     "mileage": "49,550 mi",
     "vin": "SCBBG7ZH5GC002019",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7310278.webp",
+      "/vehicles/listings/adscars-7310278-2.webp"
+    ]
   },
   {
     "id": "adscars-7329056",
@@ -411,14 +437,18 @@
     "year": 2026,
     "highlight": "210 mi · Typhoon Metallic exterior · Manual",
     "priceLabel": "$124,995",
-    "imageSrc": "/vehicles/imported/adscars-7476947.webp",
-    "imageAlt": "2026 Cadillac CT5-V Blackwing",
+    "imageSrc": "/vehicles/listings/adscars-7476947.webp",
+    "imageAlt": "2026 Cadillac CT5-V Blackwing in metallic green",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2026-cadillac-ct5-v-blackwing-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7476947",
     "mileage": "210 mi",
     "vin": "1G6D25R64T0860555",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7476947.webp",
+      "/vehicles/listings/adscars-7476947-2.webp"
+    ]
   },
   {
     "id": "adscars-7449045",
@@ -827,14 +857,18 @@
     "year": 2024,
     "highlight": "12,792 mi · Black exterior · Automatic",
     "priceLabel": "$67,995",
-    "imageSrc": "/vehicles/imported/adscars-7489126.webp",
-    "imageAlt": "2024 Ineos Grenadier Fieldmaster",
+    "imageSrc": "/vehicles/listings/adscars-7489126.webp",
+    "imageAlt": "2024 Ineos Grenadier Fieldmaster in black with KC lights",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2024-ineos-grenadier-fieldmaster-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7489126",
     "mileage": "12,792 mi",
     "vin": "SC6GM1CA4RF011124",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7489126.webp",
+      "/vehicles/listings/adscars-7489126-2.webp"
+    ]
   },
   {
     "id": "adscars-7480239",
@@ -973,14 +1007,18 @@
     "year": 2019,
     "highlight": "26,521 mi · Silver exterior · Automatic",
     "priceLabel": "$225,095",
-    "imageSrc": "/vehicles/imported/adscars-7495625.webp",
-    "imageAlt": "2019 Lamborghini Urus Mansory Kit",
+    "imageSrc": "/vehicles/listings/adscars-7495625.webp",
+    "imageAlt": "2019 Lamborghini Urus Mansory Kit red and black two-tone",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2019-lamborghini-urus-mansory-kit-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7495625",
     "mileage": "26,521 mi",
     "vin": "ZPBUA1ZL7KLA00959",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7495625.webp",
+      "/vehicles/listings/adscars-7495625-2.webp"
+    ]
   },
   {
     "id": "adscars-7380073",
@@ -990,14 +1028,21 @@
     "year": 2014,
     "highlight": "8,861 mi · Blue exterior · Automatic",
     "priceLabel": "Call for Price",
-    "imageSrc": "/vehicles/imported/adscars-7380073.webp",
-    "imageAlt": "2014 Lamborghini Aventador LP 700-4 Roadster",
+    "imageSrc": "/vehicles/listings/adscars-7380073.webp",
+    "imageAlt": "2014 Lamborghini Aventador LP 700-4 Roadster in black",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2014-lamborghini-aventador-lp-700-4-roadster-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7380073",
     "mileage": "8,861 mi",
     "vin": "ZHWUR1ZD8ELA02596",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7380073.webp",
+      "/vehicles/listings/adscars-7380073-2.webp",
+      "/vehicles/listings/adscars-7380073-3.webp",
+      "/vehicles/listings/adscars-7380073-4.webp",
+      "/vehicles/listings/adscars-7380073-5.webp"
+    ]
   },
   {
     "id": "adscars-7453787",
@@ -1294,12 +1339,18 @@
     "year": 2024,
     "highlight": "Manufaktur package · Iconic silhouette",
     "priceLabel": "Upon Inquiry",
-    "imageSrc": "/vehicles/mb-g63-2024.webp",
-    "imageAlt": "Mercedes-AMG G 63 luxury off-roader",
+    "imageSrc": "/vehicles/listings/mb-g63-2024.webp",
+    "imageAlt": "White Mercedes-Benz G 63 AMG with red interior and bull bar",
     "source": "wcfg",
     "brandSlug": "mercedes-benz",
     "status": "available",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/mb-g63-2024.webp",
+      "/vehicles/listings/mb-g63-2024-2.webp",
+      "/vehicles/listings/mb-g63-2024-3.webp",
+      "/vehicles/listings/mb-g63-2024-4.webp"
+    ]
   },
   {
     "id": "mb-s580",
@@ -1459,14 +1510,18 @@
     "year": 2018,
     "highlight": "21,916 mi · designo Diamond White Metallic exterior · Automatic",
     "priceLabel": "$129,995",
-    "imageSrc": "/vehicles/imported/adscars-7223175.webp",
-    "imageAlt": "2018 Mercedes-Benz AMG GTR R RENNtech",
+    "imageSrc": "/vehicles/listings/adscars-7223175.webp",
+    "imageAlt": "2018 Mercedes-Benz AMG GT R RENNtech in orange with black stripes",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2018-mercedes-benz-amg-gtr-r-renntech-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7223175",
     "mileage": "21,916 mi",
     "vin": "WDDYJ7KA9JA013328",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7223175.webp",
+      "/vehicles/listings/adscars-7223175-2.webp"
+    ]
   },
   {
     "id": "adscars-7384459",
@@ -1544,14 +1599,20 @@
     "year": 2012,
     "highlight": "27,106 mi · Red exterior · Automatic",
     "priceLabel": "$149,995",
-    "imageSrc": "/vehicles/imported/adscars-7474860.webp",
-    "imageAlt": "2012 Mercedes-Benz SLS AMG Convertible",
+    "imageSrc": "/vehicles/listings/adscars-7474860.webp",
+    "imageAlt": "2012 Mercedes-Benz SLS AMG Convertible in red",
     "status": "available",
     "source": "adscars",
     "sourceUrl": "https://adscars.com/2012-mercedes-benz-sls-amg-convertible-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7474860",
     "mileage": "27,106 mi",
     "vin": "WDDRK7HA1CA007230",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/adscars-7474860.webp",
+      "/vehicles/listings/adscars-7474860-2.webp",
+      "/vehicles/listings/adscars-7474860-3.webp",
+      "/vehicles/listings/adscars-7474860-4.webp"
+    ]
   },
   {
     "id": "adscars-7488100",
@@ -1808,12 +1869,17 @@
     "year": 2024,
     "highlight": "Bespoke interior · Night-ready presence",
     "priceLabel": "Upon Inquiry",
-    "imageSrc": "/vehicles/rr-cullinan-2024.webp",
-    "imageAlt": "Rolls-Royce Cullinan luxury SUV",
+    "imageSrc": "/vehicles/listings/rr-cullinan-2024.webp",
+    "imageAlt": "Rolls-Royce Cullinan Black Badge matte black with white interior",
     "source": "wcfg",
     "brandSlug": "rolls-royce",
     "status": "available",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/rr-cullinan-2024.webp",
+      "/vehicles/listings/rr-cullinan-2024-2.webp",
+      "/vehicles/listings/rr-cullinan-2024-3.webp"
+    ]
   },
   {
     "id": "rr-ghost-2023",
@@ -1822,12 +1888,16 @@
     "year": 2023,
     "highlight": "Starlight headliner · Whisper-quiet cabin",
     "priceLabel": "Upon Inquiry",
-    "imageSrc": "/vehicles/rr-ghost-2023.webp",
-    "imageAlt": "Rolls-Royce Ghost Extended luxury sedan",
+    "imageSrc": "/vehicles/listings/rr-ghost-2023.webp",
+    "imageAlt": "Rolls-Royce Ghost two-tone silver and black",
     "source": "wcfg",
     "brandSlug": "rolls-royce",
     "status": "available",
-    "featured": false
+    "featured": false,
+    "images": [
+      "/vehicles/listings/rr-ghost-2023.webp",
+      "/vehicles/listings/rr-ghost-2023-2.webp"
+    ]
   },
   {
     "id": "adscars-7423899",
@@ -1963,6 +2033,60 @@
     "sourceUrl": "https://adscars.com/2015-toyota-rav4-limited-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7476726",
     "mileage": "88,048 mi",
     "vin": "2T3YFREV5FW232317",
+    "featured": false
+  },
+  {
+    "id": "cadillac-escalade-black",
+    "brand": "Cadillac",
+    "brandSlug": "cadillac",
+    "model": "Escalade",
+    "year": 2024,
+    "highlight": "Black exterior · Light interior · Available now",
+    "priceLabel": "Call for Price",
+    "status": "available",
+    "source": "wcfg",
+    "imageSrc": "/vehicles/listings/cadillac-escalade-black.webp",
+    "imageAlt": "Black Cadillac Escalade with light interior",
+    "images": [
+      "/vehicles/listings/cadillac-escalade-black.webp",
+      "/vehicles/listings/cadillac-escalade-black-2.webp"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ferrari-f8-tributo-yellow",
+    "brand": "Ferrari",
+    "brandSlug": "ferrari",
+    "model": "F8 Tributo",
+    "year": 2022,
+    "highlight": "Yellow exterior · Mid-engine V8 · Available now",
+    "priceLabel": "Call for Price",
+    "status": "available",
+    "source": "wcfg",
+    "imageSrc": "/vehicles/listings/ferrari-f8-tributo-yellow.webp",
+    "imageAlt": "Ferrari F8 Tributo in yellow",
+    "images": [
+      "/vehicles/listings/ferrari-f8-tributo-yellow.webp",
+      "/vehicles/listings/ferrari-f8-tributo-yellow-2.webp"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aston-martin-vantage-teal",
+    "brand": "Aston Martin",
+    "brandSlug": "aston-martin",
+    "model": "Vantage",
+    "year": 2025,
+    "highlight": "Teal exterior · Carbon accents · Available now",
+    "priceLabel": "Call for Price",
+    "status": "available",
+    "source": "wcfg",
+    "imageSrc": "/vehicles/listings/aston-martin-vantage-teal.webp",
+    "imageAlt": "Aston Martin Vantage coupe in teal",
+    "images": [
+      "/vehicles/listings/aston-martin-vantage-teal.webp",
+      "/vehicles/listings/aston-martin-vantage-teal-2.webp"
+    ],
     "featured": false
   }
 ]

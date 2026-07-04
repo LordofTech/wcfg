@@ -44,16 +44,16 @@
   {
     "id": "corvette-zr1-coupe-3lz-black",
     "imageSrc": "/vehicles/corvette-zr1-coupe-3lz-black.webp",
-    "bytes": 285136,
-    "source": "Wikimedia Commons — 2025 Chevrolet C8 Corvette ZR1.jpg",
-    "note": "Black GBA Coupe with blue racing stripes (Miami reveal unit)"
+    "bytes": 188398,
+    "source": "WCFG car listings — WhatsApp Image 2026-07-03 at 10.49.511.jpeg",
+    "note": "Front hero — dealership showroom unit"
   },
   {
     "id": "corvette-zr1-coupe-3lz-black-side",
     "imageSrc": "/vehicles/corvette-zr1-coupe-3lz-black-side.webp",
-    "bytes": 316538,
-    "source": "Wikimedia Commons — 2025 Chevrolet Corvette ZR1 (54337064388).jpg",
-    "note": "Black GBA Coupe with ZTK wing; secondary angle"
+    "bytes": 196432,
+    "source": "WCFG car listings — WhatsApp Image 2026-07-03 at 10.49.51.jpeg",
+    "note": "Rear three-quarter"
   },
   {
     "id": "corvette-z06",
@@ -96,5 +96,19 @@
     "bytes": 287300,
     "source": "Wikimedia Commons — Porsche Cayenne Turbo GT DSC 7899.jpg",
     "note": null
+  },
+  {
+    "id": "corvette-zr1-coupe-3lz-black-2",
+    "imageSrc": "/vehicles/corvette-zr1-coupe-3lz-black-2.webp",
+    "bytes": 128092,
+    "source": "WCFG car listings — WhatsApp Image 2026-07-03 at 10.49.5112.jpeg",
+    "note": "Direct rear"
+  },
+  {
+    "id": "corvette-zr1-coupe-3lz-black-3",
+    "imageSrc": "/vehicles/corvette-zr1-coupe-3lz-black-3.webp",
+    "bytes": 106446,
+    "source": "WCFG car listings — WhatsApp Image 2026-07-03 at 10.49.50.jpeg",
+    "note": "Interior cabin / ZR1 sill"
   }
 ]

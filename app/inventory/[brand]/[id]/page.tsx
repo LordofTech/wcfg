@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BadgeCheck, Mail, Phone, ShieldCheck, Sparkles } from "lucide-react";
 import InventoryShell from "@/components/InventoryShell";
+import VehicleGallery from "@/components/VehicleGallery";
 import { getBrandBySlug } from "@/lib/brands";
 import {
   CONTACT_PHONE_DISPLAY,
@@ -52,6 +52,29 @@ export default async function VehicleDetailPage({
   }
 
   const emailHref = mailtoVehicleInterest(vehicle);
+  const galleryImages =
+    vehicle.images && vehicle.images.length > 0
+      ? vehicle.images
+      : vehicle.imageSrc
+        ? [vehicle.imageSrc]
+        : [];
+
+  const galleryBadge = (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-sm border bg-pitch/70 px-2.5 py-1 font-sans text-[9px] font-light uppercase tracking-luxury text-gold-light backdrop-blur-sm ${
+        vehicle.featured
+          ? "border-gold-light/50 font-medium"
+          : "border-gold-light/30"
+      }`}
+    >
+      {vehicle.featured ? (
+        <Sparkles size={12} strokeWidth={1.5} aria-hidden />
+      ) : (
+        <ShieldCheck size={12} strokeWidth={1.5} aria-hidden />
+      )}
+      {vehicle.featured ? "Featured In Stock" : "WCFG Curated"}
+    </span>
+  );
 
   return (
     <InventoryShell>
@@ -66,33 +89,12 @@ export default async function VehicleDetailPage({
           </Link>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-14">
-            <div className="relative aspect-[16/11] overflow-hidden rounded-sm border border-gold-light/15 bg-charcoal-velvet">
-              <Image
-                src={vehicle.imageSrc}
-                alt={vehicle.imageAlt}
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-velvet/80 via-transparent to-pitch/20" />
-              <div className="absolute left-4 top-4">
-                <span
-                  className={`inline-flex items-center gap-1.5 rounded-sm border bg-pitch/70 px-2.5 py-1 font-sans text-[9px] font-light uppercase tracking-luxury text-gold-light backdrop-blur-sm ${
-                    vehicle.featured
-                      ? "border-gold-light/50 font-medium"
-                      : "border-gold-light/30"
-                  }`}
-                >
-                  {vehicle.featured ? (
-                    <Sparkles size={12} strokeWidth={1.5} aria-hidden />
-                  ) : (
-                    <ShieldCheck size={12} strokeWidth={1.5} aria-hidden />
-                  )}
-                  {vehicle.featured ? "Featured In Stock" : "WCFG Curated"}
-                </span>
-              </div>
-            </div>
+            <VehicleGallery
+              images={galleryImages}
+              alt={vehicle.imageAlt}
+              featured={vehicle.featured}
+              badge={galleryBadge}
+            />
 
             <div className="flex flex-col justify-center">
               <p className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light">

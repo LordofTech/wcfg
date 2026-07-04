@@ -32,7 +32,7 @@ const brokerBenefits = [
   "Access to off-market and hard-to-find vehicles",
   "Better pricing through expert negotiation",
   "Avoid costly mistakes",
-  "Save time — we handle everything",
+  "Save time, we handle everything",
   "A seamless, stress-free experience",
   "Long-term relationship & support",
 ] as const;
@@ -65,7 +65,7 @@ export default function WhyWCFG() {
         <SectionHeading
           eyebrow="Premium Services"
           title="The WCFG Difference"
-          description="White-glove brokerage from first conversation to delivery — whether your destination is Lagos, Abuja, or anywhere our network reaches."
+          description="White-glove brokerage from first conversation to delivery, whether your destination is Lagos, Abuja, or anywhere our network reaches."
         />
 
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">

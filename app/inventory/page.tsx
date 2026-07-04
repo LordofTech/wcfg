@@ -6,7 +6,7 @@ import { listVehicles } from "@/lib/inventory-service";
 export const metadata: Metadata = {
   title: "Curated Inventory",
   description:
-    "Browse WCFG’s personally vetted luxury inventory — Mercedes-Benz, Ferrari, Rolls-Royce, Lamborghini, Corvette, Porsche, and Bentley.",
+    "Browse WCFG’s personally vetted luxury inventory: Mercedes-Benz, Ferrari, Rolls-Royce, Lamborghini, Corvette, Porsche, and Bentley.",
 };
 
 export default async function InventoryIndexPage() {

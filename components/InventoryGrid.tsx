@@ -18,7 +18,7 @@ export default function InventoryGrid() {
         <SectionHeading
           eyebrow="Curated Inventory"
           title="Premium Units, Personally Vetted"
-          description="Each vehicle is presented as a WCFG-managed premium unit — sourced, inspected, and prepared for a seamless white-glove acquisition."
+          description="Each vehicle is presented as a WCFG-managed premium unit, sourced, inspected, and prepared for a seamless white-glove acquisition."
         />
 
         <LayoutGroup>

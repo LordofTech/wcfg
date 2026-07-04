@@ -18,7 +18,7 @@ export interface Vehicle {
   sourceUrl?: string;
   mileage?: string;
   vin?: string;
-  /** Promoted “Featured In Stock” unit — shown first on homepage and listings */
+  /** Promoted “Featured In Stock” unit, shown first on homepage and listings */
   featured?: boolean;
 }
 
@@ -32,16 +32,93 @@ function normalize(vehicle: Vehicle): Vehicle {
   };
 }
 
-/** Featured units first, then WCFG curated, then remaining stock. */
+/** Featured units first, then year desc, then brand/model A-Z. */
 export function sortInventory(vehicles: Vehicle[]): Vehicle[] {
   return [...vehicles].sort((a, b) => {
     const featuredDelta = Number(b.featured) - Number(a.featured);
     if (featuredDelta !== 0) return featuredDelta;
-    const wcfgDelta =
-      Number(b.source === "wcfg") - Number(a.source === "wcfg");
-    if (wcfgDelta !== 0) return wcfgDelta;
-    return b.year - a.year;
+    if (b.year !== a.year) return b.year - a.year;
+    const brandDelta = a.brand.localeCompare(b.brand, undefined, {
+      sensitivity: "base",
+    });
+    if (brandDelta !== 0) return brandDelta;
+    return a.model.localeCompare(b.model, undefined, { sensitivity: "base" });
   });
+}
+
+export interface InventoryFilterState {
+  manufacturer: string;
+  model: string;
+  year: string;
+}
+
+export function filterInventory(
+  vehicles: Vehicle[],
+  filters: InventoryFilterState
+): Vehicle[] {
+  return vehicles.filter((vehicle) => {
+    if (filters.manufacturer && vehicle.brandSlug !== filters.manufacturer) {
+      return false;
+    }
+    if (
+      filters.model &&
+      vehicle.model.toLowerCase() !== filters.model.toLowerCase()
+    ) {
+      return false;
+    }
+    if (filters.year && String(vehicle.year) !== filters.year) {
+      return false;
+    }
+    return true;
+  });
+}
+
+/** Unique manufacturers (slug + display name), sorted A-Z by name. */
+export function getManufacturerOptions(
+  vehicles: Vehicle[]
+): { slug: string; name: string }[] {
+  const bySlug = new Map<string, string>();
+  for (const vehicle of vehicles) {
+    if (!bySlug.has(vehicle.brandSlug)) {
+      bySlug.set(vehicle.brandSlug, vehicle.brand);
+    }
+  }
+  return [...bySlug.entries()]
+    .map(([slug, name]) => ({ slug, name }))
+    .sort((a, b) =>
+      a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+    );
+}
+
+/** Unique models for the current manufacturer selection, sorted A-Z. */
+export function getModelOptions(
+  vehicles: Vehicle[],
+  manufacturerSlug?: string
+): string[] {
+  const pool = manufacturerSlug
+    ? vehicles.filter((vehicle) => vehicle.brandSlug === manufacturerSlug)
+    : vehicles;
+  return [...new Set(pool.map((vehicle) => vehicle.model))].sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
+}
+
+/** Unique years for the current manufacturer + model selection, newest first. */
+export function getYearOptions(
+  vehicles: Vehicle[],
+  manufacturerSlug?: string,
+  model?: string
+): number[] {
+  let pool = vehicles;
+  if (manufacturerSlug) {
+    pool = pool.filter((vehicle) => vehicle.brandSlug === manufacturerSlug);
+  }
+  if (model) {
+    pool = pool.filter(
+      (vehicle) => vehicle.model.toLowerCase() === model.toLowerCase()
+    );
+  }
+  return [...new Set(pool.map((vehicle) => vehicle.year))].sort((a, b) => b - a);
 }
 
 export const inventory: Vehicle[] = sortInventory(

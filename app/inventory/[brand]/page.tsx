@@ -46,7 +46,7 @@ export default async function BrandInventoryPage({ params }: BrandPageProps) {
         activeBrand={brand}
         eyebrow={`${brand.name} Collection`}
         title={`${brand.name} Inventory`}
-        description={`Every ${brand.name} unit is WCFG-managed — sourced, inspected, and prepared for white-glove acquisition. Contact us directly to secure a vehicle.`}
+        description={`Every ${brand.name} unit is WCFG-managed, sourced, inspected, and prepared for white-glove acquisition. Contact us directly to secure a vehicle.`}
         backHref="/inventory"
         backLabel="Back to all inventory"
       />

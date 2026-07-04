@@ -17,9 +17,9 @@ const STEPS = [
 
 const BUDGET_RANGES = [
   "Under $100K",
-  "$100K – $250K",
-  "$250K – $500K",
-  "$500K – $1M",
+  "$100K to $250K",
+  "$250K to $500K",
+  "$500K to $1M",
   "$1M+",
   "Flexible / Upon Advice",
 ] as const;
@@ -191,7 +191,7 @@ export default function ConsultationForm() {
         <SectionHeading
           eyebrow="Complimentary Consultation"
           title="Let's Find Your Next Dream Car"
-          description="Share a few details and initiate white-glove sourcing. We handle the search, negotiation, and delivery — you enjoy the experience."
+          description="Share a few details and initiate white-glove sourcing. We handle the search, negotiation, and delivery. You enjoy the experience."
         />
 
         <form

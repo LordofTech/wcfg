@@ -45,7 +45,7 @@ export default function FeaturedInStock() {
             Available Now
           </h2>
           <p className="mx-auto mt-3 max-w-2xl font-sans text-sm font-light leading-relaxed text-mist">
-            Our current spotlight allocation — ready for white-glove acquisition.
+            Our current spotlight allocation, ready for white-glove acquisition.
           </p>
         </motion.div>
 

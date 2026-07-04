@@ -1,11 +1,18 @@
 "use client";
 
+import { Suspense, useMemo } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import InventoryFilters from "@/components/InventoryFilters";
 import VehicleCard from "@/components/VehicleCard";
 import SectionHeading from "@/components/SectionHeading";
 import { BRANDS, type Brand } from "@/lib/brands";
-import type { Vehicle } from "@/lib/inventory";
+import {
+  filterInventory,
+  sortInventory,
+  type Vehicle,
+} from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
 
 interface InventoryListingProps {
@@ -19,16 +26,36 @@ interface InventoryListingProps {
   backLabel?: string;
 }
 
-export default function InventoryListing({
+function InventoryListingContent({
   vehicles,
   activeBrand = null,
   title = "Premium Units, Personally Vetted",
-  description = "Each vehicle is presented as a WCFG-managed premium unit — sourced, inspected, and prepared for a seamless white-glove acquisition.",
+  description = "Each vehicle is presented as a WCFG-managed premium unit, sourced, inspected, and prepared for a seamless white-glove acquisition.",
   eyebrow = "Curated Inventory",
   showBrandFilters = true,
   backHref,
   backLabel = "Back to all inventory",
 }: InventoryListingProps) {
+  const searchParams = useSearchParams();
+
+  const manufacturer = activeBrand
+    ? activeBrand.slug
+    : (searchParams.get("manufacturer")?.trim() ?? "");
+  const model = searchParams.get("model")?.trim() ?? "";
+  const year = searchParams.get("year")?.trim() ?? "";
+
+  const filteredVehicles = useMemo(
+    () =>
+      sortInventory(
+        filterInventory(vehicles, {
+          manufacturer,
+          model,
+          year,
+        })
+      ),
+    [vehicles, manufacturer, model, year]
+  );
+
   return (
     <section className="relative scroll-mt-28 px-6 py-24 md:px-8 md:py-32">
       <div className="pointer-events-none absolute inset-0 bg-gold-radial opacity-40" aria-hidden />
@@ -54,7 +81,7 @@ export default function InventoryListing({
         {showBrandFilters ? (
           <LayoutGroup>
             <div
-              className="mb-10 flex flex-wrap justify-center gap-2"
+              className="mb-6 flex flex-wrap justify-center gap-2"
               role="navigation"
               aria-label="Browse by marque"
             >
@@ -88,10 +115,16 @@ export default function InventoryListing({
           </LayoutGroup>
         ) : null}
 
-        {vehicles.length > 0 ? (
+        <InventoryFilters
+          vehicles={vehicles}
+          lockedManufacturer={activeBrand?.slug ?? null}
+          resultCount={filteredVehicles.length}
+        />
+
+        {filteredVehicles.length > 0 ? (
           <motion.div layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <AnimatePresence mode="popLayout">
-              {vehicles.map((vehicle, index) => (
+              {filteredVehicles.map((vehicle, index) => (
                 <VehicleCard
                   key={vehicle.id}
                   vehicle={vehicle}
@@ -103,19 +136,31 @@ export default function InventoryListing({
         ) : (
           <div className="glass-strong mx-auto mt-4 max-w-xl rounded-sm border border-gold-light/15 px-8 py-14 text-center">
             <p className="font-display text-2xl font-medium tracking-wide text-ivory">
-              No vehicles currently listed
-              {activeBrand ? ` for ${activeBrand.name}` : ""}.
+              {vehicles.length === 0
+                ? `No vehicles currently listed${activeBrand ? ` for ${activeBrand.name}` : ""}.`
+                : "No vehicles match these filters."}
             </p>
             <p className="mt-4 font-sans text-sm font-light leading-relaxed text-mist">
-              Request custom sourcing and our advisors will locate the right allocation for you.
+              {vehicles.length === 0
+                ? "Request custom sourcing and our advisors will locate the right allocation for you."
+                : "Try adjusting or clearing your filters to see more inventory."}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/#consultation"
-                className="inline-flex items-center justify-center bg-gold-gradient px-6 py-3 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
-              >
-                Schedule a Consultation
-              </Link>
+              {vehicles.length > 0 ? (
+                <Link
+                  href={activeBrand ? activeBrand.href : "/inventory"}
+                  className="inline-flex items-center justify-center bg-gold-gradient px-6 py-3 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
+                >
+                  Clear filters
+                </Link>
+              ) : (
+                <Link
+                  href="/#consultation"
+                  className="inline-flex items-center justify-center bg-gold-gradient px-6 py-3 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
+                >
+                  Schedule a Consultation
+                </Link>
+              )}
               <Link
                 href="/inventory"
                 className="inline-flex items-center justify-center border border-gold-light/40 px-6 py-3 font-sans text-[11px] font-medium uppercase tracking-luxury text-gold-light transition-colors hover:bg-gold-light/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
@@ -127,5 +172,21 @@ export default function InventoryListing({
         )}
       </div>
     </section>
+  );
+}
+
+export default function InventoryListing(props: InventoryListingProps) {
+  return (
+    <Suspense
+      fallback={
+        <section className="relative scroll-mt-28 px-6 py-24 md:px-8 md:py-32">
+          <div className="relative mx-auto max-w-6xl">
+            <div className="h-40 animate-pulse rounded-sm bg-charcoal-velvet/40" />
+          </div>
+        </section>
+      }
+    >
+      <InventoryListingContent {...props} />
+    </Suspense>
   );
 }

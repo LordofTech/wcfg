@@ -5,11 +5,12 @@ alter table public.vehicles
   add column if not exists source text not null default 'wcfg',
   add column if not exists source_url text,
   add column if not exists mileage text,
-  add column if not exists vin text;
+  add column if not exists vin text,
+  add column if not exists featured boolean not null default false;
 
 insert into public.vehicles (
   id, brand, brand_slug, model, year, highlight, price_label,
-  image_src, image_alt, status, source, source_url, mileage, vin
+  image_src, image_alt, status, source, source_url, mileage, vin, featured
 ) values
   (
     'adscars-7389825',
@@ -25,7 +26,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1997-am-general-hummer-h1--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7389825',
     null,
-    '255979'
+    '255979',
+    false
   ),
   (
     'adscars-7421075',
@@ -41,7 +43,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2024-aprilia-rsv4--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7421075',
     '900 mi',
-    'ZD4KYUA06RS001084'
+    'ZD4KYUA06RS001084',
+    false
   ),
   (
     'adscars-7480463',
@@ -57,7 +60,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2026-aston-martin-vanquish--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7480463',
     '4,265 mi',
-    'SCFUMCEV6TGJ60666'
+    'SCFUMCEV6TGJ60666',
+    false
   ),
   (
     'adscars-7464615',
@@ -73,7 +77,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2023-aston-martin-dbx-707-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7464615',
     '22,069 mi',
-    'SD7VUJBW0PTV06101'
+    'SD7VUJBW0PTV06101',
+    false
   ),
   (
     'adscars-7485952',
@@ -89,7 +94,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2023-aston-martin-vantage-f1-edition-convertible-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7485952',
     '7,674 mi',
-    'SCFSMGBW4PGP07113'
+    'SCFSMGBW4PGP07113',
+    false
   ),
   (
     'adscars-7428598',
@@ -105,7 +111,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2021-aston-martin-dbx--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7428598',
     '14,230 mi',
-    'SCFVUJAW2MTV03277'
+    'SCFVUJAW2MTV03277',
+    false
   ),
   (
     'adscars-7476676',
@@ -121,7 +128,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2005-aston-martin-v12-vanquish-s-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7476676',
     '25,574 mi',
-    'SCFAC24315B501584'
+    'SCFAC24315B501584',
+    false
   ),
   (
     'adscars-7415424',
@@ -137,7 +145,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-audi-e-tron-gt-quattro-premium-plus-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7415424',
     '17,235 mi',
-    'WAUFJBFW7N7007568'
+    'WAUFJBFW7N7007568',
+    false
   ),
   (
     'adscars-7455201',
@@ -153,7 +162,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2021-audi-a7-e-quattro-premium-plus-55-tfsi-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7455201',
     '36,562 mi',
-    'WAUTPBF22MN084597'
+    'WAUTPBF22MN084597',
+    false
   ),
   (
     'adscars-7471115',
@@ -169,7 +179,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2011-audi-r8-4.2-quattro-spyder-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7471115',
     '70,514 mi',
-    'WUASUAFG2BN002266'
+    'WUASUAFG2BN002266',
+    false
   ),
   (
     'bentley-continental-gt',
@@ -185,7 +196,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'adscars-7278824',
@@ -201,7 +213,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-bentley-continental-gt-v8-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7278824',
     '30,500 mi',
-    'SCBCG2ZGXLC081261'
+    'SCBCG2ZGXLC081261',
+    false
   ),
   (
     'adscars-7423590',
@@ -217,7 +230,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2019-bentley-bentayga--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7423590',
     '57,000 mi',
-    'SJAAM2ZV0KC025051'
+    'SJAAM2ZV0KC025051',
+    false
   ),
   (
     'adscars-7497621',
@@ -233,7 +247,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2018-bentley-continental-gt-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7497621',
     '12,203 mi',
-    'SCBGU3ZA8JC066895'
+    'SCBGU3ZA8JC066895',
+    false
   ),
   (
     'adscars-7473419',
@@ -249,7 +264,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2017-bentley-flying-spur-v8-s-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7473419',
     '44,760 mi',
-    'SCBEH9ZA8HC060894'
+    'SCBEH9ZA8HC060894',
+    false
   ),
   (
     'adscars-7310278',
@@ -265,7 +281,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2016-bentley-mulsanne-speed-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7310278',
     '49,550 mi',
-    'SCBBG7ZH5GC002019'
+    'SCBBG7ZH5GC002019',
+    false
   ),
   (
     'adscars-7329056',
@@ -281,7 +298,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2010-bentley-continental-gtc-speed-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7329056',
     '36,900 mi',
-    'SCBDP3ZA1AC062732'
+    'SCBDP3ZA1AC062732',
+    false
   ),
   (
     'adscars-7444858',
@@ -297,7 +315,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2008-bentley-continental-flying-spur-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7444858',
     '218,491 mi',
-    'SCBBR93W08C057444'
+    'SCBBR93W08C057444',
+    false
   ),
   (
     'adscars-6832063',
@@ -313,7 +332,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2001-bentley-azure--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/6832063',
     '66,390 mi',
-    'SCBZK25E51CX62521'
+    'SCBZK25E51CX62521',
+    false
   ),
   (
     'adscars-7495630',
@@ -329,7 +349,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-bmw-740i-740i-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7495630',
     '60,997 mi',
-    'WBA7T2C08NCG89756'
+    'WBA7T2C08NCG89756',
+    false
   ),
   (
     'adscars-7136009',
@@ -345,7 +366,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-bmw-x5-m50i--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7136009',
     '84,317 mi',
-    '5UXJU4C04L9B29095'
+    '5UXJU4C04L9B29095',
+    false
   ),
   (
     'adscars-6645795',
@@ -361,7 +383,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2018-bmw-430i-convertible-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/6645795',
     '47,378 mi',
-    'WBA4Z1C5XJEC70751'
+    'WBA4Z1C5XJEC70751',
+    false
   ),
   (
     'adscars-7421161',
@@ -377,7 +400,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2018-bmw-7-series-740i-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7421161',
     '38,456 mi',
-    'WBA7E2C57JG743411'
+    'WBA7E2C57JG743411',
+    false
   ),
   (
     'adscars-7483605',
@@ -393,7 +417,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1989-bmw-m3-custom-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7483605',
     '114,705 mi',
-    'WBSAK0301K2198405'
+    'WBSAK0301K2198405',
+    false
   ),
   (
     'adscars-7476947',
@@ -409,7 +434,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2026-cadillac-ct5-v-blackwing-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7476947',
     '210 mi',
-    '1G6D25R64T0860555'
+    '1G6D25R64T0860555',
+    false
   ),
   (
     'adscars-7449045',
@@ -425,7 +451,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2024-chevrolet-silverado-2500hd-custom-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7449045',
     '67,017 mi',
-    '2GC4YMEY9R1167586'
+    '2GC4YMEY9R1167586',
+    false
   ),
   (
     'adscars-7486926',
@@ -441,7 +468,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2021-chevrolet-tahoe-rst-duramax-diesel-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7486926',
     '77,636 mi',
-    '1GNSKRKT4MR309395'
+    '1GNSKRKT4MR309395',
+    false
   ),
   (
     'adscars-7458839',
@@ -457,7 +485,25 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1939-chevrolet-master--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7458839',
     null,
-    '2JB017713'
+    '2JB017713',
+    false
+  ),
+  (
+    'corvette-zr1-coupe-3lz-black',
+    'Corvette',
+    'corvette',
+    'ZR1 Coupe 3LZ',
+    2025,
+    'Available now · Black exterior · Twin-turbo LT7 · 1,064 hp',
+    'Call for Price',
+    '/vehicles/corvette-zr1-coupe-3lz-black.webp',
+    'New 2025 Chevrolet Corvette ZR1 Coupe 3LZ in black',
+    'available',
+    'wcfg',
+    null,
+    null,
+    null,
+    true
   ),
   (
     'corvette-z06',
@@ -473,7 +519,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'adscars-7243124',
@@ -489,7 +536,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1982-datsun-280zx-turbo-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7243124',
     '61,185 mi',
-    'JN1CZ04S4CX628589'
+    'JN1CZ04S4CX628589',
+    false
   ),
   (
     'adscars-7496568',
@@ -505,7 +553,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2024-dodge-ram-2500-limited-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7496568',
     '13,769 mi',
-    '3C6UR5TL3RG327793'
+    '3C6UR5TL3RG327793',
+    false
   ),
   (
     'adscars-7465597',
@@ -521,7 +570,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2023-dodge-charger-srt-hellcat-jailbreak-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7465597',
     '36,079 mi',
-    '2C3CDXL9XPH638478'
+    '2C3CDXL9XPH638478',
+    false
   ),
   (
     'adscars-7449079',
@@ -537,7 +587,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-dodge-ram1500-trx-custom-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7449079',
     '33,090 mi',
-    '1C6SRFU99NN353607'
+    '1C6SRFU99NN353607',
+    false
   ),
   (
     'adscars-7487938',
@@ -553,7 +604,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2021-dodge-ram-promaster-3500-travato-59gl-custom-winnebago-conversion-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7487938',
     '23,472 mi',
-    '3C6MRVJG5ME514818'
+    '3C6MRVJG5ME514818',
+    false
   ),
   (
     'adscars-7492023',
@@ -569,7 +621,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2025-ferrari-296-gts--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7492023',
     '768 mi',
-    'ZFF01SMA9S0314178'
+    'ZFF01SMA9S0314178',
+    false
   ),
   (
     'ferrari-296-gtb',
@@ -585,7 +638,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'ferrari-roma',
@@ -601,7 +655,25 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
+  ),
+  (
+    'adscars-7444752',
+    'Ferrari',
+    'ferrari',
+    'Roma',
+    2022,
+    '8,688 mi · Avorio exterior · Automatic',
+    'Call for Price',
+    '/vehicles/imported/adscars-7444752.webp',
+    '2022 Ferrari Roma',
+    'available',
+    'adscars',
+    'https://adscars.com/2022-ferrari--roma-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7444752',
+    '8,688 mi',
+    'ZFF98RNA5N0271893',
+    false
   ),
   (
     'adscars-7479821',
@@ -617,7 +689,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2019-ferrari-portofino-base-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7479821',
     '24,700 mi',
-    'ZFF89FPA4K0240120'
+    'ZFF89FPA4K0240120',
+    false
   ),
   (
     'adscars-7471915',
@@ -633,7 +706,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2016-ferrari-california-t-base-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7471915',
     '11,295 mi',
-    'ZFF77XJA6G0217669'
+    'ZFF77XJA6G0217669',
+    false
   ),
   (
     'adscars-7442823',
@@ -649,7 +723,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-ford-f-250-super-duty-fx4-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7442823',
     '81,832 mi',
-    '1FT7W2BT5LED47542'
+    '1FT7W2BT5LED47542',
+    false
   ),
   (
     'adscars-7497297',
@@ -665,7 +740,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2018-ford-explorer-xlt-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7497297',
     '50,581 mi',
-    '1FM5K8D86JGA12897'
+    '1FM5K8D86JGA12897',
+    false
   ),
   (
     'adscars-7345098',
@@ -681,7 +757,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2012-ford-mustang-boss-302-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7345098',
     '76,099 mi',
-    '1ZVBP8CU0C5270349'
+    '1ZVBP8CU0C5270349',
+    false
   ),
   (
     'adscars-7478289',
@@ -697,7 +774,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2009-ford-e350-food-truck-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7478289',
     '121,332 mi',
-    '1FDWE35L19DA44526'
+    '1FDWE35L19DA44526',
+    false
   ),
   (
     'adscars-7087135',
@@ -713,7 +791,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1996-ford-mustang-gt-spv-boss-conv-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7087135',
     '97,928 mi',
-    '1FALP45X1TF202651'
+    '1FALP45X1TF202651',
+    false
   ),
   (
     'adscars-7388116',
@@ -729,7 +808,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1968-ford-bronco--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7388116',
     null,
-    'U15NLD03258'
+    'U15NLD03258',
+    false
   ),
   (
     'adscars-7365802',
@@ -745,7 +825,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2023-genesis-gv80-3.5t-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7365802',
     '29,078 mi',
-    'KMUHCESC2PU112278'
+    'KMUHCESC2PU112278',
+    false
   ),
   (
     'adscars-7402620',
@@ -761,7 +842,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-honda-cmx1100ldn--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7402620',
     null,
-    'JH2SC8312NK102602'
+    'JH2SC8312NK102602',
+    false
   ),
   (
     'adscars-7489126',
@@ -777,7 +859,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2024-ineos-grenadier-fieldmaster-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7489126',
     '12,792 mi',
-    'SC6GM1CA4RF011124'
+    'SC6GM1CA4RF011124',
+    false
   ),
   (
     'adscars-7480239',
@@ -793,7 +876,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2024-jeep-wrangler-sport-custom-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7480239',
     '3,116 mi',
-    '1C4PJXDN8RW134887'
+    '1C4PJXDN8RW134887',
+    false
   ),
   (
     'adscars-7453845',
@@ -809,7 +893,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2021-jeep-wrangler-unlimited-rubicon-392-custom-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7453845',
     '12,219 mi',
-    '1C4JJXSJ6MW783120'
+    '1C4JJXSJ6MW783120',
+    false
   ),
   (
     'adscars-7436089',
@@ -825,7 +910,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2014-jeep-wrangler-unlimited-sport-rocky-ridge-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7436089',
     '124,190 mi',
-    '1C4BJWDG7EL179062'
+    '1C4BJWDG7EL179062',
+    false
   ),
   (
     'adscars-7032310',
@@ -841,7 +927,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1982-jeep-cj-4wd-cj7-custom-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7032310',
     null,
-    '1JCCE87A7CT043621'
+    '1JCCE87A7CT043621',
+    false
   ),
   (
     'adscars-7482574',
@@ -857,7 +944,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2011-kia-forte-koup-sx-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7482574',
     '106,000 mi',
-    'KNAFW6A32B5397461'
+    'KNAFW6A32B5397461',
+    false
   ),
   (
     'lambo-urus-se',
@@ -873,7 +961,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'lambo-huracan-sterrato',
@@ -889,7 +978,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'adscars-7487936',
@@ -905,7 +995,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-lamborghini-urus-base-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7487936',
     '32,834 mi',
-    'ZPBUA1ZL9LLA07901'
+    'ZPBUA1ZL9LLA07901',
+    false
   ),
   (
     'adscars-7495625',
@@ -921,7 +1012,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2019-lamborghini-urus-mansory-kit-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7495625',
     '26,521 mi',
-    'ZPBUA1ZL7KLA00959'
+    'ZPBUA1ZL7KLA00959',
+    false
   ),
   (
     'adscars-7380073',
@@ -937,7 +1029,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2014-lamborghini-aventador-lp-700-4-roadster-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7380073',
     '8,861 mi',
-    'ZHWUR1ZD8ELA02596'
+    'ZHWUR1ZD8ELA02596',
+    false
   ),
   (
     'adscars-7453787',
@@ -953,7 +1046,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2023-land-rover-defender-90-s-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7453787',
     '14,529 mi',
-    'SALEJ6EXXP2110492'
+    'SALEJ6EXXP2110492',
+    false
   ),
   (
     'adscars-7495057',
@@ -969,7 +1063,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-land-rover-defender-110-se-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7495057',
     '44,031 mi',
-    'SALEP7RU8N2088056'
+    'SALEP7RU8N2088056',
+    false
   ),
   (
     'adscars-7489690',
@@ -985,7 +1080,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2021-land-rover-range-rover-p400-hse-westminster-edition-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7489690',
     '91,497 mi',
-    'SALGS2RU6MA440971'
+    'SALGS2RU6MA440971',
+    false
   ),
   (
     'adscars-7353800',
@@ -1001,7 +1097,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-land-rover-defender-110-custom-osprey-restomod-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7353800',
     '13,190 mi',
-    '4S9126C45LC520008'
+    '4S9126C45LC520008',
+    false
   ),
   (
     'adscars-7489922',
@@ -1017,7 +1114,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-land-rover-range-rover-sport-hse-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7489922',
     '107,607 mi',
-    'SALWR2SU1LA709748'
+    'SALWR2SU1LA709748',
+    false
   ),
   (
     'adscars-7462511',
@@ -1033,7 +1131,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2019-land-rover-range-rover-sport-hse-dynamic-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7462511',
     '52,806 mi',
-    'SALWV2SV8KA417873'
+    'SALWV2SV8KA417873',
+    false
   ),
   (
     'adscars-7366400',
@@ -1049,7 +1148,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2016-land-rover-range-rover-supercharged-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7366400',
     '81,145 mi',
-    'SALGS2EF5GA276737'
+    'SALGS2EF5GA276737',
+    false
   ),
   (
     'adscars-7479415',
@@ -1065,7 +1165,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2016-land-rover-range-rover-sport-hse-td6-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7479415',
     '97,257 mi',
-    'SALWR2KF1GA582751'
+    'SALWR2KF1GA582751',
+    false
   ),
   (
     'adscars-6908945',
@@ -1081,7 +1182,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2016-land-rover-range-rover-sport-v8-dynamic-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/6908945',
     '58,597 mi',
-    'SALWR2EFXGA562431'
+    'SALWR2EFXGA562431',
+    false
   ),
   (
     'adscars-7487939',
@@ -1097,7 +1199,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2014-land-rover-range-rover-hse-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7487939',
     '119,885 mi',
-    'SALGS2WF2EA168474'
+    'SALGS2WF2EA168474',
+    false
   ),
   (
     'adscars-7391279',
@@ -1113,7 +1216,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1995-land-rover-defender-110-300tdi--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7391279',
     '73,134 mi',
-    'SALLDHMF7MA968436'
+    'SALLDHMF7MA968436',
+    false
   ),
   (
     'adscars-7058139',
@@ -1129,7 +1233,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1987-land-rover-defender-custom%2F-restomod-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7058139',
     null,
-    'SALLDVBD7AA265100'
+    'SALLDVBD7AA265100',
+    false
   ),
   (
     'adscars-7263086',
@@ -1145,7 +1250,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-lexus-is-350-f-sport-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7263086',
     '23,623 mi',
-    'JTHGZ1B22N5049038'
+    'JTHGZ1B22N5049038',
+    false
   ),
   (
     'adscars-7444609',
@@ -1161,7 +1267,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2010-lexus-sc-430-base-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7444609',
     '155,424 mi',
-    'JTHFN2EY0A9021545'
+    'JTHFN2EY0A9021545',
+    false
   ),
   (
     'adscars-7479801',
@@ -1177,7 +1284,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2008-lexus-lx-570-base-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7479801',
     '204,627 mi',
-    'JTJHY00W584003770'
+    'JTJHY00W584003770',
+    false
   ),
   (
     'adscars-7484226',
@@ -1193,7 +1301,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2024-maserati-granturismo-trofeo-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7484226',
     '6,070 mi',
-    'ZAMBMVDB8RX440019'
+    'ZAMBMVDB8RX440019',
+    false
   ),
   (
     'adscars-7439189',
@@ -1209,7 +1318,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-mclaren-720s-spider-performance-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7439189',
     '2,549 mi',
-    'SBM14FCA3LW004472'
+    'SBM14FCA3LW004472',
+    false
   ),
   (
     'mb-g63-2024',
@@ -1225,7 +1335,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'mb-s580',
@@ -1241,7 +1352,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'adscars-7163101',
@@ -1257,7 +1369,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-mercedes-benz-amg-g-63--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7163101',
     '22,284 mi',
-    'W1NYC7HJ8NX443035'
+    'W1NYC7HJ8NX443035',
+    false
   ),
   (
     'adscars-7496090',
@@ -1273,7 +1386,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-mercedes-benz-amg-gt-53-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7496090',
     '19,288 mi',
-    'W1K7X6BB0NA050433'
+    'W1K7X6BB0NA050433',
+    false
   ),
   (
     'adscars-7293411',
@@ -1289,7 +1403,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-mercedes-benz-s-580-s-580-4matic-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7293411',
     '23,300 mi',
-    'W1K6G7GB7NA069782'
+    'W1K6G7GB7NA069782',
+    false
   ),
   (
     'adscars-7378319',
@@ -1305,7 +1420,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-mercedes-benz-s-580-s-580-4matic-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7378319',
     '32,470 mi',
-    'W1K6G7GB6NA104117'
+    'W1K6G7GB6NA104117',
+    false
   ),
   (
     'adscars-7476721',
@@ -1321,7 +1437,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2021-mercedes-benz-g-63-amg-g-63-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7476721',
     '26,133 mi',
-    'W1NYC7HJ4MX394950'
+    'W1NYC7HJ4MX394950',
+    false
   ),
   (
     'adscars-7459400',
@@ -1337,7 +1454,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-mercedes-benz-g-63-amg-g-63-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7459400',
     '50,022 mi',
-    'W1NYC7HJ7LX346826'
+    'W1NYC7HJ7LX346826',
+    false
   ),
   (
     'adscars-7431129',
@@ -1353,7 +1471,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-mercedes-benz-gls-450-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7431129',
     '65,943 mi',
-    '4JGFF5KEXLA201784'
+    '4JGFF5KEXLA201784',
+    false
   ),
   (
     'adscars-7478228',
@@ -1369,7 +1488,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2019-mercedes-benz-g-550-g-550-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7478228',
     '96,972 mi',
-    'WDCYC6BJXKX306730'
+    'WDCYC6BJXKX306730',
+    false
   ),
   (
     'adscars-7223175',
@@ -1385,7 +1505,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2018-mercedes-benz-amg-gtr-r-renntech-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7223175',
     '21,916 mi',
-    'WDDYJ7KA9JA013328'
+    'WDDYJ7KA9JA013328',
+    false
   ),
   (
     'adscars-7384459',
@@ -1401,7 +1522,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2018-mercedes-benz-gle-43-amg-43-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7384459',
     '85,573 mi',
-    '4JGDA6EB3JB005786'
+    '4JGDA6EB3JB005786',
+    false
   ),
   (
     'adscars-7374196',
@@ -1417,7 +1539,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2017-mercedes-benz-c-63-s-amg-c-63-s-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7374196',
     '16,040 mi',
-    'WDDWJ8HB8HF427193'
+    'WDDWJ8HB8HF427193',
+    false
   ),
   (
     'adscars-6890988',
@@ -1433,7 +1556,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2015-mercedes-benz-g-63-amg-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/6890988',
     '88,061 mi',
-    'WDCYC7DF0FX233081'
+    'WDCYC7DF0FX233081',
+    false
   ),
   (
     'adscars-7479358',
@@ -1449,7 +1573,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2014-mercedes-benz-e-550--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7479358',
     '48,000 mi',
-    'WDDKJ7DB0EF252013'
+    'WDDKJ7DB0EF252013',
+    false
   ),
   (
     'adscars-7474860',
@@ -1465,7 +1590,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2012-mercedes-benz-sls-amg-convertible-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7474860',
     '27,106 mi',
-    'WDDRK7HA1CA007230'
+    'WDDRK7HA1CA007230',
+    false
   ),
   (
     'adscars-7488100',
@@ -1481,7 +1607,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2011-mercedes-benz-e-350-e-350-luxury-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7488100',
     '147,005 mi',
-    'WDDHF5GB0BA286800'
+    'WDDHF5GB0BA286800',
+    false
   ),
   (
     'adscars-7490697',
@@ -1497,7 +1624,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2010-mercedes-benz-e350-e-350-luxury-sport-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7490697',
     '47,918 mi',
-    'WDDHF5GB5AA060086'
+    'WDDHF5GB5AA060086',
+    false
   ),
   (
     'adscars-7477021',
@@ -1513,7 +1641,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2003-mercedes-benz-sl-class-sl-500-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7477021',
     '81,188 mi',
-    'WDBSK75F43F015660'
+    'WDBSK75F43F015660',
+    false
   ),
   (
     'adscars-7495973',
@@ -1529,7 +1658,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2011-morgan-aero-supersports--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7495973',
     '5,321 mi',
-    'SA9FASSA9BE004111'
+    'SA9FASSA9BE004111',
+    false
   ),
   (
     'adscars-7495055',
@@ -1545,7 +1675,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2016-nissan-370z-base-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7495055',
     '84,317 mi',
-    'JN1AZ4EH6GM934279'
+    'JN1AZ4EH6GM934279',
+    false
   ),
   (
     'adscars-7143065',
@@ -1561,7 +1692,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1981-pontiac-firebird-trans-am-custom-restomod-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7143065',
     null,
-    '1G2AW87W6BL101044'
+    '1G2AW87W6BL101044',
+    false
   ),
   (
     'adscars-7490408',
@@ -1577,7 +1709,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2026-porsche-panamera--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7490408',
     '1,544 mi',
-    'WP0AA2YA1TL001784'
+    'WP0AA2YA1TL001784',
+    false
   ),
   (
     'porsche-911-turbo-s',
@@ -1593,7 +1726,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'porsche-cayenne-turbo-gt',
@@ -1609,7 +1743,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'adscars-7428890',
@@ -1625,7 +1760,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2023-porsche-911-turbo-s-cab-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7428890',
     '20,904 mi',
-    'WP0CD2A9XPS263217'
+    'WP0CD2A9XPS263217',
+    false
   ),
   (
     'adscars-7494614',
@@ -1641,7 +1777,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-porsche-911-gt3-touring-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7494614',
     '1,829 mi',
-    'WP0AC2A97NS269743'
+    'WP0AC2A97NS269743',
+    false
   ),
   (
     'adscars-7497967',
@@ -1657,7 +1794,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-porsche-911-gt3-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7497967',
     '3,555 mi',
-    'WP0AC2A96NS270947'
+    'WP0AC2A96NS270947',
+    false
   ),
   (
     'adscars-7484228',
@@ -1673,7 +1811,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-porsche-cayenne--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7484228',
     '40,457 mi',
-    'WP1AA2AY3LDA10597'
+    'WP1AA2AY3LDA10597',
+    false
   ),
   (
     'adscars-7453150',
@@ -1689,7 +1828,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2019-porsche-macan-s-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7453150',
     '27,000 mi',
-    'WP1AB2A52KLB30253'
+    'WP1AB2A52KLB30253',
+    false
   ),
   (
     'adscars-7479355',
@@ -1705,7 +1845,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2007-porsche-911-turbo-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7479355',
     '77,077 mi',
-    'WP0AD29957S784891'
+    'WP0AD29957S784891',
+    false
   ),
   (
     'rr-cullinan-2024',
@@ -1721,7 +1862,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'rr-ghost-2023',
@@ -1737,7 +1879,8 @@ insert into public.vehicles (
     'wcfg',
     null,
     null,
-    null
+    null,
+    false
   ),
   (
     'adscars-7423899',
@@ -1753,7 +1896,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-rolls-royce-black-badge-dawn--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7423899',
     '5,269 mi',
-    'SCAXZ8C03LU118269'
+    'SCAXZ8C03LU118269',
+    false
   ),
   (
     'adscars-7340703',
@@ -1769,7 +1913,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2020-rolls-royce-cullinan-rear-thearter%2F-starlight-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7340703',
     '89,061 mi',
-    'SLATV4C00LU114599'
+    'SLATV4C00LU114599',
+    false
   ),
   (
     'adscars-7497721',
@@ -1785,7 +1930,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2016-rolls-royce-wraith-base-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7497721',
     '15,882 mi',
-    'SCA665C54GUX86117'
+    'SCA665C54GUX86117',
+    false
   ),
   (
     'adscars-7234502',
@@ -1801,7 +1947,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1999-rolls-royce-silver-seraph--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7234502',
     '74,869 mi',
-    'SCALA61E5XCX01138'
+    'SCALA61E5XCX01138',
+    false
   ),
   (
     'adscars-7468452',
@@ -1817,7 +1964,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/1991-rolls-royce-corniche-iii-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7468452',
     '69,728 mi',
-    'SCAZD02D2MCX30418'
+    'SCAZD02D2MCX30418',
+    false
   ),
   (
     'adscars-7303433',
@@ -1833,7 +1981,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2023-thor-tuscany-45bx--%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7303433',
     '9,200 mi',
-    '4UZFCHFE7NCUC9300'
+    '4UZFCHFE7NCUC9300',
+    false
   ),
   (
     'adscars-7495052',
@@ -1849,7 +1998,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2022-toyota-tundra-crewmax-sr5-custom-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7495052',
     '62,977 mi',
-    '5TFLA5AB9NX016784'
+    '5TFLA5AB9NX016784',
+    false
   ),
   (
     'adscars-7476726',
@@ -1865,7 +2015,8 @@ insert into public.vehicles (
     'adscars',
     'https://adscars.com/2015-toyota-rav4-limited-%7C-houston%2C-texas-%7C-autodynamics-houston-texas-77057/7476726',
     '88,048 mi',
-    '2T3YFREV5FW232317'
+    '2T3YFREV5FW232317',
+    false
   )
 on conflict (id) do update set
   brand = excluded.brand,
@@ -1880,4 +2031,5 @@ on conflict (id) do update set
   source = excluded.source,
   source_url = excluded.source_url,
   mileage = excluded.mileage,
-  vin = excluded.vin;
+  vin = excluded.vin,
+  featured = excluded.featured;

@@ -80,6 +80,12 @@ const WCFG_ORIGINALS = [
     priceLabel: "Call for Price",
     imageSrc: "/vehicles/corvette-zr1-coupe-3lz-black.webp",
     imageAlt: "New 2025 Chevrolet Corvette ZR1 Coupe 3LZ in black",
+    images: [
+      "/vehicles/corvette-zr1-coupe-3lz-black.webp",
+      "/vehicles/corvette-zr1-coupe-3lz-black-side.webp",
+      "/vehicles/corvette-zr1-coupe-3lz-black-2.webp",
+      "/vehicles/corvette-zr1-coupe-3lz-black-3.webp",
+    ],
     source: "wcfg",
     featured: true,
   },
@@ -301,6 +307,39 @@ function extractDd(block, className) {
   return match ? decodeHtml(match[1].replace(/<[^>]+>/g, "").trim()) : "";
 }
 
+/**
+ * Parse "2024 Porsche 911 GT3  | Houston..." listing titles.
+ * Year + model from the title are authoritative for Adscars parity.
+ */
+function parseListingTitle(text) {
+  const cleaned = decodeHtml(text || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!cleaned) return null;
+
+  const withPipe = cleaned.match(/^(\d{4})\s+(.+?)\s+\|/);
+  const bare = cleaned.match(/^(\d{4})\s+(.+)$/);
+  const match = withPipe || bare;
+  if (!match) return null;
+
+  return {
+    year: Number(match[1]),
+    vehicle: match[2].replace(/\s+/g, " ").trim(),
+  };
+}
+
+function modelFromTitleVehicle(titleVehicle, make) {
+  const vehicle = (titleVehicle || "").replace(/\s+/g, " ").trim();
+  const makeNorm = (make || "").replace(/\s+/g, " ").trim();
+  if (!vehicle) return "";
+  if (!makeNorm) return vehicle;
+
+  if (vehicle.toLowerCase().startsWith(makeNorm.toLowerCase())) {
+    return vehicle.slice(makeNorm.length).replace(/^[-\s]+/, "").trim();
+  }
+  return vehicle;
+}
+
 function parseListings(html) {
   const chunks = html.split(/class="inventory_item[^"]*"/).slice(1);
   const vehicles = [];
@@ -313,14 +352,45 @@ function parseListings(html) {
 
     const pathPart = hrefMatch[1];
     const stockId = hrefMatch[2];
-    const year = Number(extractField(block, "year"));
-    const make = extractField(block, "make");
-    const model = extractField(block, "model");
-    const trim = extractField(block, "trim");
-    if (!year || !make || !model) continue;
+    const yearField = Number(extractField(block, "year"));
+    const makeField = extractField(block, "make").replace(/\s+/g, " ").trim();
+    const modelField = extractField(block, "model").replace(/\s+/g, " ").trim();
+    const trimField = extractField(block, "trim").replace(/\s+/g, " ").trim();
+    const fieldModelLabel = [modelField, trimField]
+      .filter(Boolean)
+      .join(" ")
+      .replace(/\s+/g, " ")
+      .trim();
 
-    const brand = normalizeBrand(make, model);
-    const modelLabel = [model, trim].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
+    const altMatch = block.match(/\balt="([^"]+)"/i);
+    const titleMatch = block.match(/\btitle="([^"]+)"/i);
+    const h3TextMatch = block.match(
+      /<span class="template_title">([\s\S]*?)<\/span>/i
+    );
+    const h3Text = h3TextMatch
+      ? decodeHtml(h3TextMatch[1].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim()
+      : "";
+
+    const fromAlt = parseListingTitle(altMatch?.[1] || "");
+    const fromTitleAttr = parseListingTitle(titleMatch?.[1] || "");
+    const fromH3 = parseListingTitle(h3Text);
+    // Prefer alt/title attributes (full "YEAR MAKE MODEL | dealer"), then h3 text.
+    const fromTitle = fromAlt || fromTitleAttr || fromH3;
+
+    const year = fromTitle?.year || yearField;
+    const make = makeField;
+    const titleModel = fromTitle
+      ? modelFromTitleVehicle(fromTitle.vehicle, make)
+      : "";
+    // Prefer the longer/more complete model string for exact Adscars display parity.
+    const modelLabel =
+      titleModel.length >= fieldModelLabel.length
+        ? titleModel
+        : fieldModelLabel || titleModel;
+
+    if (!year || !make || !modelLabel) continue;
+
+    const brand = normalizeBrand(make, modelLabel);
     const priceMatch = block.match(
       /class="website_price"[^>]*>[\s\S]*?<span>([^<]*)<\/span>/i
     );

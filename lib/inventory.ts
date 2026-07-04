@@ -11,6 +11,8 @@ export interface Vehicle {
   priceLabel: string;
   imageSrc: string;
   imageAlt: string;
+  /** Optional gallery angles (primary is also `imageSrc`) */
+  images?: string[];
   status?: "available" | "reserved" | "sold";
   source?: "wcfg" | "adscars" | string;
   sourceUrl?: string;

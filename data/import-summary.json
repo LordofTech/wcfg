@@ -1,7 +1,7 @@
 {
-  "totalVehicles": 116,
-  "adscarsImported": 104,
-  "wcfgOriginals": 12,
+  "totalVehicles": 118,
+  "adscarsImported": 105,
+  "wcfgOriginals": 13,
   "brands": [
     "Mercedes-Benz",
     "Ferrari",
@@ -37,5 +37,5 @@
   ],
   "brandCount": 31,
   "imageStrategy": "local-webp",
-  "localImageBytes": 2631602
+  "localImageBytes": 2658186
 }

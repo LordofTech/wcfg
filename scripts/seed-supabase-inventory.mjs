@@ -47,22 +47,26 @@ const inventory = JSON.parse(
   readFileSync(path.join(root, "data", "inventory.json"), "utf8")
 );
 
-const rows = inventory.map((v) => ({
-  id: v.id,
-  brand: v.brand,
-  brand_slug: v.brandSlug,
-  model: v.model,
-  year: v.year,
-  highlight: v.highlight,
-  price_label: v.priceLabel,
-  image_src: v.imageSrc,
-  image_alt: v.imageAlt,
-  status: v.status || "available",
-  source: v.source || "wcfg",
-  source_url: v.sourceUrl || null,
-  mileage: v.mileage || null,
-  vin: v.vin || null,
-}));
+function toRow(v, includeFeatured) {
+  const row = {
+    id: v.id,
+    brand: v.brand,
+    brand_slug: v.brandSlug,
+    model: v.model,
+    year: v.year,
+    highlight: v.highlight,
+    price_label: v.priceLabel,
+    image_src: v.imageSrc,
+    image_alt: v.imageAlt,
+    status: v.status || "available",
+    source: v.source || "wcfg",
+    source_url: v.sourceUrl || null,
+    mileage: v.mileage || null,
+    vin: v.vin || null,
+  };
+  if (includeFeatured) row.featured = v.featured === true;
+  return row;
+}
 
 const supabase = createClient(url, serviceKey, {
   auth: { persistSession: false, autoRefreshToken: false },
@@ -74,12 +78,15 @@ alter table public.vehicles
   add column if not exists source text not null default 'wcfg',
   add column if not exists source_url text,
   add column if not exists mileage text,
-  add column if not exists vin text;
+  add column if not exists vin text,
+  add column if not exists featured boolean not null default false;
 `;
 
 const token = process.env.SUPABASE_ACCESS_TOKEN?.trim();
 const projectRef =
   process.env.SUPABASE_PROJECT_REF?.trim() || "tzbdmrbpxvqhplpuquts";
+
+let hasFeaturedColumn = true;
 
 if (token) {
   const alterRes = await fetch(
@@ -98,18 +105,35 @@ if (token) {
   console.log("Skipping alter (SUPABASE_ACCESS_TOKEN not set); upserting rows only.");
 }
 
-const batchSize = 50;
-for (let i = 0; i < rows.length; i += batchSize) {
-  const batch = rows.slice(i, i + batchSize);
-  const { error } = await supabase.from("vehicles").upsert(batch, {
-    onConflict: "id",
-  });
-  if (error) {
-    console.error("Upsert failed", error);
-    process.exit(1);
+async function upsertAll(includeFeatured) {
+  const rows = inventory.map((v) => toRow(v, includeFeatured));
+  const batchSize = 50;
+  for (let i = 0; i < rows.length; i += batchSize) {
+    const batch = rows.slice(i, i + batchSize);
+    const { error } = await supabase.from("vehicles").upsert(batch, {
+      onConflict: "id",
+    });
+    if (error) return error;
+    console.log(`Upserted ${Math.min(i + batchSize, rows.length)}/${rows.length}`);
   }
-  console.log(`Upserted ${Math.min(i + batchSize, rows.length)}/${rows.length}`);
+  return null;
 }
+
+let error = await upsertAll(true);
+if (error?.message?.includes("featured")) {
+  console.warn("featured column missing; retrying upsert without featured.");
+  hasFeaturedColumn = false;
+  error = await upsertAll(false);
+}
+if (error) {
+  console.error("Upsert failed", error);
+  process.exit(1);
+}
+console.log(
+  hasFeaturedColumn
+    ? "Seeded with featured flags."
+    : "Seeded without featured column (local inventory still marks featured ZR1)."
+);
 
 const { count, error: countError } = await supabase
   .from("vehicles")

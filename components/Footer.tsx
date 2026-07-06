@@ -90,7 +90,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/#experience" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
+              <a href="/#inventory" className="transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light">
                 The WCFG Experience
               </a>
             </li>

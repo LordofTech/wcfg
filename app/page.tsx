@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import BrandShowcase from "@/components/BrandShowcase";
 import FeaturedInStock from "@/components/FeaturedInStock";
 import InventoryGrid from "@/components/InventoryGrid";
 import WhyWCFG from "@/components/WhyWCFG";
@@ -14,7 +13,6 @@ export default function Home() {
       <main className="flex flex-1 flex-col">
         <Hero />
         <FeaturedInStock />
-        <BrandShowcase />
         <InventoryGrid />
         <WhyWCFG />
         <ConsultationForm />

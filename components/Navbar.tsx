@@ -9,7 +9,7 @@ import { luxuryEase } from "@/lib/motion";
 const NAV_LINKS = [
   { label: "Curated Inventory", href: "/inventory" },
   { label: "Premium Services", href: "/#services" },
-  { label: "The WCFG Experience", href: "/#experience" },
+  { label: "The WCFG Experience", href: "/#inventory" },
   { label: "Portal Login", href: "/portal" },
 ] as const;
 

@@ -1,8 +1,8 @@
 import { Mail, Globe, MapPin, Phone } from "lucide-react";
 import {
-  CONTACT_EMAIL,
   CONTACT_PHONE_DISPLAY,
   CONTACT_WEBSITE,
+  FOOTER_CONTACT_EMAILS,
   mailtoHref,
   telHref,
 } from "@/lib/contact";
@@ -31,15 +31,17 @@ export default function Footer() {
           </p>
           <div className="divider-gold mt-3 mb-6 w-16" />
           <ul className="space-y-4 font-sans text-sm font-light text-ivory/90">
-            <li>
-              <a
-                href={mailtoHref()}
-                className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
-              >
-                <Mail size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
-                {CONTACT_EMAIL}
-              </a>
-            </li>
+            {FOOTER_CONTACT_EMAILS.map((entry) => (
+              <li key={entry.mailto}>
+                <a
+                  href={mailtoHref(undefined, undefined, entry.mailto)}
+                  className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
+                >
+                  <Mail size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
+                  {entry.display}
+                </a>
+              </li>
+            ))}
             <li>
               <a
                 href={CONTACT_WEBSITE}

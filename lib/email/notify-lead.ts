@@ -1,7 +1,8 @@
 import nodemailer from "nodemailer";
+import { CONTACT_EMAIL_PRIMARY } from "@/lib/contact";
 import type { ConsultationLeadInput } from "@/lib/consultation";
 
-const DEFAULT_NOTIFY_EMAIL = "jamail@wcfgbizbrokers.com";
+const DEFAULT_NOTIFY_EMAIL = CONTACT_EMAIL_PRIMARY;
 const DEFAULT_SMTP_HOST = "smtp.gmail.com";
 const DEFAULT_SMTP_PORT = 587;
 

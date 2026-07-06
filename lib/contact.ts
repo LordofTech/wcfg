@@ -25,7 +25,6 @@ export const FOOTER_CONTACT_EMAILS = [
 
 export const CONTACT_PHONE_DISPLAY = "+1 (832) 566-7163";
 export const CONTACT_PHONE_TEL = "tel:+18325667163";
-export const CONTACT_WEBSITE = "https://www.wcfgbrokers.com";
 
 export const telHref = CONTACT_PHONE_TEL;
 

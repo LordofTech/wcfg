@@ -31,12 +31,34 @@ const PRODUCT_MAP = [
       "corvette-zr1-coupe-3lz-black-side.webp",
       "corvette-zr1-coupe-3lz-black-2.webp",
       "corvette-zr1-coupe-3lz-black-3.webp",
+      "corvette-zr1-coupe-3lz-black-4.webp",
+      "corvette-zr1-coupe-3lz-black-5.webp",
+      "corvette-zr1-coupe-3lz-black-6.webp",
+      "corvette-zr1-coupe-3lz-black-7.webp",
+      "corvette-zr1-coupe-3lz-black-8.webp",
+      "corvette-zr1-coupe-3lz-black-9.webp",
+      "corvette-zr1-coupe-3lz-black-10.webp",
+      "corvette-zr1-coupe-3lz-black-11.webp",
+      "corvette-zr1-coupe-3lz-black-12.webp",
+      "corvette-zr1-coupe-3lz-black-13.webp",
+      "corvette-zr1-coupe-3lz-black-14.webp",
     ],
     sources: [
       "WhatsApp Image 2026-07-03 at 10.49.511.jpeg", // front hero
       "WhatsApp Image 2026-07-03 at 10.49.51.jpeg", // rear 3/4
       "WhatsApp Image 2026-07-03 at 10.49.5112.jpeg", // rear
       "WhatsApp Image 2026-07-03 at 10.49.50.jpeg", // interior
+      "WhatsApp Image 2026-07-03 at 23.33.55.jpeg", // interior cockpit
+      "WhatsApp Image 2026-07-03 at 23.33.55 (1).jpeg", // passenger interior
+      "WhatsApp Image 2026-07-03 at 23.33.55 (2).jpeg", // driver interior
+      "WhatsApp Image 2026-07-03 at 23.33.55 (3).jpeg", // carbon detail
+      "WhatsApp Image 2026-07-03 at 23.33.55 (4).jpeg", // rear
+      "WhatsApp Image 2026-07-03 at 23.33.55 (5).jpeg", // rear 3/4
+      "WhatsApp Image 2026-07-03 at 23.33.55 (6).jpeg", // rear 3/4 alt
+      "WhatsApp Image 2026-07-03 at 23.33.56.jpeg", // rear straight
+      "WhatsApp Image 2026-07-03 at 23.33.56 (1).jpeg", // interior sill
+      "WhatsApp Image 2026-07-03 at 23.33.56 (2).jpeg", // front
+      "WhatsApp Image 2026-07-03 at 23.33.56 (3).jpeg", // front alt
     ],
   },
   {

@@ -11,6 +11,7 @@ import {
 } from "@/lib/contact";
 import { getFeaturedVehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
+import { priceLabelClassName } from "@/lib/price-label";
 
 const vehicle = getFeaturedVehicle();
 
@@ -98,7 +99,9 @@ export default function FeaturedInStock() {
 
               <p className="font-sans text-sm font-light text-mist">
                 Pricing:{" "}
-                <span className="text-ivory">{vehicle.priceLabel}</span>
+                <span className={priceLabelClassName(vehicle.priceLabel)}>
+                  {vehicle.priceLabel}
+                </span>
               </p>
 
               <div className="grid gap-3 sm:grid-cols-2">

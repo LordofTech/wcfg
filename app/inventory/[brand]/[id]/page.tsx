@@ -12,6 +12,7 @@ import {
 } from "@/lib/contact";
 import { inventory } from "@/lib/inventory";
 import { getVehicleById } from "@/lib/inventory-service";
+import { priceLabelClassName } from "@/lib/price-label";
 
 interface VehicleDetailPageProps {
   params: Promise<{ brand: string; id: string }>;
@@ -117,7 +118,9 @@ export default async function VehicleDetailPage({
 
               <p className="mt-8 font-sans text-sm font-light text-mist">
                 Pricing:{" "}
-                <span className="text-ivory">{vehicle.priceLabel}</span>
+                <span className={priceLabelClassName(vehicle.priceLabel)}>
+                  {vehicle.priceLabel}
+                </span>
               </p>
               <p className="mt-2 font-sans text-xs font-light text-mist/80">
                 Reference ID: {vehicle.id}

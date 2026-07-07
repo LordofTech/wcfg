@@ -11,6 +11,7 @@ import {
 } from "@/lib/contact";
 import type { Vehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
+import { priceLabelClassName } from "@/lib/price-label";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -113,7 +114,7 @@ export default function VehicleCard({
         </div>
 
         <div className="flex items-center justify-between gap-3 border-t border-gold-light/10 pt-4">
-          <p className="font-sans text-xs font-light text-mist">{vehicle.priceLabel}</p>
+          <p className={priceLabelClassName(vehicle.priceLabel)}>{vehicle.priceLabel}</p>
           {showDetailLink ? (
             <Link
               href={detailHref}

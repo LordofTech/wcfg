@@ -80,7 +80,7 @@ const PRODUCT_MAP = [
       highlight: "Black exterior · Light interior · Available now",
       priceLabel: "Call for Price",
       status: "available",
-      source: "wcfg",
+      source: "listings",
     },
     sources: [
       "WhatsApp Image 2026-07-03 at 23.47.46 (1).jpeg",
@@ -190,7 +190,7 @@ const PRODUCT_MAP = [
       highlight: "Yellow exterior · Mid-engine V8 · Available now",
       priceLabel: "Call for Price",
       status: "available",
-      source: "wcfg",
+      source: "listings",
     },
     sources: [
       "WhatsApp Image 2026-07-03 at 23.47.59.jpeg",
@@ -208,7 +208,7 @@ const PRODUCT_MAP = [
       highlight: "Teal exterior · Carbon accents · Available now",
       priceLabel: "Call for Price",
       status: "available",
-      source: "wcfg",
+      source: "listings",
     },
     sources: [
       "WhatsApp Image 2026-07-03 at 23.47.59 (2).jpeg",

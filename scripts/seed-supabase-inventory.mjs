@@ -119,6 +119,33 @@ async function upsertAll(includeFeatured) {
   return null;
 }
 
+async function removeStaleRows() {
+  const keepIds = new Set(inventory.map((v) => v.id));
+  const { data: existing, error: fetchError } = await supabase
+    .from("vehicles")
+    .select("id");
+
+  if (fetchError) return fetchError;
+
+  const staleIds = (existing ?? [])
+    .map((row) => row.id)
+    .filter((id) => !keepIds.has(id));
+
+  if (staleIds.length === 0) {
+    console.log("No stale vehicles to remove.");
+    return null;
+  }
+
+  const { error: deleteError } = await supabase
+    .from("vehicles")
+    .delete()
+    .in("id", staleIds);
+
+  if (deleteError) return deleteError;
+  console.log(`Removed ${staleIds.length} stale vehicle(s):`, staleIds.join(", "));
+  return null;
+}
+
 let error = await upsertAll(true);
 if (error?.message?.includes("featured")) {
   console.warn("featured column missing; retrying upsert without featured.");
@@ -127,6 +154,12 @@ if (error?.message?.includes("featured")) {
 }
 if (error) {
   console.error("Upsert failed", error);
+  process.exit(1);
+}
+
+error = await removeStaleRows();
+if (error) {
+  console.error("Stale removal failed", error);
   process.exit(1);
 }
 console.log(

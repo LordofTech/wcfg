@@ -14,11 +14,11 @@ export interface Vehicle {
   /** Optional gallery angles (primary is also `imageSrc`) */
   images?: string[];
   status?: "available" | "reserved" | "sold";
-  source?: "wcfg" | "adscars" | string;
+  source?: "adscars" | "listings" | string;
   sourceUrl?: string;
   mileage?: string;
   vin?: string;
-  /** Promoted “Featured In Stock” unit, shown first on homepage and listings */
+  /** Promoted “Featured In Stock” unit — shown first on homepage and listings */
   featured?: boolean;
 }
 
@@ -27,7 +27,7 @@ function normalize(vehicle: Vehicle): Vehicle {
     ...vehicle,
     brandSlug: vehicle.brandSlug || marqueToSlug(vehicle.brand),
     status: vehicle.status ?? "available",
-    source: vehicle.source ?? "wcfg",
+    source: vehicle.source ?? "adscars",
     featured: vehicle.featured === true,
   };
 }
@@ -140,11 +140,11 @@ export function getFeaturedVehicle(): Vehicle | null {
 
 export function getFeaturedInventory(limit = 9): Vehicle[] {
   const spotlight = inventory.filter((vehicle) => vehicle.featured);
-  const curated = inventory.filter(
-    (vehicle) => vehicle.source === "wcfg" && !vehicle.featured
+  const listings = inventory.filter(
+    (vehicle) => vehicle.source === "listings" && !vehicle.featured
   );
   const rest = inventory.filter(
-    (vehicle) => vehicle.source !== "wcfg" && !vehicle.featured
+    (vehicle) => vehicle.source !== "listings" && !vehicle.featured
   );
-  return [...spotlight, ...curated, ...rest].slice(0, limit);
+  return [...spotlight, ...listings, ...rest].slice(0, limit);
 }

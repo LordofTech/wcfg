@@ -69,8 +69,11 @@ const BRAND_ACCENTS = {
 
 const DEFAULT_ACCENT = "from-gold-light/25 via-zinc-700/15 to-transparent";
 
-/** Original WCFG showcase units (kept alongside imported stock). */
-const WCFG_ORIGINALS = [
+/**
+ * WCFG units backed by car listings folder photos (not generic internet placeholders).
+ * Adscars stock with listing photo overlays is kept via adscars import + apply-car-listings.
+ */
+const WCFG_LISTINGS_UNITS = [
   {
     id: "corvette-zr1-coupe-3lz-black",
     brand: "Corvette",
@@ -80,117 +83,8 @@ const WCFG_ORIGINALS = [
     priceLabel: "Call for Price",
     imageSrc: "/vehicles/corvette-zr1-coupe-3lz-black.webp",
     imageAlt: "New 2025 Chevrolet Corvette ZR1 Coupe 3LZ in black",
-    images: [
-      "/vehicles/corvette-zr1-coupe-3lz-black.webp",
-      "/vehicles/corvette-zr1-coupe-3lz-black-side.webp",
-      "/vehicles/corvette-zr1-coupe-3lz-black-2.webp",
-      "/vehicles/corvette-zr1-coupe-3lz-black-3.webp",
-    ],
-    source: "wcfg",
+    source: "listings",
     featured: true,
-  },
-  {
-    id: "rr-cullinan-2024",
-    brand: "Rolls-Royce",
-    model: "Cullinan Black Badge",
-    year: 2024,
-    highlight: "Bespoke interior · Night-ready presence",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/listings/rr-cullinan-2024.webp",
-    imageAlt: "Rolls-Royce Cullinan Black Badge matte black with white interior",
-    images: [
-      "/vehicles/listings/rr-cullinan-2024.webp",
-      "/vehicles/listings/rr-cullinan-2024-2.webp",
-      "/vehicles/listings/rr-cullinan-2024-3.webp",
-    ],
-    source: "wcfg",
-  },
-  {
-    id: "ferrari-296-gtb",
-    brand: "Ferrari",
-    model: "296 GTB",
-    year: 2024,
-    highlight: "Plug-in hybrid V6 · Track-bred elegance",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/ferrari-296-gtb.webp",
-    imageAlt: "Ferrari 296 GTB sports car",
-    source: "wcfg",
-  },
-  {
-    id: "lambo-urus-se",
-    brand: "Lamborghini",
-    model: "Urus SE",
-    year: 2025,
-    highlight: "Hybrid performance SUV · Off-market allocation",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/lambo-urus-se.webp",
-    imageAlt: "Lamborghini Urus SE performance SUV",
-    source: "wcfg",
-  },
-  {
-    id: "mb-g63-2024",
-    brand: "Mercedes-Benz",
-    model: "G 63 AMG",
-    year: 2024,
-    highlight: "Manufaktur package · Iconic silhouette",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/listings/mb-g63-2024.webp",
-    imageAlt: "White Mercedes-Benz G 63 AMG with red interior and bull bar",
-    images: [
-      "/vehicles/listings/mb-g63-2024.webp",
-      "/vehicles/listings/mb-g63-2024-2.webp",
-      "/vehicles/listings/mb-g63-2024-3.webp",
-      "/vehicles/listings/mb-g63-2024-4.webp",
-    ],
-    source: "wcfg",
-  },
-  {
-    id: "porsche-911-turbo-s",
-    brand: "Porsche",
-    model: "911 Turbo S",
-    year: 2024,
-    highlight: "Sport Chrono · Precision engineering",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/porsche-911-turbo-s.webp",
-    imageAlt: "Porsche 911 Turbo S sports car",
-    source: "wcfg",
-  },
-  {
-    id: "bentley-continental-gt",
-    brand: "Bentley",
-    model: "Continental GT Speed",
-    year: 2024,
-    highlight: "Mulliner appointments · Grand tourer",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/bentley-continental-gt.webp",
-    imageAlt: "Bentley Continental GT Speed grand tourer",
-    source: "wcfg",
-  },
-  {
-    id: "corvette-z06",
-    brand: "Corvette",
-    model: "Z06 3LZ",
-    year: 2024,
-    highlight: "Flat-plane V8 · American exotic",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/corvette-z06.webp",
-    imageAlt: "Chevrolet Corvette Z06 sports car",
-    source: "wcfg",
-  },
-  {
-    id: "rr-ghost-2023",
-    brand: "Rolls-Royce",
-    model: "Ghost Extended",
-    year: 2023,
-    highlight: "Starlight headliner · Whisper-quiet cabin",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/listings/rr-ghost-2023.webp",
-    imageAlt: "Rolls-Royce Ghost two-tone silver and black",
-    images: [
-      "/vehicles/listings/rr-ghost-2023.webp",
-      "/vehicles/listings/rr-ghost-2023-2.webp",
-    ],
-    source: "wcfg",
   },
   {
     id: "cadillac-escalade-black",
@@ -201,11 +95,7 @@ const WCFG_ORIGINALS = [
     priceLabel: "Call for Price",
     imageSrc: "/vehicles/listings/cadillac-escalade-black.webp",
     imageAlt: "Black Cadillac Escalade with light interior",
-    images: [
-      "/vehicles/listings/cadillac-escalade-black.webp",
-      "/vehicles/listings/cadillac-escalade-black-2.webp",
-    ],
-    source: "wcfg",
+    source: "listings",
   },
   {
     id: "ferrari-f8-tributo-yellow",
@@ -216,11 +106,7 @@ const WCFG_ORIGINALS = [
     priceLabel: "Call for Price",
     imageSrc: "/vehicles/listings/ferrari-f8-tributo-yellow.webp",
     imageAlt: "Ferrari F8 Tributo in yellow",
-    images: [
-      "/vehicles/listings/ferrari-f8-tributo-yellow.webp",
-      "/vehicles/listings/ferrari-f8-tributo-yellow-2.webp",
-    ],
-    source: "wcfg",
+    source: "listings",
   },
   {
     id: "aston-martin-vantage-teal",
@@ -231,55 +117,40 @@ const WCFG_ORIGINALS = [
     priceLabel: "Call for Price",
     imageSrc: "/vehicles/listings/aston-martin-vantage-teal.webp",
     imageAlt: "Aston Martin Vantage coupe in teal",
-    images: [
-      "/vehicles/listings/aston-martin-vantage-teal.webp",
-      "/vehicles/listings/aston-martin-vantage-teal-2.webp",
-    ],
-    source: "wcfg",
+    source: "listings",
   },
   {
-    id: "ferrari-roma",
-    brand: "Ferrari",
-    model: "Roma Spider",
-    year: 2024,
-    highlight: "Open-air grand touring · Timeless lines",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/ferrari-roma.webp",
-    imageAlt: "Ferrari Roma Spider convertible",
-    source: "wcfg",
-  },
-  {
-    id: "mb-s580",
+    id: "mb-g63-2024",
     brand: "Mercedes-Benz",
-    model: "S 580 4MATIC",
+    model: "G 63 AMG",
     year: 2024,
-    highlight: "Executive rear suite · Flagship comfort",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/mb-s580.webp",
-    imageAlt: "Mercedes-Benz S-Class luxury sedan",
-    source: "wcfg",
+    highlight: "White exterior · Red interior · Bull bar · Available now",
+    priceLabel: "Call for Price",
+    imageSrc: "/vehicles/listings/mb-g63-2024.webp",
+    imageAlt: "White Mercedes-Benz G 63 AMG with red interior and bull bar",
+    source: "listings",
   },
   {
-    id: "lambo-huracan-sterrato",
-    brand: "Lamborghini",
-    model: "Huracán Sterrato",
+    id: "rr-ghost-2023",
+    brand: "Rolls-Royce",
+    model: "Ghost Extended",
     year: 2023,
-    highlight: "Rally-bred supercar · Limited production",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/lambo-huracan-sterrato.webp",
-    imageAlt: "Lamborghini Huracán Sterrato supercar",
-    source: "wcfg",
+    highlight: "Two-tone silver and black · Starlight headliner",
+    priceLabel: "Call for Price",
+    imageSrc: "/vehicles/listings/rr-ghost-2023.webp",
+    imageAlt: "Rolls-Royce Ghost two-tone silver and black",
+    source: "listings",
   },
   {
-    id: "porsche-cayenne-turbo-gt",
-    brand: "Porsche",
-    model: "Cayenne Turbo GT",
+    id: "rr-cullinan-2024",
+    brand: "Rolls-Royce",
+    model: "Cullinan Black Badge",
     year: 2024,
-    highlight: "Track-tuned SUV · Uncompromising pace",
-    priceLabel: "Upon Inquiry",
-    imageSrc: "/vehicles/porsche-cayenne-turbo-gt.webp",
-    imageAlt: "Porsche Cayenne Turbo GT performance SUV",
-    source: "wcfg",
+    highlight: "Matte black · White interior · Bespoke presence",
+    priceLabel: "Call for Price",
+    imageSrc: "/vehicles/listings/rr-cullinan-2024.webp",
+    imageAlt: "Rolls-Royce Cullinan Black Badge matte black with white interior",
+    source: "listings",
   },
 ];
 
@@ -537,7 +408,7 @@ function enrichVehicle(vehicle) {
     ...vehicle,
     brandSlug: vehicle.brandSlug || slugify(vehicle.brand),
     status: vehicle.status || "available",
-    source: vehicle.source || "wcfg",
+    source: vehicle.source || "listings",
     featured: vehicle.featured === true,
   };
 }
@@ -625,12 +496,12 @@ export interface Vehicle {
   priceLabel: string;
   imageSrc: string;
   imageAlt: string;
+  images?: string[];
   status?: "available" | "reserved" | "sold";
-  source?: "wcfg" | "adscars" | string;
+  source?: "adscars" | "listings" | string;
   sourceUrl?: string;
   mileage?: string;
   vin?: string;
-  /** Promoted “Featured In Stock” unit — shown first on homepage and listings */
   featured?: boolean;
 }
 
@@ -639,21 +510,94 @@ function normalize(vehicle: Vehicle): Vehicle {
     ...vehicle,
     brandSlug: vehicle.brandSlug || marqueToSlug(vehicle.brand),
     status: vehicle.status ?? "available",
-    source: vehicle.source ?? "wcfg",
+    source: vehicle.source ?? "adscars",
     featured: vehicle.featured === true,
   };
 }
 
-/** Featured units first, then WCFG curated, then remaining stock. */
 export function sortInventory(vehicles: Vehicle[]): Vehicle[] {
   return [...vehicles].sort((a, b) => {
     const featuredDelta = Number(b.featured) - Number(a.featured);
     if (featuredDelta !== 0) return featuredDelta;
-    const wcfgDelta =
-      Number(b.source === "wcfg") - Number(a.source === "wcfg");
-    if (wcfgDelta !== 0) return wcfgDelta;
-    return b.year - a.year;
+    if (b.year !== a.year) return b.year - a.year;
+    const brandDelta = a.brand.localeCompare(b.brand, undefined, {
+      sensitivity: "base",
+    });
+    if (brandDelta !== 0) return brandDelta;
+    return a.model.localeCompare(b.model, undefined, { sensitivity: "base" });
   });
+}
+
+export interface InventoryFilterState {
+  manufacturer: string;
+  model: string;
+  year: string;
+}
+
+export function filterInventory(
+  vehicles: Vehicle[],
+  filters: InventoryFilterState
+): Vehicle[] {
+  return vehicles.filter((vehicle) => {
+    if (filters.manufacturer && vehicle.brandSlug !== filters.manufacturer) {
+      return false;
+    }
+    if (
+      filters.model &&
+      vehicle.model.toLowerCase() !== filters.model.toLowerCase()
+    ) {
+      return false;
+    }
+    if (filters.year && String(vehicle.year) !== filters.year) {
+      return false;
+    }
+    return true;
+  });
+}
+
+export function getManufacturerOptions(
+  vehicles: Vehicle[]
+): { slug: string; name: string }[] {
+  const bySlug = new Map<string, string>();
+  for (const vehicle of vehicles) {
+    if (!bySlug.has(vehicle.brandSlug)) {
+      bySlug.set(vehicle.brandSlug, vehicle.brand);
+    }
+  }
+  return [...bySlug.entries()]
+    .map(([slug, name]) => ({ slug, name }))
+    .sort((a, b) =>
+      a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+    );
+}
+
+export function getModelOptions(
+  vehicles: Vehicle[],
+  manufacturerSlug?: string
+): string[] {
+  const pool = manufacturerSlug
+    ? vehicles.filter((vehicle) => vehicle.brandSlug === manufacturerSlug)
+    : vehicles;
+  return [...new Set(pool.map((vehicle) => vehicle.model))].sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
+}
+
+export function getYearOptions(
+  vehicles: Vehicle[],
+  manufacturerSlug?: string,
+  model?: string
+): number[] {
+  let pool = vehicles;
+  if (manufacturerSlug) {
+    pool = pool.filter((vehicle) => vehicle.brandSlug === manufacturerSlug);
+  }
+  if (model) {
+    pool = pool.filter(
+      (vehicle) => vehicle.model.toLowerCase() === model.toLowerCase()
+    );
+  }
+  return [...new Set(pool.map((vehicle) => vehicle.year))].sort((a, b) => b - a);
 }
 
 export const inventory: Vehicle[] = sortInventory(
@@ -675,13 +619,13 @@ export function getFeaturedVehicle(): Vehicle | null {
 
 export function getFeaturedInventory(limit = 9): Vehicle[] {
   const spotlight = inventory.filter((vehicle) => vehicle.featured);
-  const curated = inventory.filter(
-    (vehicle) => vehicle.source === "wcfg" && !vehicle.featured
+  const listings = inventory.filter(
+    (vehicle) => vehicle.source === "listings" && !vehicle.featured
   );
   const rest = inventory.filter(
-    (vehicle) => vehicle.source !== "wcfg" && !vehicle.featured
+    (vehicle) => vehicle.source !== "listings" && !vehicle.featured
   );
-  return [...spotlight, ...curated, ...rest].slice(0, limit);
+  return [...spotlight, ...listings, ...rest].slice(0, limit);
 }
 `;
 }
@@ -701,7 +645,7 @@ async function writeSupabaseSeed(vehicles) {
     '${esc(v.imageSrc)}',
     '${esc(v.imageAlt)}',
     '${esc(v.status || "available")}',
-    '${esc(v.source || "wcfg")}',
+    '${esc(v.source || "adscars")}',
     ${v.sourceUrl ? `'${esc(v.sourceUrl)}'` : "null"},
     ${v.mileage ? `'${esc(v.mileage)}'` : "null"},
     ${v.vin ? `'${esc(v.vin)}'` : "null"},
@@ -805,7 +749,7 @@ async function main() {
     }
   }
 
-  const originals = WCFG_ORIGINALS.map(enrichVehicle);
+  const originals = WCFG_LISTINGS_UNITS.map(enrichVehicle);
   const adscars = imported.map((v) => {
     const { remoteImageSrc, ...rest } = v;
     return enrichVehicle(rest);
@@ -864,7 +808,7 @@ async function main() {
   const summary = {
     totalVehicles: inventory.length,
     adscarsImported: adscars.length,
-    wcfgOriginals: originals.length,
+    listingsUnits: originals.length,
     brands: brands.map((b) => b.name),
     brandCount: brands.length,
     imageStrategy,

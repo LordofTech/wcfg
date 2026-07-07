@@ -1,6 +1,8 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Globe, Mail, MapPin, Phone } from "lucide-react";
 import {
   CONTACT_PHONE_DISPLAY,
+  CONTACT_WEBSITE,
+  CONTACT_WEBSITE_DISPLAY,
   FOOTER_CONTACT_EMAILS,
   mailtoHref,
   telHref,
@@ -41,6 +43,17 @@ export default function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={CONTACT_WEBSITE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
+              >
+                <Globe size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
+                {CONTACT_WEBSITE_DISPLAY}
+              </a>
+            </li>
             <li>
               <a
                 href={telHref}

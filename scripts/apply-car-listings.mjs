@@ -23,7 +23,7 @@ const manifestPath = path.join(vehiclesDir, "LISTINGS-MAP.json");
 const PRODUCT_MAP = [
   {
     productId: "corvette-zr1-coupe-3lz-black",
-    imageAlt: "New 2025 Chevrolet Corvette ZR1 Coupe 3LZ in black",
+    imageAlt: "New 2026 Chevrolet Corvette ZR1 Coupe 3LZ in black",
     outDir: vehiclesDir,
     publicBase: "/vehicles",
     names: [

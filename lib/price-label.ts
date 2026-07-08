@@ -5,6 +5,6 @@ export function isListedPrice(priceLabel: string): boolean {
 
 export function priceLabelClassName(priceLabel: string): string {
   return isListedPrice(priceLabel)
-    ? "font-display text-lg font-medium tracking-wide text-gold-light"
-    : "font-sans text-sm font-medium uppercase tracking-luxury text-gold-light/90";
+    ? "font-display text-2xl font-bold tracking-wide text-gold-light sm:text-3xl"
+    : "font-sans text-base font-bold uppercase tracking-luxury text-gold-light sm:text-lg";
 }

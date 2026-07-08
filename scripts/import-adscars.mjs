@@ -21,6 +21,7 @@ const USER_AGENT =
 const args = new Set(process.argv.slice(2));
 const forceRemote = args.has("--remote-images");
 const skipImages = args.has("--skip-images");
+const refreshImages = args.has("--refresh-images");
 
 /** Canonical brand display names and slugs */
 const BRAND_ALIASES = {
@@ -210,13 +211,30 @@ function upgradeImageUrl(url) {
   return url.replace(/\/\d+x\d+\//, "/640x640/");
 }
 
+/** Adscars / Autorevo listing id from detail URL or `adscars-{id}` vehicle id. */
+function extractListingId(sourceUrl, vehicleId) {
+  if (sourceUrl) {
+    const fromUrl = sourceUrl.match(/\/(\d{5,})\/?(?:\?|#|$)/);
+    if (fromUrl) return fromUrl[1];
+  }
+  const fromId = vehicleId?.match(/^adscars-(\d+)$/);
+  return fromId ? fromId[1] : null;
+}
+
+/** Keep only gallery photos that belong to this listing (not similar inventory). */
+function imageBelongsToListing(url, listingId) {
+  if (!listingId || !url) return false;
+  return new RegExp(`-${listingId}(?:/|\\?)`).test(url);
+}
+
 /** Extract full-size gallery URLs from a vehicle detail page. */
-function parseVehicleGallery(html) {
+function parseVehicleGallery(html, listingId) {
   const urls = [...html.matchAll(/https:\/\/cf-img\.autorevo\.com\/[^"'\s)]+/gi)].map(
     (m) => m[0]
   );
   const byPhoto = new Map();
   for (const raw of urls) {
+    if (listingId && !imageBelongsToListing(raw, listingId)) continue;
     const idMatch = raw.match(/\/(\d+-\d+-revo\.jpg)/);
     if (!idMatch) continue;
     const photoId = idMatch[1];
@@ -232,10 +250,11 @@ function parseVehicleGallery(html) {
     .map(([, url]) => url);
 }
 
-async function fetchVehicleGallery(sourceUrl) {
+async function fetchVehicleGallery(sourceUrl, listingId) {
   try {
+    const stockId = listingId ?? extractListingId(sourceUrl);
     const html = await fetchHtml(sourceUrl);
-    const urls = parseVehicleGallery(html);
+    const urls = parseVehicleGallery(html, stockId);
     return urls.length > 0 ? urls : null;
   } catch (error) {
     console.warn(`Gallery fetch failed for ${sourceUrl}:`, error.message);
@@ -263,19 +282,36 @@ function applyBrandOverrides(vehicle) {
   return v;
 }
 
+async function removeStaleGalleryFiles(vehicleId, keepCount) {
+  const { readdir, unlink } = await import("node:fs/promises");
+  const names = await readdir(imageDir).catch(() => []);
+  for (const name of names) {
+    if (!name.endsWith(".webp")) continue;
+    if (name === `${vehicleId}.webp`) continue;
+    if (!name.startsWith(`${vehicleId}-`)) continue;
+    const index = Number(name.slice(vehicleId.length + 1, -".webp".length));
+    if (Number.isFinite(index) && index > keepCount) {
+      await unlink(path.join(imageDir, name)).catch(() => {});
+    }
+  }
+}
+
 async function downloadVehicleGallery(vehicle, useRemoteImages) {
+  const listingId = extractListingId(vehicle.sourceUrl, vehicle.id);
   const galleryUrls = vehicle.sourceUrl
-    ? await fetchVehicleGallery(vehicle.sourceUrl)
+    ? await fetchVehicleGallery(vehicle.sourceUrl, listingId)
     : null;
   const urls =
     galleryUrls && galleryUrls.length > 0
       ? galleryUrls
-      : vehicle.remoteImageSrc
+      : vehicle.remoteImageSrc &&
+          (!listingId || imageBelongsToListing(vehicle.remoteImageSrc, listingId))
         ? [vehicle.remoteImageSrc]
         : [];
 
   if (urls.length === 0) {
     vehicle.imageSrc = "";
+    vehicle.images = undefined;
     return;
   }
 
@@ -292,7 +328,7 @@ async function downloadVehicleGallery(vehicle, useRemoteImages) {
     }
 
     try {
-      if (!existsSync(dest)) {
+      if (refreshImages || !existsSync(dest)) {
         await downloadAsWebp(urls[i], dest);
         await sleep(60);
       }
@@ -303,10 +339,12 @@ async function downloadVehicleGallery(vehicle, useRemoteImages) {
     }
   }
 
-  vehicle.imageSrc = localPaths[0] || "";
-  if (localPaths.length > 1) {
-    vehicle.images = localPaths;
+  if (!useRemoteImages) {
+    await removeStaleGalleryFiles(vehicle.id, urls.length);
   }
+
+  vehicle.imageSrc = localPaths[0] || "";
+  vehicle.images = localPaths.length > 1 ? localPaths : undefined;
 }
 
 function decodeHtml(text) {

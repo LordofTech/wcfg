@@ -13,6 +13,7 @@ import {
 import { inventory } from "@/lib/inventory";
 import { getVehicleById } from "@/lib/inventory-service";
 import { priceLabelClassName } from "@/lib/price-label";
+import { yearLabelClassName } from "@/lib/year-label";
 
 interface VehicleDetailPageProps {
   params: Promise<{ brand: string; id: string }>;
@@ -98,7 +99,7 @@ export default async function VehicleDetailPage({
             />
 
             <div className="flex flex-col justify-center">
-              <p className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light">
+              <p className={`${yearLabelClassName} text-gold-light`}>
                 {vehicle.brand} · {vehicle.year}
               </p>
               <h1 className="mt-3 font-display text-4xl font-medium tracking-wide text-ivory md:text-5xl">

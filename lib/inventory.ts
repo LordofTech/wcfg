@@ -11,14 +11,12 @@ export interface Vehicle {
   priceLabel: string;
   imageSrc: string;
   imageAlt: string;
-  /** Optional gallery angles (primary is also `imageSrc`) */
   images?: string[];
   status?: "available" | "reserved" | "sold";
   source?: "adscars" | "listings" | string;
   sourceUrl?: string;
   mileage?: string;
   vin?: string;
-  /** Promoted “Featured In Stock” unit — shown first on homepage and listings */
   featured?: boolean;
 }
 
@@ -32,7 +30,6 @@ function normalize(vehicle: Vehicle): Vehicle {
   };
 }
 
-/** Featured units first, then year desc, then brand/model A-Z. */
 export function sortInventory(vehicles: Vehicle[]): Vehicle[] {
   return [...vehicles].sort((a, b) => {
     const featuredDelta = Number(b.featured) - Number(a.featured);
@@ -73,7 +70,6 @@ export function filterInventory(
   });
 }
 
-/** Unique manufacturers (slug + display name), sorted A-Z by name. */
 export function getManufacturerOptions(
   vehicles: Vehicle[]
 ): { slug: string; name: string }[] {
@@ -90,7 +86,6 @@ export function getManufacturerOptions(
     );
 }
 
-/** Unique models for the current manufacturer selection, sorted A-Z. */
 export function getModelOptions(
   vehicles: Vehicle[],
   manufacturerSlug?: string
@@ -103,7 +98,6 @@ export function getModelOptions(
   );
 }
 
-/** Unique years for the current manufacturer + model selection, newest first. */
 export function getYearOptions(
   vehicles: Vehicle[],
   manufacturerSlug?: string,

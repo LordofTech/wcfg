@@ -24,13 +24,7 @@ const BUDGET_RANGES = [
   "Flexible / Upon Advice",
 ] as const;
 
-const DELIVERY_LOCATIONS = [
-  "Lagos",
-  "Abuja",
-  "Port Harcourt",
-  "Other Nigeria",
-  "International",
-] as const;
+const DELIVERY_LOCATIONS = ["U.S", "International"] as const;
 
 interface FormData {
   fullName: string;

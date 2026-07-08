@@ -80,7 +80,7 @@ const WCFG_LISTINGS_UNITS = [
     model: "ZR1 Coupe 3LZ",
     year: 2026,
     highlight: "Available now · Black exterior · Twin-turbo LT7 · 1,064 hp",
-    priceLabel: "Call for Price",
+    priceLabel: "$315,000",
     imageSrc: "/vehicles/corvette-zr1-coupe-3lz-black.webp",
     imageAlt: "New 2026 Chevrolet Corvette ZR1 Coupe 3LZ in black",
     source: "listings",
@@ -208,6 +208,105 @@ function upgradeImageUrl(url) {
   if (!url) return null;
   // Prefer larger listing image when available
   return url.replace(/\/\d+x\d+\//, "/640x640/");
+}
+
+/** Extract full-size gallery URLs from a vehicle detail page. */
+function parseVehicleGallery(html) {
+  const urls = [...html.matchAll(/https:\/\/cf-img\.autorevo\.com\/[^"'\s)]+/gi)].map(
+    (m) => m[0]
+  );
+  const byPhoto = new Map();
+  for (const raw of urls) {
+    const idMatch = raw.match(/\/(\d+-\d+-revo\.jpg)/);
+    if (!idMatch) continue;
+    const photoId = idMatch[1];
+    const upgraded = upgradeImageUrl(raw);
+    if (!byPhoto.has(photoId)) byPhoto.set(photoId, upgraded);
+  }
+  return [...byPhoto.entries()]
+    .sort((a, b) => {
+      const ai = Number(a[0].split("-")[1]);
+      const bi = Number(b[0].split("-")[1]);
+      return ai - bi;
+    })
+    .map(([, url]) => url);
+}
+
+async function fetchVehicleGallery(sourceUrl) {
+  try {
+    const html = await fetchHtml(sourceUrl);
+    const urls = parseVehicleGallery(html);
+    return urls.length > 0 ? urls : null;
+  } catch (error) {
+    console.warn(`Gallery fetch failed for ${sourceUrl}:`, error.message);
+    return null;
+  }
+}
+
+function applyBrandOverrides(vehicle) {
+  let v = vehicle;
+  if (
+    v.brand === "Corvette" ||
+    v.brandSlug === "corvette" ||
+    /corvette/i.test(v.model)
+  ) {
+    v = { ...v, year: 2026, imageAlt: v.imageAlt?.replace(/\b20\d{2}\b/, "2026") ?? v.imageAlt };
+  }
+  if (v.id === "corvette-zr1-coupe-3lz-black") {
+    v = {
+      ...v,
+      year: 2026,
+      priceLabel: "$315,000",
+      imageAlt: "New 2026 Chevrolet Corvette ZR1 Coupe 3LZ in black",
+    };
+  }
+  return v;
+}
+
+async function downloadVehicleGallery(vehicle, useRemoteImages) {
+  const galleryUrls = vehicle.sourceUrl
+    ? await fetchVehicleGallery(vehicle.sourceUrl)
+    : null;
+  const urls =
+    galleryUrls && galleryUrls.length > 0
+      ? galleryUrls
+      : vehicle.remoteImageSrc
+        ? [vehicle.remoteImageSrc]
+        : [];
+
+  if (urls.length === 0) {
+    vehicle.imageSrc = "";
+    return;
+  }
+
+  const localPaths = [];
+  for (let i = 0; i < urls.length; i++) {
+    const suffix = i === 0 ? "" : `-${i + 1}`;
+    const filename = `${vehicle.id}${suffix}.webp`;
+    const dest = path.join(imageDir, filename);
+    const publicPath = `/vehicles/imported/${filename}`;
+
+    if (useRemoteImages) {
+      localPaths.push(upgradeImageUrl(urls[i]));
+      continue;
+    }
+
+    try {
+      if (!existsSync(dest)) {
+        await downloadAsWebp(urls[i], dest);
+        await sleep(60);
+      }
+      localPaths.push(publicPath);
+    } catch (error) {
+      console.warn(`Image ${i + 1} failed for ${vehicle.id}:`, error.message);
+      localPaths.push(upgradeImageUrl(urls[i]));
+    }
+  }
+
+  vehicle.imageSrc = localPaths[0] || "";
+  if (localPaths.length > 1) {
+    vehicle.images = localPaths;
+  }
 }
 
 function decodeHtml(text) {
@@ -702,24 +801,16 @@ async function main() {
   let imageStrategy = useRemoteImages ? "remote-cdn" : "local-webp";
 
   if (!useRemoteImages) {
-    console.log("Downloading images as WebP …");
+    console.log("Downloading vehicle galleries as WebP …");
     for (let i = 0; i < imported.length; i++) {
       const vehicle = imported[i];
-      const remote = vehicle.remoteImageSrc;
-      if (!remote) {
+      if (!vehicle.remoteImageSrc && !vehicle.sourceUrl) {
         vehicle.imageSrc = "";
         continue;
       }
 
-      const filename = `${vehicle.id}.webp`;
-      const dest = path.join(imageDir, filename);
-      const publicPath = `/vehicles/imported/${filename}`;
-
       try {
-        if (!existsSync(dest)) {
-          await downloadAsWebp(remote, dest);
-          await sleep(80);
-        }
+        await downloadVehicleGallery(vehicle, false);
         const localBytes = await dirSize(imageDir);
         if (localBytes > MAX_LOCAL_BYTES) {
           console.warn(
@@ -727,21 +818,20 @@ async function main() {
           );
           imageStrategy = "mixed-local-then-remote";
           useRemoteImages = true;
-          vehicle.imageSrc = remote;
-          for (let j = i + 1; j < imported.length; j++) {
-            imported[j].imageSrc = imported[j].remoteImageSrc || "";
+          for (let j = i; j < imported.length; j++) {
+            await downloadVehicleGallery(imported[j], true);
           }
           break;
         }
-        vehicle.imageSrc = publicPath;
       } catch (error) {
-        console.warn(`Image failed for ${vehicle.id}:`, error.message);
-        vehicle.imageSrc = remote;
+        console.warn(`Gallery failed for ${vehicle.id}:`, error.message);
+        vehicle.imageSrc = vehicle.remoteImageSrc || "";
       }
 
-      if ((i + 1) % 20 === 0) {
-        console.log(`  images ${i + 1}/${imported.length}`);
+      if ((i + 1) % 10 === 0) {
+        console.log(`  galleries ${i + 1}/${imported.length}`);
       }
+      await sleep(100);
     }
   } else {
     for (const vehicle of imported) {
@@ -749,10 +839,10 @@ async function main() {
     }
   }
 
-  const originals = WCFG_LISTINGS_UNITS.map(enrichVehicle);
+  const originals = WCFG_LISTINGS_UNITS.map(enrichVehicle).map(applyBrandOverrides);
   const adscars = imported.map((v) => {
     const { remoteImageSrc, ...rest } = v;
-    return enrichVehicle(rest);
+    return applyBrandOverrides(enrichVehicle(rest));
   });
 
   // Prefer originals first, then adscars (skip adscars that collide on id — none should)

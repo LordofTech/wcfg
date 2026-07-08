@@ -1,6 +1,6 @@
 {
-  "totalVehicles": 113,
-  "adscarsImported": 106,
+  "totalVehicles": 114,
+  "adscarsImported": 107,
   "listingsUnits": 7,
   "brands": [
     "Mercedes-Benz",
@@ -36,6 +36,6 @@
     "Toyota"
   ],
   "brandCount": 31,
-  "imageStrategy": "remote-cdn",
-  "localImageBytes": 2658186
+  "imageStrategy": "mixed-local-then-remote",
+  "localImageBytes": 52513188
 }

@@ -1,27 +1,20 @@
 import type { Vehicle } from "@/lib/inventory";
 
-/** Primary business inbox — vehicle CTAs, lead notifications, default mailto. */
-export const CONTACT_EMAIL_PRIMARY = "jay@wcfgluxauto.com";
+/** Single WCFG contact inbox — Gmail. */
+export const CONTACT_EMAIL = "Jay.luxeauto@gmail.com";
 
-/** Secondary Gmail inbox — shown as an alternative in the footer. */
-export const CONTACT_EMAIL_SECONDARY = "Jay.luxeauto@gmail.com";
+/** mailto target (normalized casing). */
+export const CONTACT_EMAIL_MAILTO = "jay.luxeauto@gmail.com";
 
-/** mailto target for the secondary address (normalized casing). */
-export const CONTACT_EMAIL_SECONDARY_MAILTO = "jay.luxeauto@gmail.com";
+/** @deprecated Use CONTACT_EMAIL_MAILTO — kept for older imports. */
+export const CONTACT_EMAIL_PRIMARY = CONTACT_EMAIL_MAILTO;
 
-/** @deprecated Use CONTACT_EMAIL_PRIMARY — kept for imports that expect a single email. */
-export const CONTACT_EMAIL = CONTACT_EMAIL_PRIMARY;
+export const FOOTER_CONTACT_EMAIL = {
+  display: CONTACT_EMAIL,
+  mailto: CONTACT_EMAIL_MAILTO,
+} as const;
 
-export const FOOTER_CONTACT_EMAILS = [
-  {
-    display: CONTACT_EMAIL_PRIMARY,
-    mailto: CONTACT_EMAIL_PRIMARY,
-  },
-  {
-    display: CONTACT_EMAIL_SECONDARY,
-    mailto: CONTACT_EMAIL_SECONDARY_MAILTO,
-  },
-] as const;
+export const FOOTER_CONTACT_EMAILS = [FOOTER_CONTACT_EMAIL] as const;
 
 export const CONTACT_PHONE_DISPLAY = "+1 (832) 566-7163";
 export const CONTACT_PHONE_TEL = "tel:+18325667163";
@@ -33,7 +26,7 @@ export const telHref = CONTACT_PHONE_TEL;
 export function mailtoHref(
   subject?: string,
   body?: string,
-  email: string = CONTACT_EMAIL_PRIMARY
+  email: string = CONTACT_EMAIL_MAILTO
 ): string {
   const params = new URLSearchParams();
   if (subject) params.set("subject", subject);

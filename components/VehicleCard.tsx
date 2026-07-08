@@ -12,6 +12,7 @@ import {
 import type { Vehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
 import { priceLabelClassName } from "@/lib/price-label";
+import { yearLabelClassName } from "@/lib/year-label";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -86,9 +87,7 @@ export default function VehicleCard({
 
       <div className="relative z-20 space-y-4 p-5">
         <div>
-          <p className="font-sans text-[10px] font-light uppercase tracking-luxury text-mist">
-            {vehicle.year}
-          </p>
+          <p className={yearLabelClassName}>{vehicle.year}</p>
           <h3 className="mt-1 font-display text-xl font-medium tracking-wide text-ivory">
             {showDetailLink ? (
               <Link

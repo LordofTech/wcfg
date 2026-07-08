@@ -87,7 +87,8 @@ export default function VehicleCard({
 
       <div className="relative z-20 space-y-4 p-5">
         <div>
-          <h3 className="font-display text-xl font-medium tracking-wide text-ivory sm:text-2xl">
+          <p className={yearLabelClassName}>{vehicle.year}</p>
+          <h3 className="mt-1 font-display text-2xl font-medium tracking-wide text-ivory sm:text-3xl">
             {showDetailLink ? (
               <Link
                 href={detailHref}
@@ -111,8 +112,7 @@ export default function VehicleCard({
           </span>
         </div>
 
-        <div className="flex items-baseline justify-between gap-3 border-t border-gold-light/10 pt-4">
-          <p className={yearLabelClassName}>{vehicle.year}</p>
+        <div className="flex items-center justify-between gap-3 border-t border-gold-light/10 pt-4">
           <p className={priceLabelClassName(vehicle.priceLabel)}>{vehicle.priceLabel}</p>
           {showDetailLink ? (
             <Link

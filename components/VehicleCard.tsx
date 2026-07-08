@@ -88,7 +88,7 @@ export default function VehicleCard({
       <div className="relative z-20 space-y-4 p-5">
         <div>
           <p className={yearLabelClassName}>{vehicle.year}</p>
-          <h3 className="mt-1 font-display text-xl font-medium tracking-wide text-ivory">
+          <h3 className="mt-1 font-display text-2xl font-medium tracking-wide text-ivory sm:text-3xl">
             {showDetailLink ? (
               <Link
                 href={detailHref}

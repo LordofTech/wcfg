@@ -12,7 +12,7 @@ import {
 import { getFeaturedVehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
 import { priceLabelClassName } from "@/lib/price-label";
-import { yearLabelClassName } from "@/lib/year-label";
+import { yearDetailClassName } from "@/lib/year-label";
 
 const vehicle = getFeaturedVehicle();
 
@@ -79,9 +79,10 @@ export default function FeaturedInStock() {
 
             <div className="flex flex-col justify-center space-y-5 p-6 md:p-10">
               <div>
-                <p className={`${yearLabelClassName} text-gold-light`}>
-                  {vehicle.brand} · {vehicle.year} · New
+                <p className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light">
+                  {vehicle.brand} · New
                 </p>
+                <p className={`mt-2 ${yearDetailClassName}`}>{vehicle.year}</p>
                 <h3 className="mt-2 font-display text-3xl font-medium tracking-wide text-ivory md:text-4xl">
                   {vehicle.model}
                 </h3>

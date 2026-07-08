@@ -13,7 +13,7 @@ import {
 import { inventory } from "@/lib/inventory";
 import { getVehicleById } from "@/lib/inventory-service";
 import { priceLabelClassName } from "@/lib/price-label";
-import { yearDetailClassName } from "@/lib/year-label";
+import { yearLabelClassName } from "@/lib/year-label";
 
 interface VehicleDetailPageProps {
   params: Promise<{ brand: string; id: string }>;
@@ -102,7 +102,6 @@ export default async function VehicleDetailPage({
               <p className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light">
                 {vehicle.brand}
               </p>
-              <p className={`mt-2 ${yearDetailClassName}`}>{vehicle.year}</p>
               <h1 className="mt-2 font-display text-3xl font-medium tracking-wide text-ivory md:text-4xl lg:text-5xl">
                 {vehicle.model}
               </h1>
@@ -118,12 +117,10 @@ export default async function VehicleDetailPage({
                 </span>
               </div>
 
-              <p className="mt-8 font-sans text-sm font-light text-mist">
-                Pricing:{" "}
-                <span className={priceLabelClassName(vehicle.priceLabel)}>
-                  {vehicle.priceLabel}
-                </span>
-              </p>
+              <div className="mt-8 flex flex-wrap items-baseline justify-between gap-4">
+                <p className={yearLabelClassName}>{vehicle.year}</p>
+                <p className={priceLabelClassName(vehicle.priceLabel)}>{vehicle.priceLabel}</p>
+              </div>
               <p className="mt-2 font-sans text-xs font-light text-mist/80">
                 Reference ID: {vehicle.id}
               </p>

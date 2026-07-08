@@ -12,7 +12,7 @@ import {
 import { getFeaturedVehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
 import { priceLabelClassName } from "@/lib/price-label";
-import { yearDetailClassName } from "@/lib/year-label";
+import { yearLabelClassName } from "@/lib/year-label";
 
 const vehicle = getFeaturedVehicle();
 
@@ -82,7 +82,6 @@ export default function FeaturedInStock() {
                 <p className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light">
                   {vehicle.brand} · New
                 </p>
-                <p className={`mt-2 ${yearDetailClassName}`}>{vehicle.year}</p>
                 <h3 className="mt-2 font-display text-3xl font-medium tracking-wide text-ivory md:text-4xl">
                   {vehicle.model}
                 </h3>
@@ -99,12 +98,10 @@ export default function FeaturedInStock() {
                 </span>
               </div>
 
-              <p className="font-sans text-sm font-light text-mist">
-                Pricing:{" "}
-                <span className={priceLabelClassName(vehicle.priceLabel)}>
-                  {vehicle.priceLabel}
-                </span>
-              </p>
+              <div className="flex flex-wrap items-baseline justify-between gap-4">
+                <p className={yearLabelClassName}>{vehicle.year}</p>
+                <p className={priceLabelClassName(vehicle.priceLabel)}>{vehicle.priceLabel}</p>
+              </div>
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <a

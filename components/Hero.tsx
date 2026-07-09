@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUpContainer, fadeUpItem } from "@/lib/motion";
 
@@ -9,7 +10,6 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20"
     >
-      {/* Cinematic backdrop — gradients only (no brand flyer imagery with personal details) */}
       <div className="absolute inset-0" aria-hidden>
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal-velvet via-pitch to-pitch" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_75%_40%,rgba(212,175,55,0.14),transparent_55%)]" />
@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gold-radial opacity-45" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-8">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 px-6 md:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
         <motion.div
           variants={fadeUpContainer}
           initial="hidden"
@@ -81,6 +81,29 @@ export default function Hero() {
               Request Custom Sourcing
             </a>
           </motion.div>
+        </motion.div>
+
+        <motion.div
+          variants={fadeUpItem}
+          initial="hidden"
+          animate="show"
+          className="relative mx-auto hidden w-full max-w-md lg:block lg:max-w-none"
+        >
+          <div className="relative overflow-hidden rounded-sm border border-gold-light/20 bg-pitch/40 shadow-gold">
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-pitch to-transparent"
+              aria-hidden
+            />
+            <Image
+              src="/brand-flyer-hero.webp"
+              alt="Luxury vehicle showcase and marque partners"
+              width={420}
+              height={1024}
+              priority
+              className="h-auto w-full object-cover"
+              sizes="(min-width: 1024px) 420px, 0px"
+            />
+          </div>
         </motion.div>
       </div>
 

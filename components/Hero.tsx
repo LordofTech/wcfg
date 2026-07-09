@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUpContainer, fadeUpItem } from "@/lib/motion";
 
@@ -10,19 +9,13 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20"
     >
-      {/* Cinematic backdrop */}
+      {/* Cinematic backdrop — gradients only (no brand flyer imagery with personal details) */}
       <div className="absolute inset-0" aria-hidden>
-        <Image
-          src="/brand-flyer-2.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-[70%_center] opacity-40"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-pitch via-pitch/92 to-pitch/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pitch via-transparent to-pitch/70" />
-        <div className="absolute inset-0 bg-gold-radial opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal-velvet via-pitch to-pitch" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_75%_40%,rgba(212,175,55,0.14),transparent_55%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-pitch via-pitch/95 to-pitch/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-pitch via-transparent to-pitch/80" />
+        <div className="absolute inset-0 bg-gold-radial opacity-45" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-8">

@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import HeroShowcase from "@/components/HeroShowcase";
 import { fadeUpContainer, fadeUpItem } from "@/lib/motion";
 
 export default function Hero() {
@@ -10,15 +10,22 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20"
     >
+      {/* Faint brand backdrop — top flyer panel only (no founder / phone) */}
       <div className="absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal-velvet via-pitch to-pitch" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_75%_40%,rgba(212,175,55,0.14),transparent_55%)]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-pitch via-pitch/95 to-pitch/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-pitch via-transparent to-pitch/80" />
-        <div className="absolute inset-0 bg-gold-radial opacity-45" />
+        <Image
+          src="/hero-backdrop.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover object-[72%_center] opacity-[0.34]"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-pitch via-pitch/92 to-pitch/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-pitch via-transparent to-pitch/70" />
+        <div className="absolute inset-0 bg-gold-radial opacity-60" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 px-6 md:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 md:px-8">
         <motion.div
           variants={fadeUpContainer}
           initial="hidden"
@@ -82,8 +89,6 @@ export default function Hero() {
             </a>
           </motion.div>
         </motion.div>
-
-        <HeroShowcase />
       </div>
 
       <div className="pointer-events-none absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-pitch to-transparent" />

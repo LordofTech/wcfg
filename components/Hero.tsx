@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
+import HeroShowcase from "@/components/HeroShowcase";
 import { fadeUpContainer, fadeUpItem } from "@/lib/motion";
 
 export default function Hero() {
@@ -83,28 +83,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          variants={fadeUpItem}
-          initial="hidden"
-          animate="show"
-          className="relative mx-auto hidden w-full max-w-md lg:block lg:max-w-none"
-        >
-          <div className="relative overflow-hidden rounded-sm border border-gold-light/20 bg-pitch/40 shadow-gold">
-            <div
-              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-pitch to-transparent"
-              aria-hidden
-            />
-            <Image
-              src="/brand-flyer-hero.webp"
-              alt="Luxury vehicle showcase and marque partners"
-              width={420}
-              height={1024}
-              priority
-              className="h-auto w-full object-cover"
-              sizes="(min-width: 1024px) 420px, 0px"
-            />
-          </div>
-        </motion.div>
+        <HeroShowcase />
       </div>
 
       <div className="pointer-events-none absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-pitch to-transparent" />

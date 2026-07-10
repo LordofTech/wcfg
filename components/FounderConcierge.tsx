@@ -17,7 +17,7 @@ const promises = [
   "Access to the world's finest vehicles",
   "Transparent, trustworthy, reliable",
   "White-glove delivery nationwide",
-  "Long-term relationship & support",
+  "Long-term relationship and support",
 ] as const;
 
 const ctaIcons = [
@@ -105,13 +105,13 @@ export default function FounderConcierge() {
                   <blockquote className="font-sans text-sm font-light leading-relaxed text-ivory/90 sm:text-[15px]">
                     At WCFG, trust is not given — it&apos;s earned. My team and I are
                     committed to combining expertise in rare automobiles with
-                    uncompromising value and service.
+                    uncompromising value and service for every client we represent.
                   </blockquote>
-                  <div className="mt-6 border-t border-gold-light/20 pt-5">
+                  <div className="mt-6 flex flex-col gap-1 border-t border-gold-light/20 pt-5 sm:flex-row sm:items-baseline sm:gap-3">
                     <p className="font-display text-xl font-medium tracking-wide text-gold-gradient sm:text-2xl">
                       Jamail
                     </p>
-                    <p className="mt-1 font-sans text-[11px] font-light uppercase tracking-luxury-wide text-gold-light">
+                    <p className="font-sans text-[11px] font-light uppercase tracking-luxury-wide text-gold-light">
                       Luxury Autos
                     </p>
                   </div>

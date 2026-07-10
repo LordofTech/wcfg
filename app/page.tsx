@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ConciergeServicesStrip from "@/components/ConciergeServicesStrip";
 import FounderConcierge from "@/components/FounderConcierge";
+import FlyerContactBar from "@/components/FlyerContactBar";
 import FeaturedInStock from "@/components/FeaturedInStock";
 import InventoryGrid from "@/components/InventoryGrid";
 import WhyWCFG from "@/components/WhyWCFG";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <ConciergeServicesStrip />
         <FounderConcierge />
+        <FlyerContactBar />
         <FeaturedInStock />
         <InventoryGrid />
         <WhyWCFG />

@@ -184,8 +184,8 @@ export default function ConsultationForm() {
       <div className="relative mx-auto max-w-2xl">
         <SectionHeading
           eyebrow="Complimentary Consultation"
-          title="Let's Find Your Next Dream Car"
-          description="Share a few details and initiate white-glove sourcing. We handle the search, negotiation, and delivery. You enjoy the experience."
+          title="Let's Find Your Next Extraordinary Vehicle"
+          description="Share a few details and initiate white-glove sourcing. We handle the search, negotiation, and delivery — you enjoy the experience."
         />
 
         <form

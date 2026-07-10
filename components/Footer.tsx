@@ -111,7 +111,7 @@ export default function Footer() {
 
       <div className="bg-gold-gradient px-6 py-3 text-center">
         <p className="font-sans text-[10px] font-medium uppercase tracking-luxury text-pitch sm:text-[11px]">
-          Concierge Service · Market Knowledge · Exclusive Access · Unmatched Experience
+          Private Access · Personal Service · Exceptional Results
         </p>
       </div>
 

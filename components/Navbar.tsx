@@ -63,7 +63,7 @@ export default function Navbar() {
               WCFG
             </span>
             <span className="mt-1 hidden font-sans text-[9px] font-light uppercase tracking-luxury text-mist sm:block">
-              Luxury Automobile Brokers
+              Private Automotive Concierge
             </span>
           </Link>
 

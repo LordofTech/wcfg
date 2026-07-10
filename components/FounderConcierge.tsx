@@ -91,7 +91,8 @@ export default function FounderConcierge() {
                     src="/jamail-avatar.webp"
                     alt="Jamail Luxury Autos"
                     fill
-                    sizes="(max-width: 768px) 240px, 240px"
+                    sizes="(max-width: 768px) 280px, 320px"
+                    quality={95}
                     className="object-cover object-center"
                   />
                 </div>

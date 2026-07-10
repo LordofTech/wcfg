@@ -1,17 +1,16 @@
 import type { Vehicle } from "@/lib/inventory";
 
-/** Public mailto target — generic business inbox only (never a personal address). */
-export const CONTACT_EMAIL_MAILTO =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "concierge@wcfgbizbrokers.com";
+/** Single WCFG contact inbox — Gmail. */
+export const CONTACT_EMAIL = "Jay.luxeauto@gmail.com";
 
-/** Client-facing contact label — no personal names or private addresses. */
-export const CONTACT_EMAIL_DISPLAY = "Concierge Desk";
+/** mailto target (normalized casing). */
+export const CONTACT_EMAIL_MAILTO = "jay.luxeauto@gmail.com";
 
-/** @deprecated Use CONTACT_EMAIL_MAILTO */
-export const CONTACT_EMAIL = CONTACT_EMAIL_MAILTO;
+/** @deprecated Use CONTACT_EMAIL_MAILTO — kept for older imports. */
+export const CONTACT_EMAIL_PRIMARY = CONTACT_EMAIL_MAILTO;
 
 export const FOOTER_CONTACT_EMAIL = {
-  display: CONTACT_EMAIL_DISPLAY,
+  display: CONTACT_EMAIL,
   mailto: CONTACT_EMAIL_MAILTO,
 } as const;
 

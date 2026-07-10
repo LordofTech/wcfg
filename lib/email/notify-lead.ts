@@ -1,8 +1,9 @@
 import nodemailer from "nodemailer";
 import type { ConsultationLeadInput } from "@/lib/consultation";
+import { CONTACT_EMAIL_PRIMARY } from "@/lib/contact";
 
 const DEFAULT_NOTIFY_EMAIL =
-  process.env.LEADS_NOTIFY_EMAIL?.trim() || "concierge@wcfgbizbrokers.com";
+  process.env.LEADS_NOTIFY_EMAIL?.trim() || CONTACT_EMAIL_PRIMARY;
 const DEFAULT_SMTP_HOST = "smtp.gmail.com";
 const DEFAULT_SMTP_PORT = 587;
 

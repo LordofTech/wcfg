@@ -46,7 +46,7 @@ export default function FounderConcierge() {
           viewport={{ once: true, margin: "-60px" }}
           className="overflow-hidden rounded-sm border border-gold-light/30 bg-charcoal/40 shadow-glass"
         >
-          <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_minmax(0,0.95fr)]">
+          <div className="grid gap-0 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.5fr)_minmax(0,0.88fr)]">
             {/* Our promise */}
             <motion.div
               variants={fadeUpItem}
@@ -84,34 +84,38 @@ export default function FounderConcierge() {
               <p className="font-sans text-[10px] font-light uppercase tracking-luxury-wide text-gold-light">
                 Founder&apos;s Message
               </p>
-              <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-start">
-                <div className="relative mx-auto aspect-[4/5] w-full max-w-[200px] shrink-0 overflow-hidden rounded-sm border border-gold-light/35 shadow-gold-sm sm:mx-0">
+
+              <div className="mt-8 grid items-start gap-8 md:grid-cols-[minmax(11rem,15rem)_minmax(0,1fr)] md:gap-10 lg:gap-12">
+                <div className="relative mx-auto aspect-[3/4] w-full max-w-[15rem] shrink-0 overflow-hidden rounded-sm border border-gold-light/40 bg-pitch shadow-gold-sm md:mx-0">
                   <Image
                     src="/jamail-avatar.webp"
                     alt="Jamail Luxury Autos"
                     fill
-                    sizes="200px"
-                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 240px, 240px"
+                    className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-pitch/50 via-transparent to-transparent" />
                 </div>
-                <div className="min-w-0 flex-1">
-                  <span
-                    className="font-display text-5xl leading-none text-gold-light/80"
-                    aria-hidden
-                  >
-                    &ldquo;
-                  </span>
-                  <blockquote className="font-sans text-sm font-light leading-relaxed text-ivory/90 sm:text-[15px]">
-                    At WCFG, trust is not given — it&apos;s earned. My team and I are
-                    committed to combining expertise in rare automobiles with
-                    uncompromising value and service for every client we represent.
-                  </blockquote>
-                  <div className="mt-6 flex flex-col gap-1 border-t border-gold-light/20 pt-5 sm:flex-row sm:items-baseline sm:gap-3">
-                    <p className="font-display text-xl font-medium tracking-wide text-gold-gradient sm:text-2xl">
+
+                <div className="flex min-w-0 flex-col justify-center space-y-6 md:py-1">
+                  <div>
+                    <span
+                      className="font-display text-4xl leading-none text-gold-light/70 md:text-[2.75rem]"
+                      aria-hidden
+                    >
+                      &ldquo;
+                    </span>
+                    <blockquote className="mt-2 max-w-none font-sans text-[15px] font-light leading-[1.8] text-ivory/92 md:text-base md:leading-[1.85]">
+                      At WCFG, trust is not given, it&apos;s earned. My team and I
+                      are committed to combining expertise in rare automobiles with
+                      uncompromising value and service.
+                    </blockquote>
+                  </div>
+
+                  <div className="border-t border-gold-light/25 pt-6">
+                    <p className="font-display text-2xl font-medium tracking-wide text-gold-gradient md:text-[1.75rem]">
                       Jamail
                     </p>
-                    <p className="font-sans text-[11px] font-light uppercase tracking-luxury-wide text-gold-light">
+                    <p className="mt-2 font-sans text-xs font-light uppercase tracking-[0.22em] text-gold-light">
                       Luxury Autos
                     </p>
                   </div>

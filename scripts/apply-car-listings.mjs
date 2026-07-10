@@ -241,6 +241,26 @@ const PRODUCT_MAP = [
       "WhatsApp Image 2026-07-03 at 23.48.00 (4).jpeg", // interior
     ],
   },
+  {
+    productId: "toyota-land-cruiser-heritage-blue-2026",
+    imageAlt: "2026 Toyota Land Cruiser in Heritage Blue",
+    newProduct: {
+      brand: "Toyota",
+      brandSlug: "toyota",
+      model: "Land Cruiser",
+      year: 2026,
+      highlight: "Heritage Blue exterior · Retro side graphics · Available now",
+      priceLabel: "$74,590",
+      status: "available",
+      source: "listings",
+    },
+    sources: [
+      "WhatsApp Image 2026-07-09 at 21.37.39.jpeg",
+      "WhatsApp Image 2026-07-09 at 21.37.38.jpeg",
+      "WhatsApp Image 2026-07-09 at 21.37.38 (1).jpeg",
+      "WhatsApp Image 2026-07-09 at 21.37.37.jpeg",
+    ],
+  },
 ];
 
 async function toWebp(inputPath, outputPath) {

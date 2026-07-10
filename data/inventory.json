@@ -4298,5 +4298,25 @@
       "https://cf-img.autorevo.com/2015-toyota-rav4-houston-tx-7476726/640x640/3176642-19-revo.jpg?_=1782936871"
     ],
     "featured": false
+  },
+  {
+    "id": "toyota-land-cruiser-heritage-blue-2026",
+    "brand": "Toyota",
+    "brandSlug": "toyota",
+    "model": "Land Cruiser",
+    "year": 2026,
+    "highlight": "Heritage Blue exterior · Retro side graphics · Available now",
+    "priceLabel": "$74,590",
+    "status": "available",
+    "source": "listings",
+    "imageSrc": "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026.webp",
+    "imageAlt": "2026 Toyota Land Cruiser in Heritage Blue",
+    "images": [
+      "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026.webp",
+      "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026-2.webp",
+      "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026-3.webp",
+      "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026-4.webp"
+    ],
+    "featured": false
   }
 ]

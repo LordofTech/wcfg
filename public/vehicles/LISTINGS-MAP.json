@@ -439,5 +439,33 @@
     "output": "/vehicles/listings/adscars-7474860-4.webp",
     "bytes": 171368,
     "role": "gallery-4"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-09 at 21.37.39.jpeg",
+    "productId": "toyota-land-cruiser-heritage-blue-2026",
+    "output": "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026.webp",
+    "bytes": 205412,
+    "role": "primary"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-09 at 21.37.38.jpeg",
+    "productId": "toyota-land-cruiser-heritage-blue-2026",
+    "output": "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026-2.webp",
+    "bytes": 220428,
+    "role": "gallery-2"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-09 at 21.37.38 (1).jpeg",
+    "productId": "toyota-land-cruiser-heritage-blue-2026",
+    "output": "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026-3.webp",
+    "bytes": 207296,
+    "role": "gallery-3"
+  },
+  {
+    "source": "WhatsApp Image 2026-07-09 at 21.37.37.jpeg",
+    "productId": "toyota-land-cruiser-heritage-blue-2026",
+    "output": "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026-4.webp",
+    "bytes": 172458,
+    "role": "gallery-4"
   }
 ]

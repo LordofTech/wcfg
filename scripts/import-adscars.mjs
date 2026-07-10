@@ -153,6 +153,17 @@ const WCFG_LISTINGS_UNITS = [
     imageAlt: "Rolls-Royce Cullinan Black Badge matte black with white interior",
     source: "listings",
   },
+  {
+    id: "toyota-land-cruiser-heritage-blue-2026",
+    brand: "Toyota",
+    model: "Land Cruiser",
+    year: 2026,
+    highlight: "Heritage Blue exterior · Retro side graphics · Available now",
+    priceLabel: "$74,590",
+    imageSrc: "/vehicles/listings/toyota-land-cruiser-heritage-blue-2026.webp",
+    imageAlt: "2026 Toyota Land Cruiser in Heritage Blue",
+    source: "listings",
+  },
 ];
 
 function sleep(ms) {

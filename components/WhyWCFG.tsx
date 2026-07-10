@@ -63,9 +63,9 @@ export default function WhyWCFG() {
 
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Premium Services"
+          eyebrow="One Source · Endless Possibilities"
           title="The WCFG Difference"
-          description="White-glove brokerage from first conversation to delivery, whether your destination is Lagos, Abuja, or anywhere our network reaches."
+          description="White-glove brokerage from first conversation to delivery — the same concierge excellence you see in our private automotive experience, wherever our network reaches."
         />
 
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">

@@ -117,7 +117,7 @@ export default function FounderConcierge() {
                       Jamail
                     </p>
                     <p className="mt-2 font-sans text-xs font-light uppercase tracking-[0.22em] text-gold-light">
-                      Luxury Autos
+                      Luxury
                     </p>
                   </div>
                 </div>

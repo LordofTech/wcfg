@@ -3,12 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BadgeCheck, Mail, Phone, ShieldCheck, Sparkles } from "lucide-react";
+import { BadgeCheck, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import {
-  CONTACT_PHONE_DISPLAY,
   mailtoVehicleInterest,
-  telHref,
 } from "@/lib/contact";
+import CallCtaLink from "@/components/CallCtaLink";
 import type { Vehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
 import { priceLabelClassName } from "@/lib/price-label";
@@ -132,13 +131,12 @@ export default function VehicleCard({
             <Mail size={13} strokeWidth={1.5} aria-hidden />
             {compact ? "Email" : "Email WCFG"}
           </a>
-          <a
-            href={telHref}
-            className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-3 py-2.5 font-sans text-[10px] font-medium uppercase tracking-luxury text-gold-light transition-colors duration-300 hover:bg-gold-light/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-velvet"
-          >
-            <Phone size={13} strokeWidth={1.5} aria-hidden />
-            {compact ? "Call" : CONTACT_PHONE_DISPLAY}
-          </a>
+          <CallCtaLink
+            iconSize={13}
+            defaultLabel={compact ? "Call" : "Call"}
+            showNumberByDefault={!compact}
+            className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-3 py-2.5 font-sans text-[10px] font-medium uppercase tracking-luxury text-gold-light transition-colors duration-300 hover:border-white hover:bg-white/10 hover:text-white active:border-white active:bg-white/15 active:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-velvet"
+          />
         </div>
       </div>
     </motion.article>

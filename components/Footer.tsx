@@ -1,11 +1,10 @@
-import { Globe, Mail, MapPin, Phone } from "lucide-react";
+import { Globe, Mail, MapPin } from "lucide-react";
+import CallCtaLink from "@/components/CallCtaLink";
 import {
-  CONTACT_PHONE_DISPLAY,
   CONTACT_WEBSITE,
   CONTACT_WEBSITE_DISPLAY,
   FOOTER_CONTACT_EMAILS,
   mailtoHref,
-  telHref,
 } from "@/lib/contact";
 
 export default function Footer() {
@@ -55,13 +54,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href={telHref}
-                className="inline-flex items-center gap-3 transition-colors hover:text-gold-light focus-visible:outline-none focus-visible:text-gold-light"
-              >
-                <Phone size={16} className="text-gold-light" strokeWidth={1.5} aria-hidden />
-                {CONTACT_PHONE_DISPLAY}
-              </a>
+              <CallCtaLink
+                iconSize={16}
+                showNumberByDefault
+                className="inline-flex items-center gap-3 transition-colors hover:text-white focus-visible:outline-none focus-visible:text-white"
+              />
             </li>
             <li className="inline-flex items-start gap-3 text-mist">
               <MapPin size={16} className="mt-0.5 shrink-0 text-gold-light" strokeWidth={1.5} aria-hidden />

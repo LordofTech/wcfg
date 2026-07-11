@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BadgeCheck, Mail, Phone, ShieldCheck, Sparkles } from "lucide-react";
+import { BadgeCheck, Mail, ShieldCheck, Sparkles } from "lucide-react";
+import CallCtaLink from "@/components/CallCtaLink";
 import InventoryShell from "@/components/InventoryShell";
 import VehicleGallery from "@/components/VehicleGallery";
 import { getBrandBySlug } from "@/lib/brands";
 import {
-  CONTACT_PHONE_DISPLAY,
   mailtoVehicleInterest,
-  telHref,
 } from "@/lib/contact";
 import { inventory } from "@/lib/inventory";
 import { getVehicleById } from "@/lib/inventory-service";
@@ -136,13 +135,10 @@ export default async function VehicleDetailPage({
                   <Mail size={15} strokeWidth={1.5} aria-hidden />
                   Email WCFG
                 </a>
-                <a
-                  href={telHref}
-                  className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-gold-light transition-colors hover:bg-gold-light/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
-                >
-                  <Phone size={15} strokeWidth={1.5} aria-hidden />
-                  Call {CONTACT_PHONE_DISPLAY}
-                </a>
+                <CallCtaLink
+                  iconSize={15}
+                  className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-gold-light transition-colors hover:border-white hover:bg-white/10 hover:text-white active:border-white active:bg-white/15 active:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
+                />
               </div>
 
               <Link

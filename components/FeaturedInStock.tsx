@@ -3,11 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { BadgeCheck, Mail, Phone, Sparkles } from "lucide-react";
+import { BadgeCheck, Mail, Sparkles } from "lucide-react";
+import CallCtaLink from "@/components/CallCtaLink";
 import {
-  CONTACT_PHONE_DISPLAY,
   mailtoVehicleInterest,
-  telHref,
 } from "@/lib/contact";
 import { getFeaturedVehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
@@ -114,13 +113,10 @@ export default function FeaturedInStock() {
                   <Mail size={15} strokeWidth={1.5} aria-hidden />
                   Email WCFG
                 </a>
-                <a
-                  href={telHref}
-                  className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-gold-light transition-colors hover:bg-gold-light/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-velvet"
-                >
-                  <Phone size={15} strokeWidth={1.5} aria-hidden />
-                  Call {CONTACT_PHONE_DISPLAY}
-                </a>
+                <CallCtaLink
+                  iconSize={15}
+                  className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-gold-light transition-colors hover:border-white hover:bg-white/10 hover:text-white active:border-white active:bg-white/15 active:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-velvet"
+                />
               </div>
 
               <Link

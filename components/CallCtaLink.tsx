@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, type MouseEvent } from "react";
 import { Phone } from "lucide-react";
 import { CONTACT_PHONE_DISPLAY, telHref } from "@/lib/contact";
 
@@ -19,7 +19,8 @@ export default function CallCtaLink({
 }: CallCtaLinkProps) {
   const [showPhoneLabel, setShowPhoneLabel] = useState(false);
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
     setShowPhoneLabel(true);
 
     if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
@@ -43,6 +44,7 @@ export default function CallCtaLink({
       onClick={handleClick}
       className={className}
       aria-label={`Call ${CONTACT_PHONE_DISPLAY}`}
+      title="Click to copy phone number"
     >
       <Phone size={iconSize} strokeWidth={1.5} aria-hidden />
       {label}

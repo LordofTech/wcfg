@@ -18,6 +18,7 @@ export default function CallCtaLink({
   showNumberByDefault = false,
 }: CallCtaLinkProps) {
   const [showPhoneLabel, setShowPhoneLabel] = useState(false);
+  const [copyFeedback, setCopyFeedback] = useState("");
 
   const handleClick = useCallback((event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -28,6 +29,9 @@ export default function CallCtaLink({
         // Clipboard access can fail in unsupported or restricted contexts.
       });
     }
+
+    setCopyFeedback("Successfully copied");
+    setTimeout(() => setCopyFeedback(""), 1800);
   }, []);
 
   const label = showNumberByDefault || showPhoneLabel
@@ -47,7 +51,8 @@ export default function CallCtaLink({
       title="Click to copy phone number"
     >
       <Phone size={iconSize} strokeWidth={1.5} aria-hidden />
-      {label}
+      {copyFeedback || label}
+      <span className="sr-only" aria-live="polite">{copyFeedback}</span>
     </a>
   );
 }

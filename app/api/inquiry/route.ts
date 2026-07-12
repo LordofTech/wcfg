@@ -7,6 +7,22 @@ export const runtime = "nodejs";
 const SALES_INQUIRY_EMAIL = "sales@wcfgluxautos.com";
 const DEFAULT_SMTP_HOST = "smtp.gmail.com";
 const DEFAULT_SMTP_PORT = 587;
+const INQUIRY_RATE_LIMIT_MS = 1000 * 60 * 15;
+
+type InquiryRateLimitStore = Map<string, number>;
+
+function getInquiryRateLimitStore(): InquiryRateLimitStore {
+  const key = "__WCFG_INQUIRY_RATE_LIMIT_STORE__";
+  const globalScope = globalThis as typeof globalThis & {
+    [key: string]: InquiryRateLimitStore | undefined;
+  };
+
+  if (!globalScope[key]) {
+    globalScope[key] = new Map<string, number>();
+  }
+
+  return globalScope[key];
+}
 
 function escapeHtml(value: string): string {
   return value
@@ -20,6 +36,62 @@ function escapeHtml(value: string): string {
 function sanitize(value: unknown, max = 140): string {
   if (typeof value !== "string") return "";
   return value.trim().slice(0, max);
+}
+
+function getClientIp(request: Request): string {
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const realIp = request.headers.get("x-real-ip")?.trim();
+  const vercelForwardedFor = request.headers
+    .get("x-vercel-forwarded-for")
+    ?.split(",")[0]
+    ?.trim();
+
+  return forwardedFor || realIp || vercelForwardedFor || "unknown";
+}
+
+function normalizeVehicleKey(vehicle: string, vehicleId: string): string {
+  if (vehicleId) return vehicleId.toLowerCase();
+  return vehicle.toLowerCase().replace(/\s+/g, " ").trim();
+}
+
+function buildRateLimitKey(params: {
+  request: Request;
+  vehicle: string;
+  vehicleId: string;
+  email: string;
+  phone: string;
+}): string {
+  const ip = getClientIp(params.request).toLowerCase();
+  const vehicleKey = normalizeVehicleKey(params.vehicle, params.vehicleId);
+  const emailKey = params.email.toLowerCase();
+  const phoneKey = params.phone.replace(/\D/g, "");
+
+  return `${vehicleKey}::${ip}::${emailKey}::${phoneKey}`;
+}
+
+function checkInquiryRateLimit(rateLimitKey: string): {
+  allowed: boolean;
+  retryAfterSeconds: number;
+} {
+  const now = Date.now();
+  const store = getInquiryRateLimitStore();
+
+  for (const [key, expiresAt] of store) {
+    if (expiresAt <= now) {
+      store.delete(key);
+    }
+  }
+
+  const expiresAt = store.get(rateLimitKey);
+  if (typeof expiresAt === "number" && expiresAt > now) {
+    return {
+      allowed: false,
+      retryAfterSeconds: Math.ceil((expiresAt - now) / 1000),
+    };
+  }
+
+  store.set(rateLimitKey, now + INQUIRY_RATE_LIMIT_MS);
+  return { allowed: true, retryAfterSeconds: 0 };
 }
 
 function resolveCountryByCode(code: string): string | null {
@@ -142,6 +214,31 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { success: false, error: "Please provide a valid email address." },
       { status: 400 }
+    );
+  }
+
+  const rateLimitKey = buildRateLimitKey({
+    request,
+    vehicle,
+    vehicleId,
+    email,
+    phone,
+  });
+  const rateLimitResult = checkInquiryRateLimit(rateLimitKey);
+
+  if (!rateLimitResult.allowed) {
+    return NextResponse.json(
+      {
+        success: false,
+        error:
+          "You already submitted an inquiry for this vehicle recently. Please wait before sending another.",
+      },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(rateLimitResult.retryAfterSeconds),
+        },
+      }
     );
   }
 

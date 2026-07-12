@@ -1,0 +1,44 @@
+#!/bin/sh
+
+remote_url=$(git remote get-url origin 2>/dev/null)
+
+# Only enforce this guard for GitHub remotes.
+case "$remote_url" in
+  https://github.com/*|git@github.com:*)
+    ;;
+  *)
+    exit 0
+    ;;
+esac
+
+owner=$(printf "%s" "$remote_url" | sed -E 's#(https://github.com/|git@github.com:)([^/]+)/.*#\2#')
+
+if [ -z "$owner" ]; then
+  echo "pre-push guard: unable to determine GitHub owner from remote URL: $remote_url"
+  exit 1
+fi
+
+if ! command -v gh >/dev/null 2>&1; then
+  echo "pre-push guard: GitHub CLI (gh) is required to verify active account."
+  echo "Install gh or disable this hook intentionally."
+  exit 1
+fi
+
+active_user=$(gh api user --jq .login 2>/dev/null)
+
+if [ -z "$active_user" ]; then
+  echo "pre-push guard: no active GitHub auth detected."
+  echo "Run: gh auth switch --hostname github.com --user $owner"
+  exit 1
+fi
+
+owner_lc=$(printf "%s" "$owner" | tr '[:upper:]' '[:lower:]')
+active_lc=$(printf "%s" "$active_user" | tr '[:upper:]' '[:lower:]')
+
+if [ "$owner_lc" != "$active_lc" ]; then
+  echo "pre-push guard: active GitHub account '$active_user' does not match remote owner '$owner'."
+  echo "Run: gh auth switch --hostname github.com --user $owner"
+  exit 1
+fi
+
+exit 0

@@ -22,6 +22,7 @@ export default function VehicleInquiryForm({
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [showCelebration, setShowCelebration] = useState(false);
 
   const selectedCountry = useMemo(
     () => COUNTRY_DIAL_CODES.find((country) => country.code === countryCode),
@@ -55,8 +56,8 @@ export default function VehicleInquiryForm({
       return;
     }
 
-    if (trimmedPhoneLocal.length < 6) {
-      setError("Please enter a valid phone number.");
+    if (trimmedPhoneLocal.length !== 10) {
+      setError("Please enter exactly 10 phone digits after the country code.");
       return;
     }
 
@@ -92,6 +93,8 @@ export default function VehicleInquiryForm({
       setPhoneLocal("");
       setCountryCode(DEFAULT_COUNTRY);
       setVehicle(initialVehicleLabel);
+      setShowCelebration(true);
+      setTimeout(() => setShowCelebration(false), 2200);
     } catch {
       setError("Network error. Please try again.");
     } finally {
@@ -190,8 +193,9 @@ export default function VehicleInquiryForm({
             onChange={(event) =>
               setPhoneLocal(event.target.value.replace(/[^\d]/g, ""))
             }
+            maxLength={10}
             className="w-full bg-transparent px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none"
-            placeholder="Enter remaining phone digits"
+            placeholder="Enter 10 remaining phone digits"
             required
           />
           </div>
@@ -239,6 +243,24 @@ export default function VehicleInquiryForm({
         >
           Inquiry sent successfully. Our team will contact you shortly.
         </p>
+      ) : null}
+
+      {showCelebration ? (
+        <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center px-6">
+          <div className="relative overflow-hidden rounded-sm border border-gold-light/40 bg-pitch/95 px-8 py-7 shadow-gold-lg">
+            <div className="absolute -left-2 -top-2 h-3 w-3 rounded-full bg-gold-light animate-ping" />
+            <div className="absolute right-3 -top-1 h-2 w-2 rounded-full bg-gold-highlight animate-ping [animation-delay:150ms]" />
+            <div className="absolute -right-2 top-6 h-2.5 w-2.5 rounded-full bg-gold-light animate-ping [animation-delay:300ms]" />
+            <div className="absolute left-5 -bottom-2 h-2.5 w-2.5 rounded-full bg-gold-highlight animate-ping [animation-delay:220ms]" />
+            <div className="absolute right-8 -bottom-2 h-3 w-3 rounded-full bg-gold-light animate-ping [animation-delay:420ms]" />
+            <p className="text-center font-display text-3xl font-medium tracking-wide text-gold-gradient">
+              Congratulations!
+            </p>
+            <p className="mt-3 text-center font-sans text-sm font-light leading-relaxed text-mist">
+              Inquiry sent successfully. Our team will contact you shortly.
+            </p>
+          </div>
+        </div>
       ) : null}
 
       <button

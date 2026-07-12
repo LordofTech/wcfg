@@ -75,6 +75,21 @@ function inferCountryFromPhone(phone: string): {
   };
 }
 
+function formatPhoneForReceipt(phone: string, dialCode: string | null): string {
+  const normalized = phone.replace(/[^\d+]/g, "");
+  if (!normalized) return phone;
+
+  if (!dialCode || !normalized.startsWith(dialCode)) {
+    const fallbackDigits = normalized.replace(/\D/g, "");
+    return fallbackDigits.replace(/(\d{4})(?=\d)/g, "$1 ");
+  }
+
+  const localDigits = normalized.slice(dialCode.length).replace(/\D/g, "");
+  const groupedLocalDigits = localDigits.replace(/(\d{4})(?=\d)/g, "$1 ").trim();
+
+  return groupedLocalDigits ? `${dialCode} ${groupedLocalDigits}` : dialCode;
+}
+
 export async function POST(request: Request) {
   let body: unknown;
 
@@ -102,6 +117,7 @@ export async function POST(request: Request) {
   const vehicleId = sanitize(record.vehicleId, 80);
   const ipCountry = inferCountryFromIpHeaders(request);
   const phoneCountry = inferCountryFromPhone(phone);
+  const formattedPhone = formatPhoneForReceipt(phone, phoneCountry.dialCode);
 
   const ipCountryLabel = ipCountry.countryName
     ? `${ipCountry.countryName}${ipCountry.countryCode ? ` (${ipCountry.countryCode})` : ""}`
@@ -160,7 +176,7 @@ export async function POST(request: Request) {
         </tr>
         <tr>
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Phone</td>
-          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(phone)}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(formattedPhone)}</td>
         </tr>
         <tr>
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Email</td>
@@ -191,7 +207,7 @@ export async function POST(request: Request) {
     "",
     `Full Name: ${fullName}`,
     `Email: ${email}`,
-    `Phone: ${phone}`,
+    `Phone: ${formattedPhone}`,
     `Country from IP: ${ipCountryLabel}`,
     `Country from Phone Code: ${phoneCountryLabel}`,
     `Selected Vehicle: ${vehicle}`,

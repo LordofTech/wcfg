@@ -1,0 +1,172 @@
+"use client";
+
+import { FormEvent, useMemo, useState } from "react";
+
+interface VehicleInquiryFormProps {
+  initialVehicleId?: string;
+  initialVehicleLabel?: string;
+}
+
+export default function VehicleInquiryForm({
+  initialVehicleId = "",
+  initialVehicleLabel = "",
+}: VehicleInquiryFormProps) {
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [vehicle, setVehicle] = useState(initialVehicleLabel);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const vehicleReference = useMemo(() => {
+    if (!initialVehicleId) return "";
+    return `Reference ID: ${initialVehicleId}`;
+  }, [initialVehicleId]);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (submitting) return;
+
+    const trimmedName = fullName.trim();
+    const trimmedPhone = phone.trim();
+    const trimmedVehicle = vehicle.trim();
+
+    if (!trimmedName || !trimmedPhone || !trimmedVehicle) {
+      setError("Please complete name, phone number, and selected vehicle.");
+      return;
+    }
+
+    setSubmitting(true);
+    setError("");
+    setSuccess(false);
+
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: trimmedName,
+          phone: trimmedPhone,
+          vehicle: trimmedVehicle,
+          vehicleId: initialVehicleId || undefined,
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as
+        | { success?: boolean; error?: string }
+        | null;
+
+      if (!response.ok || !payload?.success) {
+        setError(payload?.error ?? "Unable to send inquiry right now. Please try again.");
+        return;
+      }
+
+      setSuccess(true);
+      setFullName("");
+      setPhone("");
+      setVehicle(initialVehicleLabel);
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="glass-strong rounded-sm border border-gold-light/20 p-6 md:p-8"
+      noValidate
+    >
+      <div className="grid gap-5">
+        <div>
+          <label
+            htmlFor="inquiry-name"
+            className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light"
+          >
+            Full Name
+          </label>
+          <input
+            id="inquiry-name"
+            name="fullName"
+            type="text"
+            autoComplete="name"
+            value={fullName}
+            onChange={(event) => setFullName(event.target.value)}
+            className="mt-2 w-full border border-gold-light/20 bg-pitch/60 px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none transition-colors focus:border-gold-light/50 focus:ring-1 focus:ring-gold-light/40"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="inquiry-phone"
+            className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light"
+          >
+            Phone Number
+          </label>
+          <input
+            id="inquiry-phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            value={phone}
+            onChange={(event) => setPhone(event.target.value)}
+            className="mt-2 w-full border border-gold-light/20 bg-pitch/60 px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none transition-colors focus:border-gold-light/50 focus:ring-1 focus:ring-gold-light/40"
+            placeholder="+1 ..."
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="inquiry-vehicle"
+            className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light"
+          >
+            Selected Vehicle
+          </label>
+          <input
+            id="inquiry-vehicle"
+            name="vehicle"
+            type="text"
+            value={vehicle}
+            onChange={(event) => setVehicle(event.target.value)}
+            className="mt-2 w-full border border-gold-light/20 bg-pitch/60 px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none transition-colors focus:border-gold-light/50 focus:ring-1 focus:ring-gold-light/40"
+            placeholder="e.g., 2024 Bentley Continental GT"
+            required
+          />
+          {vehicleReference ? (
+            <p className="mt-2 font-sans text-xs font-light text-mist/80">{vehicleReference}</p>
+          ) : null}
+        </div>
+      </div>
+
+      {error ? (
+        <p
+          className="mt-5 rounded-sm border border-gold-highlight/30 bg-pitch/40 px-3 py-2.5 font-sans text-xs font-light leading-relaxed text-gold-highlight"
+          role="alert"
+        >
+          {error}
+        </p>
+      ) : null}
+
+      {success ? (
+        <p
+          className="mt-5 rounded-sm border border-gold-light/30 bg-pitch/40 px-3 py-2.5 font-sans text-xs font-light leading-relaxed text-gold-light"
+          role="status"
+        >
+          Inquiry sent successfully. Our team will contact you shortly.
+        </p>
+      ) : null}
+
+      <button
+        type="submit"
+        disabled={submitting}
+        className="mt-6 inline-flex w-full items-center justify-center bg-gold-gradient px-6 py-3 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal disabled:cursor-wait disabled:opacity-70"
+      >
+        {submitting ? "Sending..." : "Send Inquiry"}
+      </button>
+    </form>
+  );
+}

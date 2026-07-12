@@ -54,3 +54,14 @@ export function mailtoVehicleInterest(vehicle: Pick<Vehicle, "id" | "brand" | "m
 
   return mailtoHref(subject, body);
 }
+
+export function vehicleInquiryHref(
+  vehicle: Pick<Vehicle, "id" | "brand" | "model" | "year">
+): string {
+  const params = new URLSearchParams({
+    vehicle: `${vehicle.year} ${vehicle.brand} ${vehicle.model}`,
+    vehicleId: vehicle.id,
+  });
+
+  return `/inquiry?${params.toString()}`;
+}

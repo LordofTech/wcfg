@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { BadgeCheck, Mail, Sparkles } from "lucide-react";
 import CallCtaLink from "@/components/CallCtaLink";
 import {
-  mailtoVehicleInterest,
+  vehicleInquiryHref,
 } from "@/lib/contact";
 import { getFeaturedVehicle } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
@@ -19,7 +19,7 @@ export default function FeaturedInStock() {
   if (!vehicle) return null;
 
   const detailHref = `/inventory/${vehicle.brandSlug}/${vehicle.id}`;
-  const emailHref = mailtoVehicleInterest(vehicle);
+  const emailHref = vehicleInquiryHref(vehicle);
 
   return (
     <section
@@ -106,13 +106,13 @@ export default function FeaturedInStock() {
               </p>
 
               <div className="grid gap-3 sm:grid-cols-2">
-                <a
+                <Link
                   href={emailHref}
                   className="inline-flex items-center justify-center gap-2 bg-gold-gradient px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-velvet"
                 >
                   <Mail size={15} strokeWidth={1.5} aria-hidden />
                   Email WCFG
-                </a>
+                </Link>
                 <CallCtaLink
                   iconSize={15}
                   className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-gold-light transition-colors hover:border-white hover:bg-white/10 hover:text-white active:border-white active:bg-white/15 active:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-velvet"

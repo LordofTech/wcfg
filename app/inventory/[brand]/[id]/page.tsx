@@ -7,7 +7,7 @@ import InventoryShell from "@/components/InventoryShell";
 import VehicleGallery from "@/components/VehicleGallery";
 import { getBrandBySlug } from "@/lib/brands";
 import {
-  mailtoVehicleInterest,
+  vehicleInquiryHref,
 } from "@/lib/contact";
 import { inventory } from "@/lib/inventory";
 import { getVehicleById } from "@/lib/inventory-service";
@@ -52,7 +52,7 @@ export default async function VehicleDetailPage({
     notFound();
   }
 
-  const emailHref = mailtoVehicleInterest(vehicle);
+  const emailHref = vehicleInquiryHref(vehicle);
   const galleryImages =
     vehicle.images && vehicle.images.length > 0
       ? vehicle.images
@@ -128,13 +128,13 @@ export default async function VehicleDetailPage({
               </p>
 
               <div className="mt-10 grid gap-3 sm:grid-cols-2">
-                <a
+                <Link
                   href={emailHref}
                   className="inline-flex items-center justify-center gap-2 bg-gold-gradient px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-pitch transition-shadow hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"
                 >
                   <Mail size={15} strokeWidth={1.5} aria-hidden />
                   Email WCFG
-                </a>
+                </Link>
                 <CallCtaLink
                   iconSize={15}
                   className="inline-flex items-center justify-center gap-2 border border-gold-light/40 px-5 py-3.5 font-sans text-[11px] font-medium uppercase tracking-luxury text-gold-light transition-colors hover:border-white hover:bg-white/10 hover:text-white active:border-white active:bg-white/15 active:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-pitch"

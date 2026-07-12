@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { BadgeCheck, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import {
-  mailtoVehicleInterest,
+  vehicleInquiryHref,
 } from "@/lib/contact";
 import CallCtaLink from "@/components/CallCtaLink";
 import type { Vehicle } from "@/lib/inventory";
@@ -28,7 +28,7 @@ export default function VehicleCard({
   showDetailLink = true,
 }: VehicleCardProps) {
   const detailHref = `/inventory/${vehicle.brandSlug}/${vehicle.id}`;
-  const emailHref = mailtoVehicleInterest(vehicle);
+  const emailHref = vehicleInquiryHref(vehicle);
 
   return (
     <motion.article
@@ -124,13 +124,13 @@ export default function VehicleCard({
         </div>
 
         <div className={`grid gap-2 ${compact ? "grid-cols-2" : "sm:grid-cols-2"}`}>
-          <a
+          <Link
             href={emailHref}
             className="inline-flex items-center justify-center gap-2 bg-gold-gradient px-3 py-2.5 font-sans text-[10px] font-medium uppercase tracking-luxury text-pitch transition-shadow duration-300 hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-velvet"
           >
             <Mail size={13} strokeWidth={1.5} aria-hidden />
             {compact ? "Email" : "Email WCFG"}
-          </a>
+          </Link>
           <CallCtaLink
             iconSize={13}
             defaultLabel={compact ? "Call" : "Call"}

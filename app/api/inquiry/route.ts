@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { COUNTRY_DIAL_CODES } from "@/lib/country-dial-codes";
 
 export const runtime = "nodejs";
 
@@ -19,6 +20,59 @@ function escapeHtml(value: string): string {
 function sanitize(value: unknown, max = 140): string {
   if (typeof value !== "string") return "";
   return value.trim().slice(0, max);
+}
+
+function resolveCountryByCode(code: string): string | null {
+  if (!code) return null;
+  const country = COUNTRY_DIAL_CODES.find(
+    (entry) => entry.code.toLowerCase() === code.toLowerCase()
+  );
+  return country?.name ?? null;
+}
+
+function inferCountryFromIpHeaders(request: Request): {
+  countryCode: string | null;
+  countryName: string | null;
+} {
+  const countryCode =
+    request.headers.get("x-vercel-ip-country")?.trim() ||
+    request.headers.get("cf-ipcountry")?.trim() ||
+    null;
+
+  return {
+    countryCode,
+    countryName: countryCode ? resolveCountryByCode(countryCode) : null,
+  };
+}
+
+function inferCountryFromPhone(phone: string): {
+  dialCode: string | null;
+  countryNames: string[];
+} {
+  const normalized = phone.replace(/[^\d+]/g, "");
+  if (!normalized.startsWith("+")) {
+    return { dialCode: null, countryNames: [] };
+  }
+
+  const dialCodes = [...new Set(COUNTRY_DIAL_CODES.map((entry) => entry.dialCode))].sort(
+    (a, b) => b.length - a.length
+  );
+
+  const matchedDialCode = dialCodes.find((dialCode) => normalized.startsWith(dialCode));
+  if (!matchedDialCode) {
+    return { dialCode: null, countryNames: [] };
+  }
+
+  const countries = [...new Set(
+    COUNTRY_DIAL_CODES.filter((entry) => entry.dialCode === matchedDialCode).map(
+      (entry) => entry.name
+    )
+  )];
+
+  return {
+    dialCode: matchedDialCode,
+    countryNames: countries,
+  };
 }
 
 export async function POST(request: Request) {
@@ -45,6 +99,17 @@ export async function POST(request: Request) {
   const phone = sanitize(record.phone, 40);
   const vehicle = sanitize(record.vehicle, 180);
   const vehicleId = sanitize(record.vehicleId, 80);
+  const ipCountry = inferCountryFromIpHeaders(request);
+  const phoneCountry = inferCountryFromPhone(phone);
+
+  const ipCountryLabel = ipCountry.countryName
+    ? `${ipCountry.countryName}${ipCountry.countryCode ? ` (${ipCountry.countryCode})` : ""}`
+    : ipCountry.countryCode || "Unknown";
+
+  const phoneCountryLabel =
+    phoneCountry.countryNames.length > 0
+      ? `${phoneCountry.countryNames.join(", ")}${phoneCountry.dialCode ? ` (${phoneCountry.dialCode})` : ""}`
+      : "Unknown";
 
   if (!fullName || !phone || !vehicle) {
     return NextResponse.json(
@@ -90,6 +155,14 @@ export async function POST(request: Request) {
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(phone)}</td>
         </tr>
         <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Country from IP</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(ipCountryLabel)}</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Country from Phone Code</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(phoneCountryLabel)}</td>
+        </tr>
+        <tr>
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Selected Vehicle</td>
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(vehicle)}</td>
         </tr>
@@ -106,6 +179,8 @@ export async function POST(request: Request) {
     "",
     `Full Name: ${fullName}`,
     `Phone: ${phone}`,
+    `Country from IP: ${ipCountryLabel}`,
+    `Country from Phone Code: ${phoneCountryLabel}`,
     `Selected Vehicle: ${vehicle}`,
     `Vehicle Reference ID: ${vehicleId || "N/A"}`,
   ].join("\n");

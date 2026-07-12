@@ -15,6 +15,7 @@ export default function VehicleInquiryForm({
   initialVehicleLabel = "",
 }: VehicleInquiryFormProps) {
   const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
   const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY);
   const [phoneLocal, setPhoneLocal] = useState("");
   const [vehicle, setVehicle] = useState(initialVehicleLabel);
@@ -39,12 +40,18 @@ export default function VehicleInquiryForm({
     if (submitting) return;
 
     const trimmedName = fullName.trim();
+    const trimmedEmail = email.trim().toLowerCase();
     const trimmedPhoneLocal = phoneLocal.replace(/\D/g, "");
     const trimmedPhone = `${dialCode}${trimmedPhoneLocal}`;
     const trimmedVehicle = vehicle.trim();
 
-    if (!trimmedName || !trimmedPhoneLocal || !trimmedVehicle) {
-      setError("Please complete name, phone number, and selected vehicle.");
+    if (!trimmedName || !trimmedEmail || !trimmedPhoneLocal || !trimmedVehicle) {
+      setError("Please complete name, email, phone number, and selected vehicle.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      setError("Please enter a valid email address.");
       return;
     }
 
@@ -63,6 +70,7 @@ export default function VehicleInquiryForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           fullName: trimmedName,
+          email: trimmedEmail,
           phone: trimmedPhone,
           vehicle: trimmedVehicle,
           vehicleId: initialVehicleId || undefined,
@@ -80,6 +88,7 @@ export default function VehicleInquiryForm({
 
       setSuccess(true);
       setFullName("");
+      setEmail("");
       setPhoneLocal("");
       setCountryCode(DEFAULT_COUNTRY);
       setVehicle(initialVehicleLabel);
@@ -113,6 +122,26 @@ export default function VehicleInquiryForm({
             onChange={(event) => setFullName(event.target.value)}
             className="mt-2 w-full border border-gold-light/20 bg-pitch/60 px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none transition-colors focus:border-gold-light/50 focus:ring-1 focus:ring-gold-light/40"
             placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="inquiry-email"
+            className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light"
+          >
+            Email Address
+          </label>
+          <input
+            id="inquiry-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="mt-2 w-full border border-gold-light/20 bg-pitch/60 px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none transition-colors focus:border-gold-light/50 focus:ring-1 focus:ring-gold-light/40"
+            placeholder="name@example.com"
             required
           />
         </div>

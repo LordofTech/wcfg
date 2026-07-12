@@ -96,6 +96,7 @@ export async function POST(request: Request) {
 
   const record = body as Record<string, unknown>;
   const fullName = sanitize(record.fullName, 120);
+  const email = sanitize(record.email, 180).toLowerCase();
   const phone = sanitize(record.phone, 40);
   const vehicle = sanitize(record.vehicle, 180);
   const vehicleId = sanitize(record.vehicleId, 80);
@@ -111,12 +112,19 @@ export async function POST(request: Request) {
       ? `${phoneCountry.countryNames.join(", ")}${phoneCountry.dialCode ? ` (${phoneCountry.dialCode})` : ""}`
       : "Unknown";
 
-  if (!fullName || !phone || !vehicle) {
+  if (!fullName || !email || !phone || !vehicle) {
     return NextResponse.json(
       {
         success: false,
-        error: "Name, phone number, and selected vehicle are required.",
+        error: "Name, email, phone number, and selected vehicle are required.",
       },
+      { status: 400 }
+    );
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json(
+      { success: false, error: "Please provide a valid email address." },
       { status: 400 }
     );
   }
@@ -137,7 +145,7 @@ export async function POST(request: Request) {
 
   const host = process.env.SMTP_HOST?.trim() || DEFAULT_SMTP_HOST;
   const port = Number(process.env.SMTP_PORT?.trim() || DEFAULT_SMTP_PORT);
-  const from = process.env.SMTP_FROM?.trim() || `WCFG Sales <${smtpUser}>`;
+  const from = process.env.SMTP_FROM?.trim() || "WCFG Sales <sales@wcfgluxautos.com>";
 
   const html = `
     <div style="font-family:Georgia,serif;max-width:560px;margin:0 auto;color:#1a1814;">
@@ -153,6 +161,10 @@ export async function POST(request: Request) {
         <tr>
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Phone</td>
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(phone)}</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Email</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#1a1814;font-size:14px;font-weight:500;">${escapeHtml(email)}</td>
         </tr>
         <tr>
           <td style="padding:8px 12px;border-bottom:1px solid #e8e4dc;color:#6b6560;font-size:13px;width:40%;">Country from IP</td>
@@ -178,6 +190,7 @@ export async function POST(request: Request) {
     "New Vehicle Inquiry",
     "",
     `Full Name: ${fullName}`,
+    `Email: ${email}`,
     `Phone: ${phone}`,
     `Country from IP: ${ipCountryLabel}`,
     `Country from Phone Code: ${phoneCountryLabel}`,
@@ -199,6 +212,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from,
       to: SALES_INQUIRY_EMAIL,
+      replyTo: email,
       subject: `New WCFG vehicle inquiry: ${vehicle}`,
       html,
       text,

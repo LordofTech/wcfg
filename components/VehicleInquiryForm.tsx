@@ -1,22 +1,33 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { COUNTRY_DIAL_CODES } from "@/lib/country-dial-codes";
 
 interface VehicleInquiryFormProps {
   initialVehicleId?: string;
   initialVehicleLabel?: string;
 }
 
+const DEFAULT_COUNTRY = "US";
+
 export default function VehicleInquiryForm({
   initialVehicleId = "",
   initialVehicleLabel = "",
 }: VehicleInquiryFormProps) {
   const [fullName, setFullName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState(DEFAULT_COUNTRY);
+  const [phoneLocal, setPhoneLocal] = useState("");
   const [vehicle, setVehicle] = useState(initialVehicleLabel);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+
+  const selectedCountry = useMemo(
+    () => COUNTRY_DIAL_CODES.find((country) => country.code === countryCode),
+    [countryCode]
+  );
+
+  const dialCode = selectedCountry?.dialCode ?? "+1";
 
   const vehicleReference = useMemo(() => {
     if (!initialVehicleId) return "";
@@ -28,11 +39,17 @@ export default function VehicleInquiryForm({
     if (submitting) return;
 
     const trimmedName = fullName.trim();
-    const trimmedPhone = phone.trim();
+    const trimmedPhoneLocal = phoneLocal.replace(/\D/g, "");
+    const trimmedPhone = `${dialCode}${trimmedPhoneLocal}`;
     const trimmedVehicle = vehicle.trim();
 
-    if (!trimmedName || !trimmedPhone || !trimmedVehicle) {
+    if (!trimmedName || !trimmedPhoneLocal || !trimmedVehicle) {
       setError("Please complete name, phone number, and selected vehicle.");
+      return;
+    }
+
+    if (trimmedPhoneLocal.length < 6) {
+      setError("Please enter a valid phone number.");
       return;
     }
 
@@ -63,7 +80,8 @@ export default function VehicleInquiryForm({
 
       setSuccess(true);
       setFullName("");
-      setPhone("");
+      setPhoneLocal("");
+      setCountryCode(DEFAULT_COUNTRY);
       setVehicle(initialVehicleLabel);
     } catch {
       setError("Network error. Please try again.");
@@ -101,22 +119,56 @@ export default function VehicleInquiryForm({
 
         <div>
           <label
+            htmlFor="inquiry-country"
+            className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light"
+          >
+            Country
+          </label>
+          <select
+            id="inquiry-country"
+            name="country"
+            value={countryCode}
+            onChange={(event) => setCountryCode(event.target.value)}
+            className="mt-2 w-full border border-gold-light/20 bg-pitch/60 px-4 py-3.5 font-sans text-sm font-light text-ivory outline-none transition-colors focus:border-gold-light/50 focus:ring-1 focus:ring-gold-light/40"
+            required
+          >
+            {COUNTRY_DIAL_CODES.map((country) => (
+              <option key={country.code} value={country.code}>
+                {country.name} ({country.dialCode})
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label
             htmlFor="inquiry-phone"
             className="font-sans text-[11px] font-light uppercase tracking-luxury text-gold-light"
           >
             Phone Number
           </label>
+          <div className="mt-2 flex items-stretch overflow-hidden border border-gold-light/20 bg-pitch/60">
+            <span className="inline-flex items-center border-r border-gold-light/20 px-4 font-sans text-sm font-light text-gold-light">
+              {dialCode}
+            </span>
           <input
             id="inquiry-phone"
             name="phone"
             type="tel"
             autoComplete="tel"
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
-            className="mt-2 w-full border border-gold-light/20 bg-pitch/60 px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none transition-colors focus:border-gold-light/50 focus:ring-1 focus:ring-gold-light/40"
-            placeholder="+1 ..."
+            inputMode="numeric"
+            value={phoneLocal}
+            onChange={(event) =>
+              setPhoneLocal(event.target.value.replace(/[^\d]/g, ""))
+            }
+            className="w-full bg-transparent px-4 py-3.5 font-sans text-sm font-light text-ivory placeholder:text-mist/50 outline-none"
+            placeholder="Enter remaining phone digits"
             required
           />
+          </div>
+          <p className="mt-2 font-sans text-xs font-light text-mist/80">
+            Select country code first, then enter the remaining number digits.
+          </p>
         </div>
 
         <div>

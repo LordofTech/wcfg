@@ -1,10 +1,10 @@
 import type { Vehicle } from "@/lib/inventory";
 
-/** Single WCFG contact inbox — Gmail. */
-export const CONTACT_EMAIL = "Jay.luxeauto@gmail.com";
+/** Single WCFG contact inbox. */
+export const CONTACT_EMAIL = "sales@wcfgluxautos.com";
 
 /** mailto target (normalized casing). */
-export const CONTACT_EMAIL_MAILTO = "jay.luxeauto@gmail.com";
+export const CONTACT_EMAIL_MAILTO = "sales@wcfgluxautos.com";
 
 /** @deprecated Use CONTACT_EMAIL_MAILTO — kept for older imports. */
 export const CONTACT_EMAIL_PRIMARY = CONTACT_EMAIL_MAILTO;

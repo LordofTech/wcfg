@@ -19,7 +19,7 @@ The multi-step form posts to `POST /api/consultation`, which:
 
 1. Validates the payload
 2. Inserts a row into `consultation_leads` (service role, RLS denies public access)
-3. Emails lead details to `jay.luxeauto@gmail.com` (configurable via `LEADS_NOTIFY_EMAIL`)
+3. Emails lead details to `sales@wcfgluxautos.com` (configurable via `LEADS_NOTIFY_EMAIL`)
 
 If email delivery fails after a successful insert, the API still returns success so leads are never lost.
 
@@ -42,7 +42,7 @@ For the `wcfgbizbrokers.com` mailbox (cPanel / domain mail):
 1. Set `SMTP_HOST=mail.wcfgbizbrokers.com` and `SMTP_PORT=587`
 2. Set `SMTP_USER` / `SMTP_PASS` to the mailbox credentials
 3. Optionally set `SMTP_FROM` (defaults to `WCFG Consultations <SMTP_USER>`)
-4. Set `LEADS_NOTIFY_EMAIL` to the inbox that should receive leads (defaults to `jay.luxeauto@gmail.com`)
+4. Set `LEADS_NOTIFY_EMAIL` to the inbox that should receive leads (defaults to `sales@wcfgluxautos.com`)
 
 If you switch to Google Workspace later, use `SMTP_HOST=smtp.gmail.com` and an [App Password](https://myaccount.google.com/apppasswords) as `SMTP_PASS` (2-Step Verification required).
 
@@ -60,7 +60,7 @@ Copy `.env.example` to `.env.local`:
 | `SMTP_USER` | Yes (for email) | Lead is still saved if missing |
 | `SMTP_PASS` | Yes (for email) | Lead is still saved if missing |
 | `SMTP_FROM` | Optional | Defaults to `WCFG Consultations <SMTP_USER>` |
-| `LEADS_NOTIFY_EMAIL` | Optional | Defaults to `jay.luxeauto@gmail.com` |
+| `LEADS_NOTIFY_EMAIL` | Optional | Defaults to `sales@wcfgluxautos.com` |
 
 ### 4. Vercel production env
 

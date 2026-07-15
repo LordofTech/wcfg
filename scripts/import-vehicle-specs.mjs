@@ -25,7 +25,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Turbocharged gasoline ICE" },
       { label: "Seating", value: "2 passengers" },
-      { label: "Reference ID", value: "aston-martin-vantage-teal" },
     ],
     equipment: [],
   },
@@ -45,7 +44,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Turbocharged gasoline ICE" },
       { label: "VIN", value: "SCBCG2ZGXLC081261" },
-      { label: "Reference ID", value: "adscars-7278824" },
     ],
     equipment: [],
   },
@@ -65,7 +63,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Twin-turbo gasoline ICE" },
       { label: "VIN", value: "SCBBR93W08C057444" },
-      { label: "Reference ID", value: "adscars-7444858" },
     ],
     equipment: [],
   },
@@ -85,7 +82,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Naturally aspirated gasoline ICE" },
       { label: "Seating", value: "Up to 8 passengers" },
-      { label: "Reference ID", value: "cadillac-escalade-black" },
     ],
     equipment: [],
   },
@@ -105,7 +101,6 @@ const MANUAL_SPECS = {
       { label: "Emissions Type", value: "Twin-turbo gasoline ICE" },
       { label: "Seating", value: "2 passengers" },
       { label: "Trim", value: "3LZ" },
-      { label: "Reference ID", value: "corvette-zr1-coupe-3lz-black" },
     ],
     equipment: [],
   },
@@ -124,7 +119,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Twin-turbo gasoline ICE" },
       { label: "Seating", value: "2 passengers" },
-      { label: "Reference ID", value: "ferrari-f8-tributo-yellow" },
     ],
     equipment: [],
   },
@@ -144,7 +138,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Twin-turbo gasoline ICE" },
       { label: "Seating", value: "5 passengers" },
-      { label: "Reference ID", value: "mb-g63-2024" },
     ],
     equipment: [],
   },
@@ -164,7 +157,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Twin-turbo gasoline ICE" },
       { label: "Seating", value: "4 or 5 passengers" },
-      { label: "Reference ID", value: "rr-cullinan-2024" },
     ],
     equipment: [],
   },
@@ -183,7 +175,6 @@ const MANUAL_SPECS = {
       { label: "Fuel Type", value: "Gasoline" },
       { label: "Emissions Type", value: "Twin-turbo gasoline ICE" },
       { label: "Cabin Feature", value: "Starlight headliner" },
-      { label: "Reference ID", value: "rr-ghost-2023" },
     ],
     equipment: [],
   },
@@ -203,7 +194,6 @@ const MANUAL_SPECS = {
       { label: "Emissions Type", value: "Hybrid gasoline-electric" },
       { label: "Fuel Economy", value: "22 mpg city · 25 mpg highway" },
       { label: "Seating", value: "5 passengers" },
-      { label: "Reference ID", value: "toyota-land-cruiser-heritage-blue-2026" },
     ],
     equipment: [],
   },
@@ -371,8 +361,6 @@ function buildSpecs(vehicle, html) {
   addOverviewItem(overview, "Fuel Economy", [mpg.city, mpg.highway].filter(Boolean).join(" · "));
   addOverviewItem(overview, "VIN", vehicle.vin || extractDd(topline, "vin_value"));
   addOverviewItem(overview, "Warranty", extractDd(topline, "warranty_value"));
-  addOverviewItem(overview, "Reference ID", vehicle.id);
-
   const equipment = parseInstalledEquipment(html);
   return { overview, equipment };
 }

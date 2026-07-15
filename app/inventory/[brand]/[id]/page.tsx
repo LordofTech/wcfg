@@ -29,7 +29,6 @@ function buildFallbackSpecs(vehicle: Vehicle): VehicleSpecs {
     vehicle.mileage ? { label: "Mileage", value: vehicle.mileage } : null,
     vehicle.vin ? { label: "VIN", value: vehicle.vin } : null,
     { label: "Availability", value: vehicle.status ?? "available" },
-    { label: "Reference ID", value: vehicle.id },
   ].filter((item): item is { label: string; value: string } => Boolean(item));
 
   return {

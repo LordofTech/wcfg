@@ -52,10 +52,6 @@
       {
         "label": "Seating",
         "value": "2 passengers"
-      },
-      {
-        "label": "Reference ID",
-        "value": "aston-martin-vantage-teal"
       }
     ],
     "equipment": []
@@ -117,10 +113,6 @@
       {
         "label": "VIN",
         "value": "SCBCG2ZGXLC081261"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7278824"
       }
     ],
     "equipment": []
@@ -182,10 +174,6 @@
       {
         "label": "VIN",
         "value": "SCBBR93W08C057444"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7444858"
       }
     ],
     "equipment": []
@@ -247,10 +235,6 @@
       {
         "label": "Seating",
         "value": "Up to 8 passengers"
-      },
-      {
-        "label": "Reference ID",
-        "value": "cadillac-escalade-black"
       }
     ],
     "equipment": []
@@ -312,10 +296,6 @@
       {
         "label": "Trim",
         "value": "3LZ"
-      },
-      {
-        "label": "Reference ID",
-        "value": "corvette-zr1-coupe-3lz-black"
       }
     ],
     "equipment": []
@@ -373,10 +353,6 @@
       {
         "label": "Seating",
         "value": "2 passengers"
-      },
-      {
-        "label": "Reference ID",
-        "value": "ferrari-f8-tributo-yellow"
       }
     ],
     "equipment": []
@@ -438,10 +414,6 @@
       {
         "label": "Seating",
         "value": "5 passengers"
-      },
-      {
-        "label": "Reference ID",
-        "value": "mb-g63-2024"
       }
     ],
     "equipment": []
@@ -503,10 +475,6 @@
       {
         "label": "Seating",
         "value": "4 or 5 passengers"
-      },
-      {
-        "label": "Reference ID",
-        "value": "rr-cullinan-2024"
       }
     ],
     "equipment": []
@@ -564,10 +532,6 @@
       {
         "label": "Cabin Feature",
         "value": "Starlight headliner"
-      },
-      {
-        "label": "Reference ID",
-        "value": "rr-ghost-2023"
       }
     ],
     "equipment": []
@@ -629,10 +593,6 @@
       {
         "label": "Seating",
         "value": "5 passengers"
-      },
-      {
-        "label": "Reference ID",
-        "value": "toyota-land-cruiser-heritage-blue-2026"
       }
     ],
     "equipment": []
@@ -670,10 +630,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7389825"
       }
     ],
     "equipment": []
@@ -715,10 +671,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7421075"
       }
     ],
     "equipment": []
@@ -776,10 +728,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7480463"
       }
     ],
     "equipment": [
@@ -1098,10 +1046,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7464615"
       }
     ],
     "equipment": [
@@ -1431,10 +1375,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7485952"
       }
     ],
     "equipment": [
@@ -1740,10 +1680,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7428598"
       }
     ],
     "equipment": [
@@ -2071,10 +2007,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7476676"
       }
     ],
     "equipment": [
@@ -2263,10 +2195,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7415424"
       }
     ],
     "equipment": [
@@ -2589,10 +2517,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7455201"
       }
     ],
     "equipment": [
@@ -2910,10 +2834,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7471115"
       }
     ],
     "equipment": [
@@ -3169,10 +3089,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7423590"
       }
     ],
     "equipment": [
@@ -3500,10 +3416,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7497621"
       }
     ],
     "equipment": [
@@ -3807,10 +3719,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7473419"
       }
     ],
     "equipment": [
@@ -4115,10 +4023,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7310278"
       }
     ],
     "equipment": [
@@ -4421,10 +4325,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7329056"
       }
     ],
     "equipment": [
@@ -4663,10 +4563,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-6832063"
       }
     ],
     "equipment": []
@@ -4724,10 +4620,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7495630"
       }
     ],
     "equipment": [
@@ -5057,10 +4949,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7136009"
       }
     ],
     "equipment": [
@@ -5278,10 +5166,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-6645795"
       }
     ],
     "equipment": [
@@ -5471,10 +5355,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7421161"
       }
     ],
     "equipment": [
@@ -5791,10 +5671,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7483605"
       }
     ],
     "equipment": [
@@ -5971,10 +5847,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7476947"
       }
     ],
     "equipment": [
@@ -6293,10 +6165,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7449045"
       }
     ],
     "equipment": [
@@ -6576,10 +6444,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7486926"
       }
     ],
     "equipment": [
@@ -6876,10 +6740,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7458839"
       }
     ],
     "equipment": []
@@ -6929,10 +6789,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7243124"
       }
     ],
     "equipment": [
@@ -7076,10 +6932,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7496568"
       }
     ],
     "equipment": [
@@ -7398,10 +7250,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7465597"
       }
     ],
     "equipment": [
@@ -7711,10 +7559,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7449079"
       }
     ],
     "equipment": [
@@ -8022,10 +7866,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7487938"
       }
     ],
     "equipment": [
@@ -8266,10 +8106,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7492023"
       }
     ],
     "equipment": [
@@ -8575,10 +8411,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7444752"
       }
     ],
     "equipment": [
@@ -8876,10 +8708,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7479821"
       }
     ],
     "equipment": [
@@ -9179,10 +9007,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7471915"
       }
     ],
     "equipment": [
@@ -9467,10 +9291,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7442823"
       }
     ],
     "equipment": [
@@ -9718,10 +9538,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7497297"
       }
     ],
     "equipment": [
@@ -10004,10 +9820,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7345098"
       }
     ],
     "equipment": [
@@ -10206,10 +10018,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7478289"
       }
     ],
     "equipment": []
@@ -10263,10 +10071,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7087135"
       }
     ],
     "equipment": [
@@ -10407,10 +10211,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7388116"
       }
     ],
     "equipment": []
@@ -10468,10 +10268,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7365802"
       }
     ],
     "equipment": [
@@ -10777,10 +10573,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7402620"
       }
     ],
     "equipment": []
@@ -10838,10 +10630,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7489126"
       }
     ],
     "equipment": [
@@ -11137,10 +10925,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7480239"
       }
     ],
     "equipment": [
@@ -11409,10 +11193,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7453845"
       }
     ],
     "equipment": [
@@ -11717,10 +11497,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7436089"
       }
     ],
     "equipment": [
@@ -11947,10 +11723,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7498442"
       }
     ],
     "equipment": [
@@ -12174,10 +11946,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7032310"
       }
     ],
     "equipment": []
@@ -12235,10 +12003,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7482574"
       }
     ],
     "equipment": [
@@ -12465,10 +12229,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7487936"
       }
     ],
     "equipment": [
@@ -12767,10 +12527,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7495625"
       }
     ],
     "equipment": [
@@ -13062,10 +12818,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7380073"
       }
     ],
     "equipment": [
@@ -13328,10 +13080,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7453787"
       }
     ],
     "equipment": [
@@ -13635,10 +13383,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7495057"
       }
     ],
     "equipment": [
@@ -13948,10 +13692,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7489690"
       }
     ],
     "equipment": [
@@ -14283,10 +14023,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7353800"
       }
     ],
     "equipment": []
@@ -14340,10 +14076,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7489922"
       }
     ],
     "equipment": [
@@ -14678,10 +14410,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7462511"
       }
     ],
     "equipment": [
@@ -15010,10 +14738,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7366400"
       }
     ],
     "equipment": [
@@ -15336,10 +15060,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7479415"
       }
     ],
     "equipment": [
@@ -15641,10 +15361,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-6908945"
       }
     ],
     "equipment": [
@@ -15849,10 +15565,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7487939"
       }
     ],
     "equipment": [
@@ -16135,10 +15847,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7391279"
       }
     ],
     "equipment": []
@@ -16180,10 +15888,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7058139"
       }
     ],
     "equipment": []
@@ -16241,10 +15945,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7263086"
       }
     ],
     "equipment": [
@@ -16540,10 +16240,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7444609"
       }
     ],
     "equipment": [
@@ -16810,10 +16506,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7479801"
       }
     ],
     "equipment": [
@@ -17095,10 +16787,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7484226"
       }
     ],
     "equipment": [
@@ -17420,10 +17108,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7297409"
       }
     ],
     "equipment": [
@@ -17707,10 +17391,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7439189"
       }
     ],
     "equipment": [
@@ -17997,10 +17677,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7354081"
       }
     ],
     "equipment": [
@@ -18291,10 +17967,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7163101"
       }
     ],
     "equipment": [
@@ -18513,10 +18185,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7496090"
       }
     ],
     "equipment": [
@@ -18839,10 +18507,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7293411"
       }
     ],
     "equipment": [
@@ -19174,10 +18838,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7459400"
       }
     ],
     "equipment": [
@@ -19511,10 +19171,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7431129"
       }
     ],
     "equipment": [
@@ -19840,10 +19496,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7478228"
       }
     ],
     "equipment": [
@@ -20163,10 +19815,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7223175"
       }
     ],
     "equipment": [
@@ -20469,10 +20117,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7384459"
       }
     ],
     "equipment": [
@@ -20784,10 +20428,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7374196"
       }
     ],
     "equipment": [
@@ -21067,10 +20707,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-6890988"
       }
     ],
     "equipment": [
@@ -21281,10 +20917,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7479358"
       }
     ],
     "equipment": [
@@ -21563,10 +21195,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7474860"
       }
     ],
     "equipment": [
@@ -21828,10 +21456,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7488100"
       }
     ],
     "equipment": [
@@ -22077,10 +21701,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7490697"
       }
     ],
     "equipment": [
@@ -22326,10 +21946,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7477021"
       }
     ],
     "equipment": [
@@ -22534,10 +22150,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7495973"
       }
     ],
     "equipment": []
@@ -22595,10 +22207,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7495055"
       }
     ],
     "equipment": [
@@ -22811,10 +22419,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7143065"
       }
     ],
     "equipment": []
@@ -22872,10 +22476,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7490408"
       }
     ],
     "equipment": [
@@ -23187,10 +22787,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7428890"
       }
     ],
     "equipment": [
@@ -23498,10 +23094,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7494614"
       }
     ],
     "equipment": [
@@ -23785,10 +23377,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7497967"
       }
     ],
     "equipment": [
@@ -24073,10 +23661,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7484228"
       }
     ],
     "equipment": [
@@ -24376,10 +23960,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7453150"
       }
     ],
     "equipment": [
@@ -24671,10 +24251,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7498440"
       }
     ],
     "equipment": [
@@ -24971,10 +24547,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7479355"
       }
     ],
     "equipment": [
@@ -25213,10 +24785,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7340703"
       }
     ],
     "equipment": [
@@ -25511,10 +25079,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7423899"
       }
     ],
     "equipment": [
@@ -25810,10 +25374,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7497721"
       }
     ],
     "equipment": [
@@ -26074,10 +25634,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7234502"
       }
     ],
     "equipment": []
@@ -26119,10 +25675,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7468452"
       }
     ],
     "equipment": []
@@ -26164,10 +25716,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7303433"
       }
     ],
     "equipment": []
@@ -26221,10 +25769,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7495052"
       }
     ],
     "equipment": [
@@ -26502,10 +26046,6 @@
       {
         "label": "Warranty",
         "value": "AS-IS No Warranty"
-      },
-      {
-        "label": "Reference ID",
-        "value": "adscars-7476726"
       }
     ],
     "equipment": [

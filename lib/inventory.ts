@@ -1,5 +1,9 @@
 import inventoryData from "@/data/inventory.json";
 import { marqueToSlug, type BrandSlug } from "./brands";
+import vehicleSpecsData from "@/data/vehicle-specs.json";
+import type { VehicleSpecs, VehicleSpecsById } from "./vehicle-specs";
+
+const vehicleSpecsById = vehicleSpecsData as VehicleSpecsById;
 
 export interface Vehicle {
   id: string;
@@ -18,6 +22,7 @@ export interface Vehicle {
   mileage?: string;
   vin?: string;
   featured?: boolean;
+  specs?: VehicleSpecs;
 }
 
 function normalize(vehicle: Vehicle): Vehicle {
@@ -27,6 +32,7 @@ function normalize(vehicle: Vehicle): Vehicle {
     status: vehicle.status ?? "available",
     source: vehicle.source ?? "adscars",
     featured: vehicle.featured === true,
+    specs: vehicle.specs ?? vehicleSpecsById[vehicle.id],
   };
 }
 

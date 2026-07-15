@@ -139,6 +139,7 @@ function overlayLocalFields(remote: Vehicle, local?: Vehicle): Vehicle {
     imageSrc: local.imageSrc || remote.imageSrc,
     imageAlt: local.imageAlt || remote.imageAlt,
     images: local.images ?? remote.images,
+    specs: local.specs ?? remote.specs,
   };
 }
 
@@ -195,5 +196,6 @@ export function vehicleToJson(vehicle: Vehicle) {
     mileage: vehicle.mileage,
     vin: vehicle.vin,
     featured: vehicle.featured === true,
+    specs: vehicle.specs,
   };
 }

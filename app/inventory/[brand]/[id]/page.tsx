@@ -5,6 +5,7 @@ import { BadgeCheck, Mail, ShieldCheck, Sparkles } from "lucide-react";
 import CallCtaLink from "@/components/CallCtaLink";
 import InventoryShell from "@/components/InventoryShell";
 import VehicleGallery from "@/components/VehicleGallery";
+import VehicleSpecsPanel from "@/components/VehicleSpecsPanel";
 import { getBrandBySlug } from "@/lib/brands";
 import {
   vehicleInquiryHref,
@@ -12,10 +13,29 @@ import {
 import { inventory } from "@/lib/inventory";
 import { getVehicleById } from "@/lib/inventory-service";
 import { priceLabelClassName } from "@/lib/price-label";
+import type { Vehicle } from "@/lib/inventory";
+import type { VehicleSpecs } from "@/lib/vehicle-specs";
 import { yearDetailClassName } from "@/lib/year-label";
 
 interface VehicleDetailPageProps {
   params: Promise<{ brand: string; id: string }>;
+}
+
+function buildFallbackSpecs(vehicle: Vehicle): VehicleSpecs {
+  const overview = [
+    { label: "Year", value: String(vehicle.year) },
+    { label: "Brand", value: vehicle.brand },
+    { label: "Model", value: vehicle.model },
+    vehicle.mileage ? { label: "Mileage", value: vehicle.mileage } : null,
+    vehicle.vin ? { label: "VIN", value: vehicle.vin } : null,
+    { label: "Availability", value: vehicle.status ?? "available" },
+    { label: "Reference ID", value: vehicle.id },
+  ].filter((item): item is { label: string; value: string } => Boolean(item));
+
+  return {
+    overview,
+    equipment: [],
+  };
 }
 
 export function generateStaticParams() {
@@ -59,6 +79,7 @@ export default async function VehicleDetailPage({
       : vehicle.imageSrc
         ? [vehicle.imageSrc]
         : [];
+  const detailSpecs = vehicle.specs ?? buildFallbackSpecs(vehicle);
 
   const galleryBadge = (
     <span
@@ -149,6 +170,8 @@ export default async function VehicleDetailPage({
               </Link>
             </div>
           </div>
+
+          <VehicleSpecsPanel specs={detailSpecs} />
         </div>
       </section>
     </InventoryShell>

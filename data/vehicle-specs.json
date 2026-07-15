@@ -22,6 +22,14 @@
         "value": "Teal"
       },
       {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
         "label": "Engine",
         "value": "4.0L twin-turbocharged V8"
       },
@@ -81,6 +89,18 @@
       {
         "label": "Exterior Color",
         "value": "Black"
+      },
+      {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -144,6 +164,18 @@
         "value": "Black"
       },
       {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "6.0L twin-turbocharged W12"
       },
@@ -205,6 +237,10 @@
         "value": "Light interior"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
         "label": "Engine",
         "value": "6.2L V8 with Dynamic Fuel Management"
       },
@@ -260,6 +296,14 @@
       {
         "label": "Exterior Color",
         "value": "Black"
+      },
+      {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
       },
       {
         "label": "Engine",
@@ -323,6 +367,14 @@
         "value": "Yellow"
       },
       {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
         "label": "Engine",
         "value": "3.9L twin-turbocharged V8"
       },
@@ -382,6 +434,10 @@
       {
         "label": "Interior",
         "value": "Red interior"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
       },
       {
         "label": "Engine",
@@ -445,6 +501,10 @@
         "value": "White interior"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
         "label": "Engine",
         "value": "6.75L twin-turbocharged V12"
       },
@@ -502,6 +562,18 @@
         "value": "Two-tone silver and black"
       },
       {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "6.75L twin-turbocharged V12"
       },
@@ -557,6 +629,14 @@
       {
         "label": "Exterior Color",
         "value": "Heritage Blue"
+      },
+      {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
       },
       {
         "label": "Engine",
@@ -620,6 +700,14 @@
         "value": "Tan"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -661,6 +749,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "1-2 riders"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -700,6 +796,14 @@
       {
         "label": "Interior",
         "value": "Blue"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -1018,6 +1122,14 @@
       {
         "label": "Interior",
         "value": "Black Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -1349,6 +1461,14 @@
         "value": "White Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.0L Twin Turbo V8 527hp 505ft. lbs."
       },
@@ -1652,6 +1772,14 @@
       {
         "label": "Interior",
         "value": "Black Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -1981,6 +2109,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "5L NA V12 double overhead cam (DOHC) 48V"
       },
@@ -2167,6 +2303,14 @@
       {
         "label": "Interior",
         "value": "Black Leatherette"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -2491,6 +2635,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "2.0L Plug-in Hybrid E-Turbo I4 362hp 369ft. lbs."
       },
@@ -2808,6 +2960,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.2L V8 420hp 317ft. lbs."
       },
@@ -3061,6 +3221,14 @@
       {
         "label": "Interior",
         "value": "Tan"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -3390,6 +3558,14 @@
         "value": "Tan"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "6.0L Twin Turbo W12 582hp 531ft. lbs."
       },
@@ -3691,6 +3867,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -4001,6 +4185,14 @@
         "value": "Tan"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "6.8L Twin Turbo V8 530hp 811ft. lbs."
       },
@@ -4303,6 +4495,14 @@
         "value": "Tan"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "6.0L Twin Turbo W12 600hp 553ft. lbs."
       },
@@ -4553,6 +4753,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -4592,6 +4800,14 @@
       {
         "label": "Interior",
         "value": "Tan Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -4923,6 +5139,14 @@
         "value": "Brown Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Engine: 4.4L DOHC V8 32V Twin Turbo"
       },
@@ -5140,6 +5364,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Engine: 2.0L 4 Cylinder TwinPower Turbo -inc: twin-scroll turbocharger w/variable valve control (Double-VANOS and Valvetronic"
       },
@@ -5327,6 +5559,14 @@
       {
         "label": "Interior",
         "value": "Brown"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -5645,6 +5885,14 @@
         "value": "Gray Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "2.3L I4 192hp 170ft. lbs."
       },
@@ -5819,6 +6067,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -6143,6 +6399,14 @@
         "value": "Black Cloth"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Duramax 6.6L Biodiesel Turbo V8 470hp 975ft. lbs."
       },
@@ -6416,6 +6680,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -6730,6 +7002,14 @@
         "value": "Tan"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -6769,6 +7049,14 @@
       {
         "label": "Interior",
         "value": "Tan Cloth"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
       },
       {
         "label": "Engine",
@@ -6908,6 +7196,14 @@
       {
         "label": "Interior",
         "value": "Black Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
       },
       {
         "label": "Engine",
@@ -7224,6 +7520,14 @@
         "value": "Red"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "HEMI 6.2L Supercharged V8 717hp 650ft. lbs."
       },
@@ -7531,6 +7835,14 @@
       {
         "label": "Interior",
         "value": "Black Vinyl"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
       },
       {
         "label": "Engine",
@@ -7844,6 +8156,14 @@
         "value": "Tan Cloth"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Pentastar 3.6L V6 280hp 260ft. lbs."
       },
@@ -8078,6 +8398,14 @@
       {
         "label": "Interior",
         "value": "Tan"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -8385,6 +8713,14 @@
         "value": "Tan"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.9L Twin Turbo V8 612hp 561ft. lbs."
       },
@@ -8680,6 +9016,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -8981,6 +9325,14 @@
         "value": "Brown"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.9L Twin Turbo V8 553hp 557ft. lbs."
       },
@@ -9269,6 +9621,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Power Stroke 6.7L Biodiesel Turbo V8 475hp 1050ft. lbs."
       },
@@ -9510,6 +9870,14 @@
       {
         "label": "Interior",
         "value": "Tan Cloth"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -9798,6 +10166,14 @@
         "value": "Charcoal Black Cloth"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Hi-Po 302 5.0L V8 444hp 380ft. lbs."
       },
@@ -9996,6 +10372,14 @@
         "value": "Gray"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Triton 5.4L Flex Fuel V8 255hp 350ft. lbs."
       },
@@ -10047,6 +10431,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -10201,6 +10593,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -10240,6 +10640,14 @@
       {
         "label": "Interior",
         "value": "Brown"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -10563,6 +10971,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -10602,6 +11018,14 @@
       {
         "label": "Interior",
         "value": "Tan"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -10899,6 +11323,14 @@
         "value": "Red Cloth"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "2.0L Turbo I4 270hp 295ft. lbs."
       },
@@ -11165,6 +11597,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -11471,6 +11911,14 @@
         "value": "Black Cloth"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.6L V6 285hp 260ft. lbs."
       },
@@ -11695,6 +12143,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -11932,6 +12388,14 @@
         "value": "Gray"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -11975,6 +12439,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -12201,6 +12673,14 @@
       {
         "label": "Interior",
         "value": "Red Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -12501,6 +12981,14 @@
         "value": "Green Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.0L Twin Turbo V8 641hp 626ft. lbs."
       },
@@ -12796,6 +13284,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "6.5L V12 691hp 509ft. lbs."
       },
@@ -13052,6 +13548,14 @@
       {
         "label": "Interior",
         "value": "Black Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -13361,6 +13865,14 @@
         "value": "Tan Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.0L Mild Hybrid E-Turbo I6 395hp 406ft. lbs."
       },
@@ -13668,6 +14180,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -14013,6 +14533,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -14052,6 +14580,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -14384,6 +14920,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.0L Supercharged V6 380hp 332ft. lbs."
       },
@@ -14712,6 +15256,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "5.0L Supercharged V8 510hp 461ft. lbs."
       },
@@ -15034,6 +15586,14 @@
         "value": "Tan Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.0L Diesel Turbo V6 254hp 440ft. lbs."
       },
@@ -15343,6 +15903,14 @@
         "value": "Red Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -15537,6 +16105,14 @@
       {
         "label": "Interior",
         "value": "Tan"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -15837,6 +16413,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Manual"
       },
@@ -15872,6 +16456,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
       },
       {
         "label": "Transmission",
@@ -15917,6 +16509,14 @@
       {
         "label": "Interior",
         "value": "Black Leatherette"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -16214,6 +16814,14 @@
         "value": "Tan Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.3L V8 288hp 317ft. lbs."
       },
@@ -16478,6 +17086,14 @@
       {
         "label": "Interior",
         "value": "Tan"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -16759,6 +17375,14 @@
       {
         "label": "Interior",
         "value": "Tan Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -17090,6 +17714,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.0L Twin Turbo V8 612hp 465ft. lbs."
       },
@@ -17363,6 +17995,14 @@
       {
         "label": "Interior",
         "value": "Tan"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -17655,6 +18295,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.0L Twin Turbo V8 720hp 568ft. lbs."
       },
@@ -17941,6 +18589,14 @@
         "value": "Red Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Engine: 4.0L AMG V8 biturbo"
       },
@@ -18161,6 +18817,14 @@
       {
         "label": "Interior",
         "value": "Black Leatherette"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -18483,6 +19147,14 @@
       {
         "label": "Interior",
         "value": "Red"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -18810,6 +19482,14 @@
       {
         "label": "Interior",
         "value": "White"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -19145,6 +19825,14 @@
         "value": "Tan Leatherette"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.0L Turbo I6 362hp 369ft. lbs."
       },
@@ -19470,6 +20158,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.0L Twin Turbo V8 416hp 450ft. lbs."
       },
@@ -19789,6 +20485,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "AMG 4.0L Twin Turbo V8 577hp 516ft. lbs."
       },
@@ -20089,6 +20793,14 @@
       {
         "label": "Interior",
         "value": "Tan Leatherette"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -20402,6 +21114,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.0L Twin Turbo V8 503hp 516ft. lbs."
       },
@@ -20685,6 +21405,14 @@
         "value": "Red Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "Engine: 5.5L Bi-Turbo V8"
       },
@@ -20889,6 +21617,14 @@
       {
         "label": "Interior",
         "value": "Black Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -21169,6 +21905,14 @@
         "value": "Tan"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "AMG 6.3L V8 563hp 479ft. lbs."
       },
@@ -21434,6 +22178,14 @@
         "value": "Black Leatherette"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.5L V6 268hp 258ft. lbs."
       },
@@ -21673,6 +22425,14 @@
       {
         "label": "Interior",
         "value": "Black Leatherette"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -21920,6 +22680,14 @@
         "value": "Tan Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "5.0L NA V8 single overhead cam (SOHC) 24V"
       },
@@ -22140,6 +22908,14 @@
         "value": "Blue"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Manual"
       },
@@ -22179,6 +22955,14 @@
       {
         "label": "Interior",
         "value": "Gray"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -22405,6 +23189,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Manual"
       },
@@ -22448,6 +23240,14 @@
       {
         "label": "Interior",
         "value": "Black Leatherette"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -22761,6 +23561,14 @@
         "value": "Red Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.8L Twin Turbo H6 572hp 553ft. lbs."
       },
@@ -23068,6 +23876,14 @@
         "value": "Brown Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "4.0L H6 502hp 331ft. lbs."
       },
@@ -23349,6 +24165,14 @@
       {
         "label": "Interior",
         "value": "Black Leather"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -23633,6 +24457,14 @@
       {
         "label": "Interior",
         "value": "Gray"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -23934,6 +24766,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.0L Turbo V6 348hp 354ft. lbs."
       },
@@ -24223,6 +25063,14 @@
       {
         "label": "Interior",
         "value": "Black"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -24521,6 +25369,14 @@
         "value": "Black Leather"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "3.6L Twin Turbo H6 480hp 460ft. lbs."
       },
@@ -24761,6 +25617,14 @@
       {
         "label": "Interior",
         "value": "White"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",
@@ -25051,6 +25915,14 @@
       {
         "label": "Interior",
         "value": "Tan"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
       },
       {
         "label": "Engine",
@@ -25348,6 +26220,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2 passengers"
+      },
+      {
         "label": "Engine",
         "value": "6.6L Twin Turbo V12 624hp 590ft. lbs."
       },
@@ -25624,6 +26504,14 @@
         "value": "Black"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -25665,6 +26553,14 @@
         "value": "Brown"
       },
       {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
+      },
+      {
         "label": "Transmission",
         "value": "Automatic"
       },
@@ -25700,6 +26596,18 @@
       {
         "label": "Exterior Color",
         "value": "Silver"
+      },
+      {
+        "label": "Interior",
+        "value": "Curated premium cabin"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
       },
       {
         "label": "Engine",
@@ -25745,6 +26653,14 @@
       {
         "label": "Interior",
         "value": "Black Cloth"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium trim-dependent upholstery"
+      },
+      {
+        "label": "Seating",
+        "value": "2-5 passengers"
       },
       {
         "label": "Engine",
@@ -26018,6 +26934,14 @@
       {
         "label": "Interior",
         "value": "Tan Leatherette"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Premium leather"
+      },
+      {
+        "label": "Seating",
+        "value": "4-5 passengers"
       },
       {
         "label": "Engine",

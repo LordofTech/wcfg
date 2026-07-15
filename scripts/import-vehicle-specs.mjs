@@ -286,6 +286,102 @@ function addOverviewItem(items, label, value) {
   items.push({ label: cleanLabel, value: cleanValue });
 }
 
+function getOverviewValue(items, label) {
+  return items.find((item) => item.label === label)?.value?.trim() || "";
+}
+
+function upsertOverviewItem(items, label, value, options = {}) {
+  const cleanLabel = stripTags(label);
+  const cleanValue = stripTags(value);
+  if (!cleanLabel || !cleanValue) return;
+
+  const existingIndex = items.findIndex((item) => item.label === cleanLabel);
+  if (existingIndex >= 0) {
+    if (!items[existingIndex].value?.trim()) {
+      items[existingIndex] = { label: cleanLabel, value: cleanValue };
+    }
+    return;
+  }
+
+  const afterLabel = options.afterLabel ? stripTags(options.afterLabel) : "";
+  const afterIndex = afterLabel
+    ? items.findIndex((item) => item.label === afterLabel)
+    : -1;
+
+  if (afterIndex >= 0) {
+    items.splice(afterIndex + 1, 0, { label: cleanLabel, value: cleanValue });
+    return;
+  }
+
+  items.push({ label: cleanLabel, value: cleanValue });
+}
+
+function inferInteriorValue(vehicle, overview) {
+  const existingInterior =
+    getOverviewValue(overview, "Interior") ||
+    getOverviewValue(overview, "Interior Color") ||
+    getOverviewValue(overview, "Cabin");
+
+  if (existingInterior) return existingInterior;
+
+  const text = `${vehicle.highlight || ""} ${vehicle.imageAlt || ""}`.toLowerCase();
+  const colorMatch = text.match(/\b([a-z][a-z-]*(?:\s+[a-z][a-z-]*){0,2})\s+interior\b/i);
+  if (colorMatch?.[1]) {
+    return `${titleCase(colorMatch[1])} interior`;
+  }
+
+  return "Curated premium cabin";
+}
+
+function inferUpholsteryValue(interior) {
+  const text = String(interior || "").toLowerCase();
+  if (text.includes("alcantara")) return "Alcantara and premium leather";
+  if (text.includes("leather")) return "Premium leather";
+  return "Premium trim-dependent upholstery";
+}
+
+function inferSeatingValue(vehicle, overview) {
+  const existingSeating = getOverviewValue(overview, "Seating");
+  if (existingSeating) return existingSeating;
+
+  const text = `${vehicle.model || ""} ${vehicle.highlight || ""} ${getOverviewValue(overview, "Body Style")}`.toLowerCase();
+
+  if (/(motorcycle|bike|rsv4|ducati|yamaha|kawasaki)/i.test(text)) {
+    return "1-2 riders";
+  }
+
+  if (/\b(3-row|three-row|full-size 3-row)\b/i.test(text)) {
+    return "Up to 8 passengers";
+  }
+
+  if (/(suv|wagon|sedan|saloon|4-door|four-door|land cruiser|escalade|g 63|cullinan|ghost)/i.test(text)) {
+    return "4-5 passengers";
+  }
+
+  if (/(coupe|berlinetta|roadster|convertible|2-door|two-door|vanquish|vantage|corvette|f8)/i.test(text)) {
+    return "2 passengers";
+  }
+
+  return "2-5 passengers";
+}
+
+function enrichInteriorOverview(vehicle, specs) {
+  const overview = Array.isArray(specs?.overview) ? specs.overview : [];
+  const interior = inferInteriorValue(vehicle, overview);
+  const upholstery = inferUpholsteryValue(interior);
+  const seating = inferSeatingValue(vehicle, overview);
+
+  upsertOverviewItem(overview, "Interior", interior, { afterLabel: "Exterior Color" });
+  upsertOverviewItem(overview, "Upholstery", upholstery, { afterLabel: "Interior" });
+  upsertOverviewItem(overview, "Seating", seating, { afterLabel: "Upholstery" });
+
+  return {
+    ...specs,
+    overview,
+    equipment: Array.isArray(specs?.equipment) ? specs.equipment : [],
+  };
+}
+
 function parseInstalledEquipment(html) {
   const sectionMatch = html.match(/<section id="installed_options">([\s\S]*?)<\/section>/i);
   if (!sectionMatch) return [];
@@ -386,14 +482,28 @@ async function main() {
 
   for (const vehicle of inventory) {
     if (!vehicle?.id) continue;
-    if (specsById[vehicle.id]) continue;
-    if (!vehicle.sourceUrl || !/adscars\.com/i.test(vehicle.sourceUrl)) continue;
+    if (specsById[vehicle.id]) {
+      specsById[vehicle.id] = enrichInteriorOverview(vehicle, specsById[vehicle.id]);
+      continue;
+    }
+
+    if (!vehicle.sourceUrl || !/adscars\.com/i.test(vehicle.sourceUrl)) {
+      specsById[vehicle.id] = enrichInteriorOverview(vehicle, {
+        overview: [{ label: "Year", value: String(vehicle.year) }],
+        equipment: [],
+      });
+      continue;
+    }
 
     try {
       const html = await fetchHtml(vehicle.sourceUrl);
-      specsById[vehicle.id] = buildSpecs(vehicle, html);
+      specsById[vehicle.id] = enrichInteriorOverview(vehicle, buildSpecs(vehicle, html));
     } catch (error) {
       console.warn(`Spec import failed for ${vehicle.id}: ${error.message}`);
+      specsById[vehicle.id] = enrichInteriorOverview(vehicle, {
+        overview: [{ label: "Year", value: String(vehicle.year) }],
+        equipment: [],
+      });
     }
   }
 

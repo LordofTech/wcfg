@@ -9,6 +9,7 @@ import {
 } from "@/lib/contact";
 import CallCtaLink from "@/components/CallCtaLink";
 import type { Vehicle } from "@/lib/inventory";
+import { getVehicleDetailHref } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
 import { priceLabelClassName } from "@/lib/price-label";
 import { yearLabelClassName } from "@/lib/year-label";
@@ -27,7 +28,7 @@ export default function VehicleCard({
   compact = false,
   showDetailLink = true,
 }: VehicleCardProps) {
-  const detailHref = `/inventory/${vehicle.brandSlug}/${vehicle.id}`;
+  const detailHref = getVehicleDetailHref(vehicle);
   const emailHref = vehicleInquiryHref(vehicle);
 
   return (
@@ -37,7 +38,7 @@ export default function VehicleCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.4, ease: luxuryEase }}
-      id={vehicle.id}
+      id={`vehicle-${vehicle.brandSlug}-${vehicle.year}-${vehicle.model.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
       className="group relative scroll-mt-32 overflow-hidden rounded-sm border border-gold-light/15 bg-charcoal-velvet transition-shadow duration-500 hover:border-gold-light/40 hover:shadow-gold"
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-charcoal-soft via-charcoal-velvet to-pitch">

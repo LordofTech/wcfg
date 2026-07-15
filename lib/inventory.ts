@@ -25,6 +25,22 @@ export interface Vehicle {
   specs?: VehicleSpecs;
 }
 
+function slugifyVehicleSegment(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getVehiclePublicSlug(vehicle: Pick<Vehicle, "year" | "brand" | "model">): string {
+  return slugifyVehicleSegment(`${vehicle.year} ${vehicle.brand} ${vehicle.model}`);
+}
+
+export function getVehicleDetailHref(vehicle: Pick<Vehicle, "brandSlug" | "year" | "brand" | "model">): string {
+  return `/inventory/${vehicle.brandSlug}/${getVehiclePublicSlug(vehicle)}`;
+}
+
 function normalize(vehicle: Vehicle): Vehicle {
   return {
     ...vehicle,
@@ -131,7 +147,11 @@ export function getLocalInventory(brandSlug?: string): Vehicle[] {
 }
 
 export function getLocalVehicleById(id: string): Vehicle | null {
-  return inventory.find((vehicle) => vehicle.id === id) ?? null;
+  return (
+    inventory.find(
+      (vehicle) => vehicle.id === id || getVehiclePublicSlug(vehicle) === id
+    ) ?? null
+  );
 }
 
 export function getFeaturedVehicle(): Vehicle | null {

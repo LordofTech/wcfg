@@ -8,7 +8,7 @@ import CallCtaLink from "@/components/CallCtaLink";
 import {
   vehicleInquiryHref,
 } from "@/lib/contact";
-import { getFeaturedVehicle } from "@/lib/inventory";
+import { getFeaturedVehicle, getVehicleDetailHref } from "@/lib/inventory";
 import { luxuryEase } from "@/lib/motion";
 import { priceLabelClassName } from "@/lib/price-label";
 import { yearDetailClassName } from "@/lib/year-label";
@@ -18,7 +18,7 @@ const vehicle = getFeaturedVehicle();
 export default function FeaturedInStock() {
   if (!vehicle) return null;
 
-  const detailHref = `/inventory/${vehicle.brandSlug}/${vehicle.id}`;
+  const detailHref = getVehicleDetailHref(vehicle);
   const emailHref = vehicleInquiryHref(vehicle);
 
   return (

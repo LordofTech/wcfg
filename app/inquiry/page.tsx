@@ -12,14 +12,12 @@ export const metadata: Metadata = {
 interface InquiryPageProps {
   searchParams: Promise<{
     vehicle?: string;
-    vehicleId?: string;
   }>;
 }
 
 export default async function InquiryPage({ searchParams }: InquiryPageProps) {
   const params = await searchParams;
   const vehicle = typeof params.vehicle === "string" ? params.vehicle : "";
-  const vehicleId = typeof params.vehicleId === "string" ? params.vehicleId : "";
 
   return (
     <InventoryShell>
@@ -47,7 +45,6 @@ export default async function InquiryPage({ searchParams }: InquiryPageProps) {
 
           <VehicleInquiryForm
             initialVehicleLabel={vehicle}
-            initialVehicleId={vehicleId}
           />
         </div>
       </section>

@@ -10,7 +10,7 @@ import { getBrandBySlug } from "@/lib/brands";
 import {
   vehicleInquiryHref,
 } from "@/lib/contact";
-import { inventory } from "@/lib/inventory";
+import { getVehiclePublicSlug, inventory } from "@/lib/inventory";
 import { getVehicleById } from "@/lib/inventory-service";
 import { priceLabelClassName } from "@/lib/price-label";
 import type { Vehicle } from "@/lib/inventory";
@@ -41,7 +41,7 @@ function buildFallbackSpecs(vehicle: Vehicle): VehicleSpecs {
 export function generateStaticParams() {
   return inventory.map((vehicle) => ({
     brand: vehicle.brandSlug,
-    id: vehicle.id,
+    id: getVehiclePublicSlug(vehicle),
   }));
 }
 
@@ -144,10 +144,6 @@ export default async function VehicleDetailPage({
                   {vehicle.priceLabel}
                 </span>
               </p>
-              <p className="mt-2 font-sans text-xs font-light text-mist/80">
-                Reference ID: {vehicle.id}
-              </p>
-
               <div className="mt-10 grid gap-3 sm:grid-cols-2">
                 <Link
                   href={emailHref}

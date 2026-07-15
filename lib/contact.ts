@@ -45,7 +45,6 @@ export function mailtoVehicleInterest(vehicle: Pick<Vehicle, "id" | "brand" | "m
     `Brand: ${vehicle.brand}`,
     `Model: ${vehicle.model}`,
     `Year: ${vehicle.year}`,
-    `Reference ID: ${vehicle.id}`,
     "",
     "Please contact me with availability and next steps.",
     "",
@@ -56,11 +55,10 @@ export function mailtoVehicleInterest(vehicle: Pick<Vehicle, "id" | "brand" | "m
 }
 
 export function vehicleInquiryHref(
-  vehicle: Pick<Vehicle, "id" | "brand" | "model" | "year">
+  vehicle: Pick<Vehicle, "brand" | "model" | "year">
 ): string {
   const params = new URLSearchParams({
     vehicle: `${vehicle.year} ${vehicle.brand} ${vehicle.model}`,
-    vehicleId: vehicle.id,
   });
 
   return `/inquiry?${params.toString()}`;

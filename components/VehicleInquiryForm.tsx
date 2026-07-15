@@ -4,14 +4,12 @@ import { FormEvent, useMemo, useState } from "react";
 import { COUNTRY_DIAL_CODES } from "@/lib/country-dial-codes";
 
 interface VehicleInquiryFormProps {
-  initialVehicleId?: string;
   initialVehicleLabel?: string;
 }
 
 const DEFAULT_COUNTRY = "US";
 
 export default function VehicleInquiryForm({
-  initialVehicleId = "",
   initialVehicleLabel = "",
 }: VehicleInquiryFormProps) {
   const [fullName, setFullName] = useState("");
@@ -30,11 +28,6 @@ export default function VehicleInquiryForm({
   );
 
   const dialCode = selectedCountry?.dialCode ?? "+1";
-
-  const vehicleReference = useMemo(() => {
-    if (!initialVehicleId) return "";
-    return `Reference ID: ${initialVehicleId}`;
-  }, [initialVehicleId]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -74,7 +67,6 @@ export default function VehicleInquiryForm({
           email: trimmedEmail,
           phone: trimmedPhone,
           vehicle: trimmedVehicle,
-          vehicleId: initialVehicleId || undefined,
         }),
       });
 
@@ -221,9 +213,6 @@ export default function VehicleInquiryForm({
             placeholder="e.g., 2024 Bentley Continental GT"
             required
           />
-          {vehicleReference ? (
-            <p className="mt-2 font-sans text-xs font-light text-mist/80">{vehicleReference}</p>
-          ) : null}
         </div>
       </div>
 

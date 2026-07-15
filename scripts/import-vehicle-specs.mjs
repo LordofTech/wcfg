@@ -375,6 +375,19 @@ function parsePassengerCount(seating) {
   return Math.max(...numbers);
 }
 
+function getInteriorTemplateTier(vehicle, bodyStyleText) {
+  const brand = String(vehicle?.brand || "").toLowerCase();
+  const model = String(vehicle?.model || "").toLowerCase();
+  const combined = `${brand} ${model} ${bodyStyleText}`;
+
+  if (/(rolls-royce|bentley|maybach)/i.test(combined)) return "ultra-luxury";
+  if (/(ferrari|lamborghini|mclaren|aston martin|corvette|porsche 911|amg gt|f8|zr1)/i.test(combined)) return "performance-luxury";
+  if (/(h1|wrangler|bronco|land cruiser|g class|g 63|defender|truck|off-road|suv)/i.test(combined)) {
+    return "utility-luxury";
+  }
+  return "premium";
+}
+
 function buildInteriorEquipmentCategory(vehicle, overview) {
   const seating = inferSeatingValue(vehicle, overview);
   const interior = inferInteriorValue(vehicle, overview);
@@ -382,6 +395,7 @@ function buildInteriorEquipmentCategory(vehicle, overview) {
   const bodyStyle = `${getOverviewValue(overview, "Body Style")} ${vehicle.model || ""}`.toLowerCase();
   const passengerCount = parsePassengerCount(seating);
   const isMotorcycle = /(motorcycle|bike|rsv4|ducati|yamaha|kawasaki)/i.test(bodyStyle);
+  const templateTier = getInteriorTemplateTier(vehicle, bodyStyle);
 
   if (isMotorcycle) {
     return {
@@ -429,6 +443,28 @@ function buildInteriorEquipmentCategory(vehicle, overview) {
     "Rearview mirror: auto-dimming",
   ];
 
+  if (templateTier === "ultra-luxury") {
+    convenienceItems.unshift(
+      "Rear executive lounge controls",
+      "Soft-close doors",
+      "Power rear sunshades"
+    );
+    convenienceItems.push(
+      "Four-zone climate personalization",
+      "Rear-seat infotainment command interface"
+    );
+  }
+
+  if (templateTier === "performance-luxury") {
+    convenienceItems.unshift("Drive-mode configurable cabin ambience");
+    convenienceItems.push("Launch-control readiness display");
+  }
+
+  if (templateTier === "utility-luxury") {
+    convenienceItems.unshift("Cabin storage: expanded utility layout");
+    convenienceItems.push("All-weather floor protection package");
+  }
+
   const seatingAndTrimItems = [
     `Seating capacity: ${seating}`,
     `Interior theme: ${interior}`,
@@ -437,6 +473,28 @@ function buildInteriorEquipmentCategory(vehicle, overview) {
     passengerCount >= 5 ? "Rear seat type: bench" : "Driver seat: power-adjustable",
     "Steering wheel trim: leather",
   ];
+
+  if (templateTier === "ultra-luxury") {
+    seatingAndTrimItems.push(
+      "Seat massage: front and rear",
+      "Headliner: bespoke starlight or suede finish",
+      "Trim inlays: open-pore wood / metal veneer"
+    );
+  }
+
+  if (templateTier === "performance-luxury") {
+    seatingAndTrimItems.push(
+      "Performance seat bolsters: adaptive",
+      "Cabin trim: carbon fiber and metal accents"
+    );
+  }
+
+  if (templateTier === "utility-luxury") {
+    seatingAndTrimItems.push(
+      "Seat material durability package: high-wear resistant",
+      "Cargo-side utility tie-down interfaces"
+    );
+  }
 
   return {
     title: "INTERIOR",

@@ -78,6 +78,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Drive-mode configurable cabin ambience",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -88,7 +89,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Launch-control readiness display"
             ]
           },
           {
@@ -99,7 +101,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: sport bucket",
               "Driver seat: power-adjustable",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Performance seat bolsters: adaptive",
+              "Cabin trim: carbon fiber and metal accents"
             ]
           }
         ]
@@ -193,6 +197,9 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Rear executive lounge controls",
+              "Soft-close doors",
+              "Power rear sunshades",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -203,7 +210,9 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Four-zone climate personalization",
+              "Rear-seat infotainment command interface"
             ]
           },
           {
@@ -214,7 +223,10 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: sport bucket",
               "Driver seat: power-adjustable",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat massage: front and rear",
+              "Headliner: bespoke starlight or suede finish",
+              "Trim inlays: open-pore wood / metal veneer"
             ]
           }
         ]
@@ -308,6 +320,9 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Rear executive lounge controls",
+              "Soft-close doors",
+              "Power rear sunshades",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -318,7 +333,9 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Four-zone climate personalization",
+              "Rear-seat infotainment command interface"
             ]
           },
           {
@@ -329,7 +346,10 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat massage: front and rear",
+              "Headliner: bespoke starlight or suede finish",
+              "Trim inlays: open-pore wood / metal veneer"
             ]
           }
         ]
@@ -415,6 +435,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -425,7 +446,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -436,7 +458,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -526,6 +550,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Drive-mode configurable cabin ambience",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -536,7 +561,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Launch-control readiness display"
             ]
           },
           {
@@ -547,7 +573,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: sport bucket",
               "Driver seat: power-adjustable",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Performance seat bolsters: adaptive",
+              "Cabin trim: carbon fiber and metal accents"
             ]
           }
         ]
@@ -633,6 +661,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Drive-mode configurable cabin ambience",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -643,7 +672,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Launch-control readiness display"
             ]
           },
           {
@@ -654,7 +684,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: sport bucket",
               "Driver seat: power-adjustable",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Performance seat bolsters: adaptive",
+              "Cabin trim: carbon fiber and metal accents"
             ]
           }
         ]
@@ -740,6 +772,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -750,7 +783,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -761,7 +795,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -847,6 +883,9 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Rear executive lounge controls",
+              "Soft-close doors",
+              "Power rear sunshades",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -857,7 +896,9 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Four-zone climate personalization",
+              "Rear-seat infotainment command interface"
             ]
           },
           {
@@ -868,7 +909,10 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat massage: front and rear",
+              "Headliner: bespoke starlight or suede finish",
+              "Trim inlays: open-pore wood / metal veneer"
             ]
           }
         ]
@@ -958,6 +1002,9 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Rear executive lounge controls",
+              "Soft-close doors",
+              "Power rear sunshades",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -968,7 +1015,9 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Four-zone climate personalization",
+              "Rear-seat infotainment command interface"
             ]
           },
           {
@@ -979,7 +1028,10 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat massage: front and rear",
+              "Headliner: bespoke starlight or suede finish",
+              "Trim inlays: open-pore wood / metal veneer"
             ]
           }
         ]
@@ -1069,6 +1121,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -1079,7 +1132,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -1090,7 +1144,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -1156,6 +1212,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -1166,7 +1223,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -1177,7 +1235,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -5274,6 +5334,9 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Rear executive lounge controls",
+              "Soft-close doors",
+              "Power rear sunshades",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -5284,7 +5347,9 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Four-zone climate personalization",
+              "Rear-seat infotainment command interface"
             ]
           },
           {
@@ -5295,7 +5360,10 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat massage: front and rear",
+              "Headliner: bespoke starlight or suede finish",
+              "Trim inlays: open-pore wood / metal veneer"
             ]
           }
         ]
@@ -10989,6 +11057,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -10999,7 +11068,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -11010,7 +11080,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -11240,6 +11312,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -11250,7 +11323,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -11261,7 +11335,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -15306,6 +15382,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -15316,7 +15393,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -15327,7 +15405,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -17228,6 +17308,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -17238,7 +17319,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -17249,7 +17331,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -17319,6 +17403,7 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Cabin storage: expanded utility layout",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -17329,7 +17414,8 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "All-weather floor protection package"
             ]
           },
           {
@@ -17340,7 +17426,9 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat material durability package: high-wear resistant",
+              "Cargo-side utility tie-down interfaces"
             ]
           }
         ]
@@ -27487,6 +27575,9 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Rear executive lounge controls",
+              "Soft-close doors",
+              "Power rear sunshades",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -27497,7 +27588,9 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Four-zone climate personalization",
+              "Rear-seat infotainment command interface"
             ]
           },
           {
@@ -27508,7 +27601,10 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat massage: front and rear",
+              "Headliner: bespoke starlight or suede finish",
+              "Trim inlays: open-pore wood / metal veneer"
             ]
           }
         ]
@@ -27578,6 +27674,9 @@
           {
             "title": "Convenience Features",
             "items": [
+              "Rear executive lounge controls",
+              "Soft-close doors",
+              "Power rear sunshades",
               "Ambient lighting",
               "Cargo area light",
               "Cruise control",
@@ -27588,7 +27687,9 @@
               "Power outlet(s): three 12V",
               "Power steering: variable assist",
               "Push-button start",
-              "Rearview mirror: auto-dimming"
+              "Rearview mirror: auto-dimming",
+              "Four-zone climate personalization",
+              "Rear-seat infotainment command interface"
             ]
           },
           {
@@ -27599,7 +27700,10 @@
               "Upholstery: Premium trim-dependent upholstery",
               "Front seat type: bucket",
               "Rear seat type: bench",
-              "Steering wheel trim: leather"
+              "Steering wheel trim: leather",
+              "Seat massage: front and rear",
+              "Headliner: bespoke starlight or suede finish",
+              "Trim inlays: open-pore wood / metal veneer"
             ]
           }
         ]

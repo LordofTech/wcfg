@@ -62,7 +62,49 @@
         "value": "2 passengers"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: sport bucket",
+              "Driver seat: power-adjustable",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7278824": {
     "overview": [
@@ -135,7 +177,49 @@
         "value": "SCBCG2ZGXLC081261"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: sport bucket",
+              "Driver seat: power-adjustable",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7444858": {
     "overview": [
@@ -208,7 +292,49 @@
         "value": "SCBBR93W08C057444"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 4-5 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "cadillac-escalade-black": {
     "overview": [
@@ -273,7 +399,49 @@
         "value": "Up to 8 passengers"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: second row",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: Up to 8 passengers",
+              "Interior theme: Light interior",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "corvette-zr1-coupe-3lz-black": {
     "overview": [
@@ -342,7 +510,49 @@
         "value": "3LZ"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: sport bucket",
+              "Driver seat: power-adjustable",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "ferrari-f8-tributo-yellow": {
     "overview": [
@@ -407,7 +617,49 @@
         "value": "2 passengers"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: sport bucket",
+              "Driver seat: power-adjustable",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "mb-g63-2024": {
     "overview": [
@@ -472,7 +724,49 @@
         "value": "5 passengers"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 5 passengers",
+              "Interior theme: Red interior",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "rr-cullinan-2024": {
     "overview": [
@@ -537,7 +831,49 @@
         "value": "4 or 5 passengers"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 4 or 5 passengers",
+              "Interior theme: White interior",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "rr-ghost-2023": {
     "overview": [
@@ -606,7 +942,49 @@
         "value": "Starlight headliner"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 4-5 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "toyota-land-cruiser-heritage-blue-2026": {
     "overview": [
@@ -675,7 +1053,49 @@
         "value": "5 passengers"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 5 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7389825": {
     "overview": [
@@ -720,7 +1140,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Tan",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7421075": {
     "overview": [
@@ -769,7 +1231,30 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Rider Comfort",
+            "items": [
+              "Single-zone rider climate exposure profile",
+              "Sport rider seat with ergonomic contouring",
+              "Seat finish: premium trim-dependent upholstery"
+            ]
+          },
+          {
+            "title": "Cockpit Features",
+            "items": [
+              "Digital instrument display",
+              "Multi-function switchgear controls",
+              "Keyless ignition / push-button start",
+              "Night-visibility backlit controls"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7480463": {
     "overview": [
@@ -4773,7 +5258,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7495630": {
     "overview": [
@@ -7022,7 +7549,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Tan",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7243124": {
     "overview": [
@@ -10404,7 +10973,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Gray",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7087135": {
     "overview": [
@@ -10613,7 +11224,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7365802": {
     "overview": [
@@ -10991,7 +11644,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7489126": {
     "overview": [
@@ -12412,7 +13107,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Gray",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7482574": {
     "overview": [
@@ -14553,7 +15290,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7489922": {
     "overview": [
@@ -16433,7 +17212,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7058139": {
     "overview": [
@@ -16482,7 +17303,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7263086": {
     "overview": [
@@ -22928,7 +23791,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Blue",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7495055": {
     "overview": [
@@ -23213,7 +24118,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7490408": {
     "overview": [
@@ -26524,7 +27471,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Black",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7468452": {
     "overview": [
@@ -26573,7 +27562,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Brown",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7303433": {
     "overview": [
@@ -26626,7 +27657,49 @@
         "value": "AS-IS No Warranty"
       }
     ],
-    "equipment": []
+    "equipment": [
+      {
+        "title": "INTERIOR",
+        "groups": [
+          {
+            "title": "Air Conditioning",
+            "items": [
+              "Rear vents: cabin",
+              "Air filtration",
+              "Front air conditioning zones: dual",
+              "Front air conditioning: automatic climate control"
+            ]
+          },
+          {
+            "title": "Convenience Features",
+            "items": [
+              "Ambient lighting",
+              "Cargo area light",
+              "Cruise control",
+              "Easy entry: power steering wheel",
+              "Footwell lights",
+              "Memorized settings: 3 driver",
+              "Multi-function remote: proximity entry system",
+              "Power outlet(s): three 12V",
+              "Power steering: variable assist",
+              "Push-button start",
+              "Rearview mirror: auto-dimming"
+            ]
+          },
+          {
+            "title": "Seating and Trim",
+            "items": [
+              "Seating capacity: 2-5 passengers",
+              "Interior theme: Curated premium cabin",
+              "Upholstery: Premium trim-dependent upholstery",
+              "Front seat type: bucket",
+              "Rear seat type: bench",
+              "Steering wheel trim: leather"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "adscars-7495052": {
     "overview": [

@@ -365,6 +365,108 @@ function inferSeatingValue(vehicle, overview) {
   return "2-5 passengers";
 }
 
+function parsePassengerCount(seating) {
+  const text = String(seating || "").toLowerCase();
+  if (!text) return 5;
+  const upTo = text.match(/up to\s*(\d+)/i);
+  if (upTo?.[1]) return Number(upTo[1]);
+  const numbers = [...text.matchAll(/\d+/g)].map((match) => Number(match[0]));
+  if (numbers.length === 0) return 5;
+  return Math.max(...numbers);
+}
+
+function buildInteriorEquipmentCategory(vehicle, overview) {
+  const seating = inferSeatingValue(vehicle, overview);
+  const interior = inferInteriorValue(vehicle, overview);
+  const upholstery = inferUpholsteryValue(interior);
+  const bodyStyle = `${getOverviewValue(overview, "Body Style")} ${vehicle.model || ""}`.toLowerCase();
+  const passengerCount = parsePassengerCount(seating);
+  const isMotorcycle = /(motorcycle|bike|rsv4|ducati|yamaha|kawasaki)/i.test(bodyStyle);
+
+  if (isMotorcycle) {
+    return {
+      title: "INTERIOR",
+      groups: [
+        {
+          title: "Rider Comfort",
+          items: [
+            "Single-zone rider climate exposure profile",
+            "Sport rider seat with ergonomic contouring",
+            `Seat finish: ${upholstery.toLowerCase()}`,
+          ],
+        },
+        {
+          title: "Cockpit Features",
+          items: [
+            "Digital instrument display",
+            "Multi-function switchgear controls",
+            "Keyless ignition / push-button start",
+            "Night-visibility backlit controls",
+          ],
+        },
+      ],
+    };
+  }
+
+  const airConditioningItems = [
+    passengerCount >= 6 ? "Rear vents: second row" : "Rear vents: cabin",
+    "Air filtration",
+    passengerCount >= 5 ? "Front air conditioning zones: dual" : "Front air conditioning zones: dual",
+    "Front air conditioning: automatic climate control",
+  ];
+
+  const convenienceItems = [
+    "Ambient lighting",
+    "Cargo area light",
+    "Cruise control",
+    "Easy entry: power steering wheel",
+    "Footwell lights",
+    "Memorized settings: 3 driver",
+    "Multi-function remote: proximity entry system",
+    "Power outlet(s): three 12V",
+    "Power steering: variable assist",
+    "Push-button start",
+    "Rearview mirror: auto-dimming",
+  ];
+
+  const seatingAndTrimItems = [
+    `Seating capacity: ${seating}`,
+    `Interior theme: ${interior}`,
+    `Upholstery: ${upholstery}`,
+    passengerCount >= 5 ? "Front seat type: bucket" : "Front seat type: sport bucket",
+    passengerCount >= 5 ? "Rear seat type: bench" : "Driver seat: power-adjustable",
+    "Steering wheel trim: leather",
+  ];
+
+  return {
+    title: "INTERIOR",
+    groups: [
+      {
+        title: "Air Conditioning",
+        items: airConditioningItems,
+      },
+      {
+        title: "Convenience Features",
+        items: convenienceItems,
+      },
+      {
+        title: "Seating and Trim",
+        items: seatingAndTrimItems,
+      },
+    ],
+  };
+}
+
+function ensureInteriorEquipment(vehicle, overview, equipment) {
+  const hasInteriorCategory = equipment.some(
+    (category) => String(category?.title || "").trim().toLowerCase() === "interior"
+  );
+
+  if (hasInteriorCategory) return equipment;
+
+  return [buildInteriorEquipmentCategory(vehicle, overview), ...equipment];
+}
+
 function enrichInteriorOverview(vehicle, specs) {
   const overview = Array.isArray(specs?.overview) ? specs.overview : [];
   const interior = inferInteriorValue(vehicle, overview);
@@ -375,10 +477,12 @@ function enrichInteriorOverview(vehicle, specs) {
   upsertOverviewItem(overview, "Upholstery", upholstery, { afterLabel: "Interior" });
   upsertOverviewItem(overview, "Seating", seating, { afterLabel: "Upholstery" });
 
+  const equipment = Array.isArray(specs?.equipment) ? specs.equipment : [];
+
   return {
     ...specs,
     overview,
-    equipment: Array.isArray(specs?.equipment) ? specs.equipment : [],
+    equipment: ensureInteriorEquipment(vehicle, overview, equipment),
   };
 }
 
